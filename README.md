@@ -12,7 +12,7 @@
 ## Project structure
 
 ```
-my-nextjs-project/
+wind-speed/
 ├── public/
 │   ├── images/             # Store all static images here
 │   ├── fonts/              # Any custom fonts if needed
@@ -41,8 +41,6 @@ my-nextjs-project/
 │   └── data/               # Static data or API mocks
 └── package.json
 ```
-
-## Getting Started
 
 ## Deploy on Vercel
 
