@@ -1,33 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Wind Speed Motobike rental official
 
-## Getting Started
+## Project stack
 
-First, run the development server:
+- NextJs
+- Type Script
+- App router
+- material UI
+- Framer Motion
+- Slick Slider
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project structure
+
+```
+my-nextjs-project/
+├── public/
+│   ├── images/             # Store all static images here
+│   ├── fonts/              # Any custom fonts if needed
+│   ├── favicon.ico
+│   └── ...                 # Any other public assets
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx      # Layout component for App Router
+│   │   ├── page.tsx        # Home page component
+│   │   └── globals.css     # Global styles
+│   ├── components/
+│   │   ├── Layout/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── Layout.tsx
+│   │   ├── HeroBanner.tsx
+│   │   ├── MotoPark.tsx
+│   │   ├── HowWeWork.tsx
+│   │   ├── Advantages.tsx
+│   │   ├── ContactForm.tsx
+│   │   ├── ContactMap.tsx
+│   │   └── ...             # Additional components
+│   ├── theme/
+│   │   └── theme.ts        # Custom MUI theme
+│   ├── utils/              # Any utility functions
+│   └── data/               # Static data or API mocks
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Getting Started
 
 ## Deploy on Vercel
 
