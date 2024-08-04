@@ -1,3 +1,4 @@
+"use client";
 import HeroBanner from "@/components/HeroBanner";
 import MotoPark from "@/components/MotoPark";
 import HowWeWork from "@/components/HowWeWork";
@@ -5,7 +6,7 @@ import Advantages from "@/components/Advantages";
 import ContactForm from "@/components/ContactForm";
 import ContactMap from "@/components/ContactMap";
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
   return (
     <>
       <HeroBanner />
@@ -16,4 +17,6 @@ export default function HomePage() {
       <ContactMap />
     </>
   );
-}
+};
+
+export default HomePage;

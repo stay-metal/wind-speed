@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { useState } from "react";
 import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
@@ -5,6 +6,7 @@ import { Roboto } from "@next/font/google";
 import theme from "@/theme/theme";
 import Logo from "../Logo";
 import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from "next-i18next";
 import BurgerIcon from "../BurgerIcon";
 
 const roboto = Roboto({
@@ -15,10 +17,10 @@ const roboto = Roboto({
 });
 
 const Header = () => {
+  const { t } = useTranslation("common");
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   function handleBurgerClick() {
-    console.log("Burger Clicked");
     setMenuOpen((prevState) => !prevState); // Use callback to avoid stale state issues
   }
 
@@ -55,30 +57,28 @@ const Header = () => {
               gap: 1,
             }}
           >
-            <Box
-              sx={{ position: "relative", top: "-2px", marginRight: "20px" }}
-            >
+            <Box sx={{ position: "relative", marginRight: "20px" }}>
               <LanguageSwitcher />
             </Box>
             {isMenuOpen && (
               <>
                 <MenuButton
-                  text="Каталог"
+                  text={t("menu.catalog")}
                   width={menuItemsSize.xl.catalog.width}
                   left={menuItemsSize.xl.catalog.left}
                 />
                 <MenuButton
-                  text="Как мы работаем?"
+                  text={t("menu.howWeWork")}
                   width={menuItemsSize.xl.howWeWork.width}
                   left={menuItemsSize.xl.howWeWork.left}
                 />
                 <MenuButton
-                  text="Наши приемущества"
+                  text={t("menu.benefits")}
                   width={menuItemsSize.xl.benefits.width}
                   left={menuItemsSize.xl.benefits.left}
                 />
                 <MenuButton
-                  text="Контакты"
+                  text={t("menu.contacts")}
                   width={menuItemsSize.xl.contacts.width}
                 />
               </>

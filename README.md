@@ -8,6 +8,7 @@
 - material UI
 - Framer Motion
 - Slick Slider
+- next-i18next
 
 ## Project structure
 
@@ -15,6 +16,11 @@
 wind-speed/
 ├── public/
 │   ├── images/                    # Store all static images here
+│   ├── locales/                   # Folder for localisation
+│   │   ├── en                     # Engilsh locale
+|   |   |   └──common.json         # English interface items
+│   │   └── ru                     # Russian locale
+|   |       └── common.json        # Russian interface items
 │   ├── fonts/                     # Any custom fonts if needed
 │   ├── favicon.ico
 │   └── ...                        # Any other public assets
@@ -40,7 +46,9 @@ wind-speed/
 │   ├── utils/                      # Any utility functions
 |   │   └── animation/
 |   |       └── framerAnimations.ts # Framer Motion animation collection
+|   ├── i18n.ts                     # Settings for i18n module
 │   └── data/                       # Static data or API mocks
+|
 └── package.json
 ```
 
