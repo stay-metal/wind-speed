@@ -94,6 +94,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
     MuiCard: {
       styleOverrides: {
         root: {

@@ -1,9 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
 import { Roboto } from "@next/font/google";
 import theme from "@/theme/theme";
 import Logo from "../Logo";
 import LanguageSwitcher from "../LanguageSwitcher";
+import BurgerIcon from "../BurgerIcon";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -13,6 +15,13 @@ const roboto = Roboto({
 });
 
 const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  function handleBurgerClick() {
+    console.log("Burger Clicked");
+    setMenuOpen((prevState) => !prevState); // Use callback to avoid stale state issues
+  }
+
   const menuItemsSize = {
     xl: {
       catalog: {
@@ -35,7 +44,7 @@ const Header = () => {
   return (
     <AppBar position="absolute">
       <Container>
-        <Toolbar>
+        <Toolbar disableGutters>
           <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
             <Logo />
           </Box>
@@ -43,7 +52,6 @@ const Header = () => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              // flexGrow: 1,
               gap: 1,
             }}
           >
@@ -52,26 +60,31 @@ const Header = () => {
             >
               <LanguageSwitcher />
             </Box>
-            <MenuButton
-              text="Каталог"
-              width={menuItemsSize.xl.catalog.width}
-              left={menuItemsSize.xl.catalog.left}
-            />
-            <MenuButton
-              text="Как мы работаем?"
-              width={menuItemsSize.xl.howWeWork.width}
-              left={menuItemsSize.xl.howWeWork.left}
-            />
-            <MenuButton
-              text="Наши приемущества"
-              width={menuItemsSize.xl.benefits.width}
-              left={menuItemsSize.xl.benefits.left}
-            />
-            <MenuButton
-              text="Контакты"
-              width={menuItemsSize.xl.contacts.width}
-            />
+            {isMenuOpen && (
+              <>
+                <MenuButton
+                  text="Каталог"
+                  width={menuItemsSize.xl.catalog.width}
+                  left={menuItemsSize.xl.catalog.left}
+                />
+                <MenuButton
+                  text="Как мы работаем?"
+                  width={menuItemsSize.xl.howWeWork.width}
+                  left={menuItemsSize.xl.howWeWork.left}
+                />
+                <MenuButton
+                  text="Наши приемущества"
+                  width={menuItemsSize.xl.benefits.width}
+                  left={menuItemsSize.xl.benefits.left}
+                />
+                <MenuButton
+                  text="Контакты"
+                  width={menuItemsSize.xl.contacts.width}
+                />
+              </>
+            )}
           </Box>
+          <BurgerIcon isOpen={isMenuOpen} toggleOpen={handleBurgerClick} />
         </Toolbar>
       </Container>
     </AppBar>
@@ -89,6 +102,9 @@ const MenuButton = ({
 }) => {
   return (
     <Button
+      disableRipple
+      disableFocusRipple
+      disableTouchRipple
       className={roboto.className}
       color="inherit"
       sx={{
@@ -112,7 +128,6 @@ const MenuButton = ({
           content: '""',
           position: "absolute",
           bottom: "1px", // Move down slightly to make it visible outside
-          // left: "50%",
           width: width ? width + "px" : "100%",
           height: "41px", // Height of the parallelogram
           backgroundColor: theme.palette.primary.main,

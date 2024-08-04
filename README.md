@@ -35,10 +35,6 @@ wind-speed/
 │   │   ├── ContactForm.tsx
 │   │   ├── ContactMap.tsx
 │   │   └── ...             # Additional components
-│   ├── styled/
-│   │   ├── Wrappers.ts     # Styled components for wrappers
-│   │   ├── Buttons.ts      # Styled components for buttons
-│   │   └── ...             # Additional styled component files
 │   ├── theme/
 │   │   └── theme.ts        # Custom MUI theme
 │   ├── utils/              # Any utility functions
