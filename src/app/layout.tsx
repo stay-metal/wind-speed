@@ -4,7 +4,8 @@ import theme from "@/theme/theme";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,9 +22,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={inter.className}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {/* <Header /> */}
+          <Header />
           <main>{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
