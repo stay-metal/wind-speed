@@ -1,5 +1,26 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+declare module "@mui/material/styles" {
+  interface Theme {
+    custom: {
+      maxPageWidth: string;
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    custom?: {
+      maxPageWidth?: string;
+    };
+  }
+}
 
 const theme = createTheme({
   palette: {
@@ -19,7 +40,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto, Arial, sans-serif", // Custom font family
+    fontFamily: inter.style.fontFamily,
     h1: {
       fontSize: "2.5rem",
       fontWeight: 700,
@@ -42,12 +63,34 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          padding: "20px",
+          maxWidth: "1280px", // Default max width
+          "@media (max-width:1280px)": {
+            maxWidth: "100%",
+          },
+          "@media (max-width:960px)": {
+            // maxWidth: "100%",
+          },
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          background: "transparent",
+          boxShadow: "none",
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
           textTransform: "none", // Disable uppercase text
-          borderRadius: 8, // Custom border radius
-          padding: "10px 20px",
+          borderRadius: 0, // Custom border radius
+          padding: 0,
         },
       },
     },
@@ -68,6 +111,9 @@ const theme = createTheme({
       lg: 1280,
       xl: 1920,
     },
+  },
+  custom: {
+    maxPageWidth: "1920px", // Add custom variable here
   },
 });
 
