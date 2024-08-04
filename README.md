@@ -14,15 +14,15 @@
 ```
 wind-speed/
 ├── public/
-│   ├── images/             # Store all static images here
-│   ├── fonts/              # Any custom fonts if needed
+│   ├── images/                    # Store all static images here
+│   ├── fonts/                     # Any custom fonts if needed
 │   ├── favicon.ico
-│   └── ...                 # Any other public assets
+│   └── ...                        # Any other public assets
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx      # Layout component for App Router
-│   │   ├── page.tsx        # Home page component
-│   │   └── globals.css     # Global styles
+│   │   ├── layout.tsx             # Layout component for App Router
+│   │   ├── page.tsx               # Home page component
+│   │   └── globals.css            # Global styles
 │   ├── components/
 │   │   ├── Layout/
 │   │   │   ├── Header.tsx
@@ -34,11 +34,13 @@ wind-speed/
 │   │   ├── Advantages.tsx
 │   │   ├── ContactForm.tsx
 │   │   ├── ContactMap.tsx
-│   │   └── ...             # Additional components
+│   │   └── ...                     # Additional components
 │   ├── theme/
-│   │   └── theme.ts        # Custom MUI theme
-│   ├── utils/              # Any utility functions
-│   └── data/               # Static data or API mocks
+│   │   └── theme.ts                # Custom MUI theme
+│   ├── utils/                      # Any utility functions
+|   │   └── animation/
+|   |       └── framerAnimations.ts # Framer Motion animation collection
+│   └── data/                       # Static data or API mocks
 └── package.json
 ```
 
