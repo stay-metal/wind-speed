@@ -35,6 +35,7 @@ const LanguageSwitcher = () => {
       disableRipple
       disableFocusRipple
       sx={{
+        fontSize: { xs: "24px", sm: "24px", md: "25px", lg: "28px" },
         backgroundColor: "transparent",
         borderRadius: 2,
         height: "46px",
@@ -57,7 +58,7 @@ const LanguageSwitcher = () => {
         variant="body1"
         component="span"
         sx={{
-          fontSize: "28px",
+          fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
           fontWeight: "700",
           marginRight: 0.3,
           transition: "0.2s",
@@ -69,12 +70,25 @@ const LanguageSwitcher = () => {
       >
         EN
       </Typography>
-      /
       <Typography
         variant="body1"
         component="span"
         sx={{
-          fontSize: "28px",
+          fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
+          fontWeight: "700",
+          marginRight: 0.3,
+          transition: "0.2s",
+          color: theme.palette.background.paper, // Underline active language
+        }}
+      >
+        /
+      </Typography>
+
+      <Typography
+        variant="body1"
+        component="span"
+        sx={{
+          fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
           fontWeight: "700",
           transition: "0.2s",
           marginLeft: 0,

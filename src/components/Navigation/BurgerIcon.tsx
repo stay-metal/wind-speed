@@ -23,8 +23,8 @@ const BurgerIcon: React.FC<BurgerIconProps> = ({ isOpen, toggleOpen }) => {
       sx={{
         color: "white",
         padding: 0,
-        width: "37px",
-        height: "30px",
+        width: { xs: "23px", sm: "30px", md: "37px", lg: "37px" },
+        height: { xs: "23px", sm: "24px", md: "30px", lg: "30px" },
         overflow: "hidden",
         borderRadius: 0,
       }}
@@ -36,8 +36,8 @@ const BurgerIcon: React.FC<BurgerIconProps> = ({ isOpen, toggleOpen }) => {
         {...fadeIn(0.4, 0)}
         sx={{
           position: "relative",
-          width: "37px",
-          height: "30px",
+          width: { xs: "23px", sm: "30px", md: "37px", lg: "37px" },
+          height: { xs: "23px", sm: "30px", md: "30px", lg: "30px" },
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

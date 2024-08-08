@@ -1,48 +1,70 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { AppBar, Toolbar, Button, Box, Container } from "@mui/material";
-import { Roboto } from "@next/font/google";
-import theme from "@/theme/theme";
-import Logo from "../Logo";
+import { AppBar, Toolbar, Box, Container } from "@mui/material";
+import Logo from "../Navigation/Logo";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "next-i18next";
-import BurgerIcon from "../BurgerIcon";
+import BurgerIcon from "../Navigation/BurgerIcon";
+import MenuButton from "../MenuButton";
+import { motion } from "framer-motion";
+import theme from "@/theme/theme";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300", "500", "700"],
-  style: ["italic", "normal"],
-  display: "swap",
-});
+const AnimateMenuButton = motion(MenuButton);
+const AnimateBox = motion(Box);
+
+const list = { hidden: { x: -10, opacity: 0 } };
 
 const Header = () => {
   const { t } = useTranslation("common");
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  function handleBurgerClick() {
-    setMenuOpen((prevState) => !prevState); // Use callback to avoid stale state issues
-  }
+  // Toggle menu state
+  const handleBurgerClick = () => {
+    setMenuOpen((prevState) => !prevState);
+  };
 
+  const isXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isLg = useMediaQuery(theme.breakpoints.only("lg"));
+  const isMd = useMediaQuery(theme.breakpoints.only("md"));
+
+  // Define menu item dimensions
   const menuItemsSize = {
     xl: {
-      catalog: {
-        width: 134,
-        left: -38.5,
-      },
-      howWeWork: {
-        width: 224,
-        left: -51,
-      },
-      benefits: {
-        width: 256,
-        left: -3,
-      },
-      contacts: {
-        width: 134,
-      },
+      catalog: { width: 134, left: -9 },
+      howWeWork: { width: 224, left: -6 },
+      benefits: { width: 256, left: -3 },
+      contacts: { width: 134 },
+    },
+    lg: {
+      catalog: { width: 134, left: -9 },
+      howWeWork: { width: 224, left: -6 },
+      benefits: { width: 256, left: -3 },
+      contacts: { width: 134 },
+    },
+    md: {
+      catalog: { width: 100, left: -9 },
+      howWeWork: { width: 160, left: -6 },
+      benefits: { width: 190, left: -3 },
+      contacts: { width: 100 },
+    },
+    sm: {
+      catalog: { width: 160, left: 90 },
+      howWeWork: { width: 230, left: 20 },
+      benefits: { width: 250, left: 0 },
+      contacts: { width: 190, left: 60 },
     },
   };
+
+  const selectedSize = isXl
+    ? menuItemsSize.xl
+    : isLg
+    ? menuItemsSize.lg
+    : isMd
+    ? menuItemsSize.md
+    : menuItemsSize.sm;
+
   return (
     <AppBar position="absolute">
       <Container>
@@ -54,95 +76,84 @@ const Header = () => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
+              alignItems: "center",
               gap: 1,
             }}
           >
-            <Box sx={{ position: "relative", marginRight: "20px" }}>
+            <Box
+              sx={{
+                position: "relative",
+                marginRight: "20px",
+                [theme.breakpoints.down("lg")]: {
+                  marginRight: "0px",
+                },
+                [theme.breakpoints.down("sm")]: {
+                  // fontSize: "24px",
+                },
+              }}
+            >
               <LanguageSwitcher />
             </Box>
             {isMenuOpen && (
-              <>
-                <MenuButton
+              <AnimateBox
+                sx={{
+                  paddingRight: "30px",
+                  paddingLeft: "30px",
+                  overflow: "hidden",
+                  [theme.breakpoints.down("lg")]: {
+                    paddingRight: "5px",
+                    paddingLeft: "15px",
+                  },
+                  [theme.breakpoints.down("md")]: {
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "absolute",
+                    top: "90px",
+                    right: "-52px",
+                    gap: 2,
+                  },
+                  [theme.breakpoints.down("sm")]: {
+                    top: "60px",
+                  },
+                }}
+                animate="hidden"
+                variants={list}
+                transition={{
+                  duration: theme.custom.animation?.duration?.fast,
+                }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+              >
+                <AnimateMenuButton
                   text={t("menu.catalog")}
-                  width={menuItemsSize.xl.catalog.width}
-                  left={menuItemsSize.xl.catalog.left}
+                  width={selectedSize.catalog.width}
+                  left={selectedSize.catalog.left}
                 />
-                <MenuButton
+                <AnimateMenuButton
                   text={t("menu.howWeWork")}
-                  width={menuItemsSize.xl.howWeWork.width}
-                  left={menuItemsSize.xl.howWeWork.left}
+                  width={selectedSize.howWeWork.width}
+                  left={selectedSize.howWeWork.left}
+                  animate={{ x: 100 }}
                 />
-                <MenuButton
+                <AnimateMenuButton
                   text={t("menu.benefits")}
-                  width={menuItemsSize.xl.benefits.width}
-                  left={menuItemsSize.xl.benefits.left}
+                  width={selectedSize.benefits.width}
+                  left={selectedSize.benefits.left}
+                  animate={{ x: 100 }}
                 />
-                <MenuButton
+                <AnimateMenuButton
                   text={t("menu.contacts")}
-                  width={menuItemsSize.xl.contacts.width}
+                  width={selectedSize.contacts.width}
+                  left={selectedSize.contacts.left}
+                  animate={{ x: 100 }}
                 />
-              </>
+              </AnimateBox>
             )}
           </Box>
           <BurgerIcon isOpen={isMenuOpen} toggleOpen={handleBurgerClick} />
         </Toolbar>
       </Container>
     </AppBar>
-  );
-};
-
-const MenuButton = ({
-  text,
-  width,
-  left,
-}: {
-  text: string;
-  width?: number;
-  left?: number;
-}) => {
-  return (
-    <Button
-      disableRipple
-      disableFocusRipple
-      disableTouchRipple
-      className={roboto.className}
-      color="inherit"
-      sx={{
-        width: width,
-        maxWidth: "500px",
-        textTransform: "uppercase",
-        flex: 1,
-        fontWeight: 600,
-        fontStyle: "italic",
-        height: "41px",
-        left: left ? left + "px" : "0px",
-        position: "relative",
-        opacity: 1,
-        overflow: "visible", // Allow the ::before element to be visible
-        "&:hover": {
-          color: theme.palette.primary.main,
-          background: "transparent",
-        },
-        "&::before": {
-          opacity: 1,
-          content: '""',
-          position: "absolute",
-          bottom: "1px", // Move down slightly to make it visible outside
-          width: width ? width + "px" : "100%",
-          height: "41px", // Height of the parallelogram
-          backgroundColor: theme.palette.primary.main,
-          transform: "skewX(-9deg)", // Skew the element
-          transition: "background-color 0.3s, transform 0.3s",
-          zIndex: -1, // Ensure it appears above other elements
-        },
-        "&:hover::before": {
-          opacity: 1,
-          backgroundColor: theme.palette.background.paper, // Change color on hover
-        },
-      }}
-    >
-      {text}
-    </Button>
   );
 };
 

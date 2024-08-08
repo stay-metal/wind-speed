@@ -11,13 +11,33 @@ const inter = Inter({
 declare module "@mui/material/styles" {
   interface Theme {
     custom: {
+      pallete?: {
+        grey?: string;
+      };
       maxPageWidth: string;
+      animation?: {
+        duration?: {
+          fast: number;
+          medium: number;
+          slow: number;
+        };
+      };
     };
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
     custom?: {
+      pallete?: {
+        grey?: string;
+      };
       maxPageWidth?: string;
+      animation?: {
+        duration?: {
+          fast: number;
+          medium: number;
+          slow: number;
+        };
+      };
     };
   }
 }
@@ -35,7 +55,7 @@ const theme = createTheme({
       paper: "#ffffff", // Paper color
     },
     text: {
-      primary: "#333333", // Primary text color
+      primary: "#000000", // Primary text color
       secondary: "#555555", // Secondary text color
     },
   },
@@ -58,21 +78,31 @@ const theme = createTheme({
     body1: {
       fontSize: "1rem",
       "@media (max-width:600px)": {
-        fontSize: "0.875rem",
+        // fontSize: "0.875rem",
       },
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          // position: "relative",
+          // width: "100vw",
+          // overflow: "hidden",
+        },
+        span: {
+          fontSize: "inherit",
+        },
+      },
+    },
+
     MuiContainer: {
       styleOverrides: {
         root: {
-          padding: "20px",
+          padding: "50px",
           maxWidth: "1280px", // Default max width
           "@media (max-width:1280px)": {
-            maxWidth: "100%",
-          },
-          "@media (max-width:960px)": {
-            // maxWidth: "100%",
+            padding: 24,
           },
         },
       },
@@ -120,7 +150,17 @@ const theme = createTheme({
     },
   },
   custom: {
+    pallete: {
+      grey: "#DFDFDF",
+    },
     maxPageWidth: "1920px", // Add custom variable here
+    animation: {
+      duration: {
+        fast: 0.2,
+        medium: 0.5,
+        slow: 1,
+      },
+    },
   },
 });
 
