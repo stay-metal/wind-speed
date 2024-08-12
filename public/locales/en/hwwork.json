@@ -1,0 +1,21 @@
+{
+  "reservations": {
+    "title": "Reservations:",
+    "description": "You choose the bike you like, book it through our website or by calling our manager."
+  },
+  "delivery": {
+    "title": "Delivery:",
+    "description": "We deliver the motorcycle and helmets to you, conclude an agreement on the spot, and you pay a deposit and payment for renting the vehicle."
+  },
+  "technical": {
+    "title": "Technical inspection:",
+    "description": "We deliver the motorcycle and helmets to you, conclude an agreement on the spot, and you pay a deposit and payment for renting the vehicle."
+  },
+  "return": {
+    "title": "Return:",
+    "description": "At the end of the rental period, we contact you, our employee picks up the motorcycle at a place convenient for you, and also returns the deposit after inspecting the condition of the vehicle."
+  },
+  "H1": {
+    "text": "How we work"
+  }
+}

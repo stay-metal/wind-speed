@@ -83,7 +83,7 @@ const HeroBanner = () => {
     <Box
       sx={{
         height: { xs: "100dvh", md: "90dvh" },
-        maxHeight: { xs: "700px", md: "700px", lg: "100%" },
+        maxHeight: { xs: "700px", md: "700px", lg: "934px" },
         // maxHeight: { xs: "700px", md: "700px", lg: "734px", xl: "934px" },
         width: "100%",
         backgroundImage: 'url("/images/hero-banner.jpg")',
@@ -147,7 +147,7 @@ const HeroBanner = () => {
               maxWidth: { xs: "365px", sm: "100%", md: "100%" },
               pb: { xs: 3, lg: 4 },
               lineHeight: "130%",
-              fontSize: { xs: 40, sm: 45, md: 45 },
+              fontSize: { xs: 40, sm: 45, md: 48 },
               fontStyle: "italic",
             }}
             dangerouslySetInnerHTML={{ __html: t("title.h1") }}

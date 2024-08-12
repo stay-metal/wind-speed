@@ -13,6 +13,10 @@ declare module "@mui/material/styles" {
     custom: {
       pallete?: {
         grey?: string;
+        greydark?: string;
+        background?: {
+          dark?: string;
+        };
       };
       maxPageWidth: string;
       animation?: {
@@ -22,6 +26,9 @@ declare module "@mui/material/styles" {
           slow: number;
         };
       };
+      borderRadius?: {
+        brand?: string;
+      };
     };
   }
   // allow configuration using `createTheme`
@@ -29,6 +36,10 @@ declare module "@mui/material/styles" {
     custom?: {
       pallete?: {
         grey?: string;
+        greydark?: string;
+        background?: {
+          dark?: string;
+        };
       };
       maxPageWidth?: string;
       animation?: {
@@ -37,6 +48,9 @@ declare module "@mui/material/styles" {
           medium: number;
           slow: number;
         };
+      };
+      borderRadius?: {
+        brand?: string;
       };
     };
   }
@@ -69,10 +83,15 @@ const theme = createTheme({
       },
     },
     h2: {
-      fontSize: "2rem",
       fontWeight: 700,
+      fontSize: 41,
+      // fontFamily: "Inter",
+      fontStyle: "italic",
       "@media (max-width:600px)": {
-        fontSize: "1.5rem",
+        fontSize: 32,
+      },
+      "@media (max-width:960px)": {
+        fontSize: 37,
       },
     },
     body1: {
@@ -92,6 +111,9 @@ const theme = createTheme({
         },
         span: {
           fontSize: "inherit",
+        },
+        a: {
+          textDecoration: "none!importnat",
         },
       },
     },
@@ -134,8 +156,10 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
-          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          background: "none",
+          borderRadius: 0,
+          // border: "1px solid black",
+          boxShadow: "none",
         },
       },
     },
@@ -152,6 +176,10 @@ const theme = createTheme({
   custom: {
     pallete: {
       grey: "#DFDFDF",
+      greydark: "#828282",
+      background: {
+        dark: "#232421",
+      },
     },
     maxPageWidth: "1920px", // Add custom variable here
     animation: {
@@ -160,6 +188,9 @@ const theme = createTheme({
         medium: 0.5,
         slow: 1,
       },
+    },
+    borderRadius: {
+      brand: "8px",
     },
   },
 });
