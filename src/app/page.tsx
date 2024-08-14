@@ -3,8 +3,7 @@ import HeroBanner from "@/components/HeroBanner";
 import MotoPark from "@/components/MotoPark";
 import HowWeWork from "@/components/HowWeWork";
 import Advantages from "@/components/Advantages";
-import ContactForm from "@/components/ContactForm";
-import ContactMap from "@/components/ContactMap";
+import Contacts from "@/components/Contacts";
 
 const HomePage: React.FC = () => {
   return (
@@ -13,8 +12,9 @@ const HomePage: React.FC = () => {
       {/* <MotoPark /> */}
       <HowWeWork />
       <Advantages />
-      <ContactForm />
-      <ContactMap />
+      <Contacts />
+      {/* <ContactForm />
+      <ContactMap /> */}
     </>
   );
 };

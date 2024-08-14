@@ -1,0 +1,18 @@
+{
+  "H1": "Контакты",
+  "address": {
+    "title": "Адрес:",
+    "value": "Таиланд, Пхукет, ул. 88/14 Khrongkan Ban Rawai-Ban Nai Han Rd."
+  },
+  "phone": {
+    "title": "Телефон:",
+    "value": "+6 66 470146 47"
+  },
+  "form": {
+    "name": "Имя",
+    "phone": "Телефон",
+    "email": "Email",
+    "text": "Текст сообщения",
+    "button": "Отправить"
+  }
+}

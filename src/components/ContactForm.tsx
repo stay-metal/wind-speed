@@ -2,8 +2,11 @@
 import { Box, TextField, Button, Typography } from "@mui/material";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 
 const ContactForm = () => {
+  const { t } = useTranslation("contacts");
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -29,19 +32,19 @@ const ContactForm = () => {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       sx={{
-        py: 6,
-        px: { xs: 2, md: 4 },
+        py: 0,
+        // px: { xs: 2, md: 4 },
         display: "flex",
         flexDirection: "column",
         gap: 2,
       }}
       onSubmit={handleSubmit}
     >
-      <Typography variant="h4" component="h2" gutterBottom>
+      {/* <Typography variant="h4" component="h2" gutterBottom>
         Contact Us
-      </Typography>
+      </Typography> */}
       <TextField
-        label="Name"
+        label={t("form.name")}
         name="name"
         fullWidth
         margin="normal"
@@ -49,7 +52,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
       />
       <TextField
-        label="Phone"
+        label={t("form.phone")}
         name="phone"
         fullWidth
         margin="normal"
@@ -57,7 +60,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
       />
       <TextField
-        label="Email"
+        label={t("form.email")}
         name="email"
         fullWidth
         margin="normal"
@@ -65,7 +68,7 @@ const ContactForm = () => {
         onChange={handleInputChange}
       />
       <TextField
-        label="Text"
+        label={t("form.text")}
         name="text"
         fullWidth
         margin="normal"
@@ -74,8 +77,13 @@ const ContactForm = () => {
         value={formData.text}
         onChange={handleInputChange}
       />
-      <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
-        Send
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{ mt: 2, maxWidth: "352px", py: "18px", fontSize: "20px" }}
+      >
+        {t("form.button")}
       </Button>
     </Box>
   );

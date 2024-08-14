@@ -163,6 +163,36 @@ const theme = createTheme({
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "rgb(255 255 255 / 74%)",
+            color: "rgb(255 255 255 / 74%)",
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "rgb(255 255 255 / 100%)",
+          },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "rgba(255, 53, 24, 1)",
+            color: "rgba(255, 53, 24, 1)",
+          },
+          "& .MuiInputBase-input": {
+            color: "rgb(255 255 255 / 100%)",
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "rgb(255 255 255 / 74%)", // Default label color
+          "&.Mui-focused": {
+            color: "rgba(255, 53, 24, 1)", // Label color when focused
+          },
+        },
+      },
+    },
   },
   breakpoints: {
     values: {

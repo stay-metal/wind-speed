@@ -1,0 +1,18 @@
+{
+  "H1": "Contacts",
+  "address": {
+    "title": "Address:",
+    "value": "99/99 Moo 2, Rawai, Mueang, Phuket 83130, Thailand"
+  },
+  "phone": {
+    "title": "Phone:",
+    "value": "+6 66 470146 47"
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "text": "Text",
+    "button": "Send"
+  }
+}
