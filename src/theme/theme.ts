@@ -179,6 +179,14 @@ const theme = createTheme({
           },
           "& .MuiInputBase-input": {
             color: "rgb(255 255 255 / 100%)",
+            "@media (max-width:600px)": {
+              background: "#DFDFDF",
+              borderRadius: "8px",
+              color: "#000000",
+            },
+            // "@media (max-width:960px)": {
+            //   fontSize: 37,
+            // },
           },
         },
       },
@@ -187,7 +195,14 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           color: "rgb(255 255 255 / 74%)", // Default label color
+          "@media (max-width:600px)": {
+            color: "#000000",
+          },
           "&.Mui-focused": {
+            "@media (max-width:600px)": {
+              borderColor: "rgba(255, 53, 24, 1)",
+              color: "rgba(255, 53, 24, 1)",
+            },
             color: "rgba(255, 53, 24, 1)", // Label color when focused
           },
         },

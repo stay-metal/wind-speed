@@ -1,14 +1,20 @@
 import Image from "next/image";
 import { Box } from "@mui/material";
 
-const Logo = () => {
+const Logo = ({ footer }: { footer: boolean | null }) => {
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
         "& .logo": {
-          width: { xs: 101, sm: 140, md: 140, lg: 160 }, // Adjust sizes based on breakpoints
+          width: {
+            xs: footer ? 115 : 125,
+            sm: footer ? 115 : 140,
+            md: footer ? 120 : 160,
+            lg: footer ? 150 : 160,
+            // xl: footer ? 180 : 160,
+          }, // Adjust sizes based on breakpoints
           // height: { xs: 30, sm: 40, md: 50,  },
         },
       }}

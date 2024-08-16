@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <HeroBanner />
-      {/* <MotoPark /> */}
+      <MotoPark />
       <HowWeWork />
       <Advantages />
       <Contacts />

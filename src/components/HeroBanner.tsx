@@ -7,7 +7,6 @@ import {
   Instagram,
   WhatsApp,
 } from "@mui/icons-material";
-import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
 import { useTranslation } from "next-i18next";
 import { Kulim_Park } from "@next/font/google";
 import theme from "@/theme/theme";
@@ -82,8 +81,8 @@ const HeroBanner = () => {
   return (
     <Box
       sx={{
-        height: { xs: "100dvh", md: "90dvh" },
-        maxHeight: { xs: "700px", md: "700px", lg: "934px" },
+        height: { xs: "100dvh", md: "100dvh" },
+        maxHeight: "934px",
         // maxHeight: { xs: "700px", md: "700px", lg: "734px", xl: "934px" },
         width: "100%",
         backgroundImage: 'url("/images/hero-banner.jpg")',
@@ -175,7 +174,7 @@ const HeroBanner = () => {
             display: "flex",
             // flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
             flexDirection: { xs: "column", sm: "row" },
-            pb: { xs: 0, lg: 6 },
+            pb: { xs: 1, sm: 3, lg: 6 },
             alignItems: "center",
             justifyContent: { xs: "center", sm: "space-between" },
             height: "100%",
@@ -256,7 +255,7 @@ const HeroBanner = () => {
           <Box
             sx={{
               position: "absolute",
-              bottom: { xs: 0, lg: 43 }, // Distance from the bottom
+              bottom: { xs: 0, md: 20, lg: 43 }, // Distance from the bottom
               display: { xs: "none", sm: "none", md: "flex" },
               justifyContent: "center",
               width: "100%",

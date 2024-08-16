@@ -73,15 +73,28 @@ const ContactForm = () => {
         fullWidth
         margin="normal"
         multiline
-        rows={4}
+        rows={8}
         value={formData.text}
         onChange={handleInputChange}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            padding: 0, // Removes padding from the specified component
+          },
+          // padding: { xs: 0, sm: 4 },
+        }}
       />
       <Button
         type="submit"
         variant="contained"
         color="primary"
-        sx={{ mt: 2, maxWidth: "352px", py: "18px", fontSize: "20px" }}
+        sx={{
+          mt: 2,
+          maxWidth: "352px",
+          minWidth: "266px",
+          py: { xs: "12px", sm: "18px" },
+          fontSize: { xs: "16px", sm: "20px" },
+          margin: { xs: " 0 auto", sm: "initial" },
+        }}
       >
         {t("form.button")}
       </Button>

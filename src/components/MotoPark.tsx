@@ -1,110 +1,201 @@
-"use client";
+import { useState } from "react";
 import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
   Button,
   Grid,
+  Typography,
+  IconButton,
+  Container,
+  Box,
 } from "@mui/material";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-type Motorcycle = {
-  id: string;
-  name: string;
-  price: number;
-  features: string[];
-  image: string;
-};
-
-const motorcycles: Motorcycle[] = [
+const motorcycles = [
   {
-    id: "1",
-    name: "Yamaha FZ",
-    price: 3000,
-    features: ["ABS", "Tires Dunlop", "Exhaust Akrapovic"],
-    image: "/images/yamaha-fz.png",
+    brand: "Yamaha",
+    model: "FZ 8",
+    image: "/images/yamaha-fz8.png",
+    maxSpeed: "296 км/ч",
+    weight: "226 кг",
+    engine: "998 см3",
+    features: {
+      abs: true,
+      tires: "Dunlop",
+      exhaust: "Akrapovic",
+    },
+    price: "3000",
   },
   {
-    id: "2",
-    name: "Yamaha FZ",
-    price: 3000,
-    features: ["ABS", "Tires Dunlop", "Exhaust Akrapovic"],
-    image: "/images/yamaha-fz.png",
+    brand: "Yamaha",
+    model: "FZ 9",
+    image: "/images/yamaha-fz9.png",
+    maxSpeed: "290 км/ч",
+    weight: "220 кг",
+    engine: "889 см3",
+    features: {
+      abs: true,
+      tires: "Michelin",
+      exhaust: "Akrapovic",
+    },
+    price: "3200",
   },
-  // Add more motorcycles here
+  {
+    brand: "Yamaha",
+    model: "TSX",
+    image: "/images/yamaha-tsx.png",
+    maxSpeed: "310 км/ч",
+    weight: "210 кг",
+    engine: "998 см3",
+    features: {
+      abs: true,
+      tires: "Pirelli",
+      exhaust: "Termignoni",
+    },
+    price: "3500",
+  },
+  {
+    brand: "Kawasaki",
+    model: "Ninja ZX-10R",
+    image: "/images/kawasaki-zx10r.png",
+    maxSpeed: "299 км/ч",
+    weight: "207 кг",
+    engine: "998 см3",
+    features: {
+      abs: true,
+      tires: "Bridgestone",
+      exhaust: "Yoshimura",
+    },
+    price: "4000",
+  },
 ];
 
 const MotoPark = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Sportbike");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedBrand, setSelectedBrand] = useState("Yamaha");
+
+  const brands = [...new Set(motorcycles.map((bike) => bike.brand))];
+
+  const filteredModels = motorcycles.filter(
+    (bike) => bike.brand === selectedBrand
+  );
+
+  const nextBike = () => {
+    if (currentIndex < filteredModels.length - 1) {
+      // Move to the next model in the current brand
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    } else {
+      // If it's the last model, switch to the first model of the next brand
+      const currentBrandIndex = brands.indexOf(selectedBrand);
+      const nextBrandIndex = (currentBrandIndex + 1) % brands.length;
+      const nextBrand = brands[nextBrandIndex];
+      setSelectedBrand(nextBrand);
+      setCurrentIndex(0); // Reset to the first model of the next brand
+    }
+  };
+
+  const prevBike = () => {
+    if (currentIndex > 0) {
+      // Move to the previous model in the current brand
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    } else {
+      // If it's the first model, switch to the last model of the previous brand
+      const currentBrandIndex = brands.indexOf(selectedBrand);
+      const prevBrandIndex =
+        currentBrandIndex === 0 ? brands.length - 1 : currentBrandIndex - 1;
+      const prevBrand = brands[prevBrandIndex];
+      setSelectedBrand(prevBrand);
+      setCurrentIndex(
+        motorcycles.filter((bike) => bike.brand === prevBrand).length - 1
+      );
+    }
+  };
+
+  const currentBike = filteredModels[currentIndex];
 
   return (
-    <Box sx={{ py: 6, px: { xs: 2, md: 4 } }}>
-      <Typography variant="h4" component="h2" gutterBottom>
-        MOTOPARK
-      </Typography>
-      <Box sx={{ display: "flex", gap: 2, mb: 4, flexWrap: "wrap" }}>
-        {["Urban", "Enduro", "ATV", "Sportbike"].map((category) => (
-          <Button
-            key={category}
-            variant={selectedCategory === category ? "contained" : "outlined"}
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </Button>
-        ))}
-      </Box>
-      <Grid container spacing={3}>
-        {motorcycles.map((moto, index) => (
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={4}
-            key={moto.id}
-            component={motion.div}
-            initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <Card
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
+    <Box>
+      <Container>
+        {/* Brand Selection */}
+        <Box>
+          {brands.map((brand, index) => (
+            <Typography
+              key={index}
+              variant="h6"
+              color={brand === selectedBrand ? "primary" : "textSecondary"}
+              style={{ cursor: "pointer", marginRight: "15px" }}
+              onClick={() => {
+                setSelectedBrand(brand);
+                setCurrentIndex(0); // Reset to the first model of the new brand
               }}
             >
-              <Box
-                component="img"
-                src={moto.image}
-                alt={moto.name}
-                sx={{
-                  width: "100%",
-                  height: "auto",
-                  maxHeight: 200,
-                  objectFit: "cover",
-                }}
-              />
-              <CardContent>
-                <Typography variant="h5" component="h3">
-                  {moto.name}
-                </Typography>
-                <Typography variant="h6" color="text.secondary">
-                  ฿ {moto.price}
-                </Typography>
-                <Box>
-                  {moto.features.map((feature, index) => (
-                    <Typography variant="body2" key={index}>
-                      {feature}
-                    </Typography>
-                  ))}
-                </Box>
-              </CardContent>
-            </Card>
+              {brand}
+            </Typography>
+          ))}
+        </Box>
+
+        {/* Model Selection */}
+        <Box mt={2}>
+          {filteredModels.map((bike, index) => (
+            <Typography
+              key={index}
+              variant="body1"
+              color={index === currentIndex ? "primary" : "textSecondary"}
+              style={{ cursor: "pointer", marginRight: "15px" }}
+              onClick={() => setCurrentIndex(index)}
+            >
+              {bike.model}
+            </Typography>
+          ))}
+        </Box>
+      </Container>
+
+      <Grid container spacing={2} direction="column" alignItems="center">
+        {/* Motorcycle Image and Details */}
+        <Grid item container justifyContent="center" alignItems="center">
+          <Grid item>
+            <IconButton onClick={prevBike}>
+              <ArrowBackIosIcon />
+            </IconButton>
           </Grid>
-        ))}
+          <Grid item>
+            <img src={currentBike.image} alt={currentBike.model} width="300" />
+          </Grid>
+          <Grid item>
+            <IconButton onClick={nextBike}>
+              <ArrowForwardIosIcon />
+            </IconButton>
+          </Grid>
+        </Grid>
+
+        {/* Motorcycle Characteristics */}
+        <Grid item>
+          <Typography variant="h4" gutterBottom>
+            {currentBike.model}
+          </Typography>
+          <Typography variant="body1">
+            Макс. скорость: {currentBike.maxSpeed}
+          </Typography>
+          <Typography variant="body1">Масса: {currentBike.weight}</Typography>
+          <Typography variant="body1">
+            Двигатель: {currentBike.engine}
+          </Typography>
+          <Typography variant="body1">
+            Шины: {currentBike.features.tires}
+          </Typography>
+          <Typography variant="body1">
+            Выхлоп: {currentBike.features.exhaust}
+          </Typography>
+          <Typography variant="h5" color="secondary" gutterBottom>
+            Цена: {currentBike.price} ₽
+          </Typography>
+        </Grid>
+
+        {/* Navigation Buttons */}
+        <Grid item>
+          <Button variant="contained" color="primary" onClick={nextBike}>
+            Подробнее
+          </Button>
+        </Grid>
       </Grid>
     </Box>
   );

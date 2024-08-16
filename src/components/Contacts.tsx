@@ -26,7 +26,7 @@ const Contacts = () => {
             sm: "linear-gradient(-10deg, rgba(0,0,0,0.5), rgba(255,255,255,0))",
           },
           pt: { xs: 0, sm: 3, md: 3, lg: 3 },
-          pb: { xs: 0, sm: 3, md: 3, lg: 3 },
+          pb: { xs: 0, sm: 3, md: 3, lg: 8 },
         }}
       >
         <Container
@@ -36,6 +36,7 @@ const Contacts = () => {
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
             justifyContent: "space-between",
+            pt: { xs: 0, sm: 3, md: 3, lg: 3 },
             gap: { xs: 4, md: 6, lg: 8 },
             position: "relative", // Ensure the Container is the containing block for the overlay
             "::before": {
@@ -66,7 +67,7 @@ const Contacts = () => {
               variant="h2"
               component="h2"
               sx={{
-                // pt: { xs: 1, sm: 2, md: 3, lg: 1 },
+                // pt: { xs: 0, sm: 2, md: 3, lg: 1 },
                 // pb: { xs: 5, sm: 4, md: 5, lg: 5 },
                 color: {
                   xs: theme.palette.text.primary,
@@ -89,8 +90,8 @@ const Contacts = () => {
                 position: "relative",
                 zIndex: 1,
                 color: {
-                  xs: theme.palette.background.paper,
-                  sm: theme.custom.pallete?.paper,
+                  xs: theme.palette.text.primary,
+                  sm: theme.palette.background.paper,
                 },
               }}
             >
@@ -109,9 +110,9 @@ const Contacts = () => {
           <Box
             sx={{
               position: "relative",
-              width: "50%",
-              height: "auto",
-              display: { xs: "none", sm: "block" },
+              width: { xs: "100%", sm: "50%" },
+              height: { xs: "610px", sm: "auto" },
+              display: { xs: "block", sm: "block" },
             }}
           >
             <ContactMap />
