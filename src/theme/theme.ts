@@ -14,6 +14,7 @@ declare module "@mui/material/styles" {
       pallete?: {
         grey?: string;
         greydark?: string;
+        greycatalog?: string;
         background?: {
           dark?: string;
         };
@@ -37,6 +38,7 @@ declare module "@mui/material/styles" {
       pallete?: {
         grey?: string;
         greydark?: string;
+        greycatalog?: string;
         background?: {
           dark?: string;
         };
@@ -222,6 +224,7 @@ const theme = createTheme({
     pallete: {
       grey: "#DFDFDF",
       greydark: "#828282",
+      greycatalog: "#F2F2F2",
       background: {
         dark: "#232421",
       },

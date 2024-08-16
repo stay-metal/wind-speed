@@ -41,6 +41,8 @@ const HowWeWork = () => {
   return (
     <Box
       sx={{
+        position: "relative",
+        zIndex: 1,
         bgcolor: {
           xs: theme.palette.background.paper,
           sm: theme.custom.pallete?.background?.dark,
