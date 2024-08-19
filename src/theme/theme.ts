@@ -15,6 +15,7 @@ declare module "@mui/material/styles" {
         grey?: string;
         greydark?: string;
         greycatalog?: string;
+        greymenu?: string;
         background?: {
           dark?: string;
         };
@@ -39,6 +40,7 @@ declare module "@mui/material/styles" {
         grey?: string;
         greydark?: string;
         greycatalog?: string;
+        greymenu?: string;
         background?: {
           dark?: string;
         };
@@ -225,6 +227,7 @@ const theme = createTheme({
       grey: "#DFDFDF",
       greydark: "#828282",
       greycatalog: "#F2F2F2",
+      greymenu: "#E4E4E4",
       background: {
         dark: "#232421",
       },

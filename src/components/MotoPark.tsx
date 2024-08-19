@@ -10,16 +10,28 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import theme from "@/theme/theme";
+import { Roboto } from "@next/font/google";
+import MotoCharDisplay from "./MotoCharDisplay";
+import ShowMore from "./ShowMore";
+import Image from "next/image";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  style: ["italic", "normal"],
+  display: "swap",
+});
 
 const motorcycles = [
   {
     brand: "Yamaha",
     model: "FZ 8",
-    image: "/images/dummy_moto.webp",
-    maxSpeed: "296 км/ч",
-    weight: "226 кг",
-    engine: "998 см3",
+    image: "/images/bike.png",
+    maxSpeed: "296",
+    weight: "226",
+    engine: "998",
     features: {
+      type: "Спортбайк",
       abs: true,
       tires: "Dunlop",
       exhaust: "Akrapovic",
@@ -30,11 +42,12 @@ const motorcycles = [
   {
     brand: "Yamaha",
     model: "FZ 9",
-    image: "/images/dummy_moto.webp",
-    maxSpeed: "290 км/ч",
-    weight: "220 кг",
-    engine: "889 см3",
+    image: "/images/bike2.png",
+    maxSpeed: "290",
+    weight: "220",
+    engine: "889",
     features: {
+      type: "Спортбайк",
       abs: true,
       tires: "Michelin",
       exhaust: "Akrapovic",
@@ -45,11 +58,12 @@ const motorcycles = [
   {
     brand: "Yamaha",
     model: "TSX",
-    image: "/images/dummy_moto.webp",
-    maxSpeed: "310 км/ч",
-    weight: "210 кг",
-    engine: "998 см3",
+    image: "/images/bike3.png",
+    maxSpeed: "310",
+    weight: "210",
+    engine: "998",
     features: {
+      type: "Спортбайк",
       abs: true,
       tires: "Pirelli",
       exhaust: "Termignoni",
@@ -60,11 +74,12 @@ const motorcycles = [
   {
     brand: "Kawasaki",
     model: "ZX-10R",
-    image: "/images/dummy_moto.webp",
-    maxSpeed: "299 км/ч",
-    weight: "207 кг",
-    engine: "998 см3",
+    image: "/images/bike.png",
+    maxSpeed: "299",
+    weight: "207",
+    engine: "998",
     features: {
+      type: "Спортбайк",
       abs: true,
       tires: "Bridgestone",
       exhaust: "Yoshimura",
@@ -113,11 +128,11 @@ const MotoPark = () => {
   };
 
   const toggleView = () => {
+    console.log("click");
     setShowPrices(!showPrices);
   };
 
   const currentBike = filteredModels[currentIndex];
-
   return (
     <Box
     // sx={{ maxHeight: "100dvh" }}
@@ -130,7 +145,11 @@ const MotoPark = () => {
           },
         }}
       >
-        <Container>
+        <Container
+          sx={{
+            pb: 2.2,
+          }}
+        >
           <Typography
             variant="h2"
             component="h2"
@@ -154,43 +173,142 @@ const MotoPark = () => {
             }}
           >
             {brands.map((brand, index) => (
-              <Typography
+              <Box
                 key={index}
-                variant="h6"
-                color={brand === selectedBrand ? "primary" : "textSecondary"}
-                style={{ cursor: "pointer", marginRight: "15px" }}
-                onClick={() => {
-                  setSelectedBrand(brand);
-                  setCurrentIndex(0);
-                  setShowPrices(false); // Reset to characteristics view when brand is changed
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
                 }}
               >
-                {brand}
-              </Typography>
+                <Box
+                  sx={{
+                    marginRight: "-1px",
+                    width: "10px",
+                    height: "100%",
+                    // backgroundColor: "grey",
+                    backgroundColor:
+                      brand === selectedBrand
+                        ? theme.palette.text.primary
+                        : theme.custom.pallete?.greymenu,
+                    clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 55% 0%)",
+                  }}
+                ></Box>
+                <Typography
+                  className={roboto.className}
+                  variant="h6"
+                  py={0.4}
+                  px={2}
+                  color={
+                    brand === selectedBrand
+                      ? theme.palette.background.paper
+                      : theme.palette.text.primary
+                  }
+                  sx={{
+                    cursor: "pointer",
+                    // marginRight: "15px",
+                    textTransform: "uppercase",
+                    fontStyle: "italic",
+                    fontSize: "16px",
+                    position: "relative",
+                    backgroundColor:
+                      brand === selectedBrand
+                        ? theme.palette.text.primary
+                        : theme.custom.pallete?.greymenu,
+                  }}
+                  onClick={() => {
+                    setSelectedBrand(brand);
+                    setCurrentIndex(0);
+                    setShowPrices(false); // Reset to characteristics view when brand is changed
+                  }}
+                >
+                  {brand}
+                </Typography>
+                <Box
+                  sx={{
+                    marginLeft: "-1px",
+                    width: "11px",
+                    height: "100",
+                    // backgroundColor: "grey",
+                    backgroundColor:
+                      brand === selectedBrand
+                        ? theme.palette.text.primary
+                        : theme.custom.pallete?.greymenu,
+                    clipPath: "polygon(0 0, 100% 0, 45% 100%, 0% 100%)",
+                  }}
+                ></Box>
+              </Box>
             ))}
           </Box>
 
           {/* Model Selection */}
           <Box
-            mt={2}
+            mt={2.2}
             sx={{
               display: "flex",
               flexDirection: "row",
             }}
           >
             {filteredModels.map((bike, index) => (
-              <Typography
+              <Box
                 key={index}
-                variant="body1"
-                color={index === currentIndex ? "primary" : "textSecondary"}
-                style={{ cursor: "pointer", marginRight: "15px" }}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  setShowPrices(false); // Reset to characteristics view when model is changed
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
                 }}
               >
-                {bike.model}
-              </Typography>
+                <Box
+                  sx={{
+                    marginRight: "-1px",
+                    width: "10px",
+                    height: "100%",
+                    // backgroundColor: "grey",
+                    backgroundColor:
+                      index === currentIndex
+                        ? theme.palette.primary.main
+                        : "#FF9393",
+                    clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 55% 0%)",
+                  }}
+                ></Box>
+                <Typography
+                  variant="body1"
+                  py={0.4}
+                  px={4}
+                  color={
+                    index === currentIndex
+                      ? theme.palette.background.paper
+                      : theme.palette.background.paper
+                  }
+                  sx={{
+                    cursor: "pointer",
+                    textTransform: "uppercase",
+                    fontStyle: "italic",
+                    fontSize: "16px",
+                    backgroundColor:
+                      index === currentIndex
+                        ? theme.palette.primary.main
+                        : "#FF9393",
+                  }}
+                  onClick={() => {
+                    setCurrentIndex(index);
+                    setShowPrices(false); // Reset to characteristics view when model is changed
+                  }}
+                >
+                  {bike.model}
+                </Typography>
+                <Box
+                  sx={{
+                    marginLeft: "-1px",
+                    width: "11px",
+                    height: "100",
+                    // backgroundColor: "grey",
+                    backgroundColor:
+                      index === currentIndex
+                        ? theme.palette.primary.main
+                        : "#FF9393",
+                    clipPath: "polygon(0 0, 100% 0, 45% 100%, 0% 100%)",
+                  }}
+                ></Box>
+              </Box>
             ))}
           </Box>
         </Container>
@@ -213,7 +331,7 @@ const MotoPark = () => {
             position: "absolute",
             zIndex: 0,
             height: "100%",
-            maxHeight: "630px",
+            // maxHeight: "630px",
             width: "100%",
             backgroundColor: "transparent",
             display: "flex",
@@ -222,7 +340,7 @@ const MotoPark = () => {
         >
           <Box
             sx={{
-              width: "45%",
+              width: "35%",
               backgroundColor: {
                 xs: theme.custom.pallete?.greycatalog,
                 sm: theme.custom.pallete?.greycatalog,
@@ -231,7 +349,7 @@ const MotoPark = () => {
           ></Box>
           <Box
             sx={{
-              width: "200px",
+              width: "225px",
               backgroundColor: theme.custom.pallete?.greycatalog,
               backgroundImage: "url('/images/slider_background.svg')",
               backgroundRepeat: "no-repeat",
@@ -241,7 +359,7 @@ const MotoPark = () => {
           ></Box>
           <Box
             sx={{
-              width: "45%",
+              width: "55%",
               backgroundColor: {
                 xs: theme.palette.primary.main,
               },
@@ -266,16 +384,49 @@ const MotoPark = () => {
               sx={{
                 display: "flex",
                 flexDirection: "row",
+                justifyContent: "space-between",
+                // height: "490px",
               }}
             >
-              <Box className="bike_picture">
-                <img
-                  src={currentBike.image}
-                  alt={currentBike.model}
-                  width="800"
-                />
+              <Box
+                className="bike_picture"
+                sx={{
+                  position: "relative",
+                  top: "6px",
+                  right: "120px",
+                  width: "50%",
+                  display: "flex",
+                  alignItems: "end",
+                  // position: "absolute",
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "absolute",
+                    width: "650px",
+                    height: "auto",
+                    marginLeft: "30px",
+                  }}
+                >
+                  <Image
+                    src={currentBike.image}
+                    alt={currentBike.model}
+                    width="801"
+                    height="406"
+                    objectFit="fit"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </Box>
               </Box>
-              <Box className="info_container">
+              <Box
+                className="info_container"
+                sx={{
+                  width: "50%",
+                }}
+              >
                 {showPrices ? (
                   <Box>
                     <Typography variant="h4" gutterBottom>
@@ -288,33 +439,128 @@ const MotoPark = () => {
                     ))}
                   </Box>
                 ) : (
-                  <Box>
-                    <Typography variant="body1">
-                      Макс. скорость: {currentBike.maxSpeed}
-                    </Typography>
-                    <Typography variant="body1">
-                      Масса: {currentBike.weight}
-                    </Typography>
-                    <Typography variant="body1">
-                      Двигатель: {currentBike.engine}
-                    </Typography>
-                    <Typography variant="body1">
-                      Шины: {currentBike.features.tires}
-                    </Typography>
-                    <Typography variant="body1">
-                      Выхлоп: {currentBike.features.exhaust}
-                    </Typography>
+                  <Box
+                    sx={{
+                      pt: 10,
+                      pb: 21,
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "end",
+                      gap: "160px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "70%",
+                        marginTop: "-14px",
+                        gap: 4,
+                      }}
+                    >
+                      <Typography
+                        variant="body1"
+                        className={roboto.className}
+                        sx={{
+                          textTransform: "uppercase",
+                          fontStyle: "italic",
+                          fontWeight: 600,
+                          fontSize: 49,
+                        }}
+                      >
+                        {currentBike.features.type}
+                      </Typography>
+                      {currentBike.features.tires ? (
+                        <Typography
+                          variant="body1"
+                          className={roboto.className}
+                          sx={{
+                            textTransform: "uppercase",
+                            fontStyle: "italic",
+                            fontWeight: 600,
+                            fontSize: 36,
+                            color: theme.custom.pallete?.background?.dark,
+                            marginLeft: "-27px",
+                          }}
+                        >
+                          {" "}
+                          ABS{" "}
+                        </Typography>
+                      ) : (
+                        ""
+                      )}
+                      <Typography
+                        variant="body1"
+                        className={roboto.className}
+                        sx={{
+                          textTransform: "uppercase",
+                          fontStyle: "italic",
+                          fontWeight: 600,
+                          fontSize: 36,
+                          marginLeft: "-51px",
+                          color: theme.custom.pallete?.background?.dark,
+                        }}
+                      >
+                        Шины{" "}
+                        <span
+                          style={{
+                            fontWeight: 400,
+                            color: theme.palette.background?.paper,
+                          }}
+                        >
+                          {currentBike.features.tires}
+                        </span>
+                      </Typography>
+                      <Typography
+                        className={roboto.className}
+                        variant="body1"
+                        sx={{
+                          textTransform: "uppercase",
+                          fontStyle: "italic",
+                          fontWeight: 600,
+                          fontSize: 36,
+                          color: theme.custom.pallete?.background?.dark,
+                          marginLeft: "-76px",
+                        }}
+                      >
+                        Выхлоп{" "}
+                        <span
+                          style={{
+                            fontWeight: 400,
+                            color: theme.palette.background?.paper,
+                          }}
+                        >
+                          {currentBike.features.exhaust}
+                        </span>
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 5,
+                        width: "30%",
+                      }}
+                    >
+                      <MotoCharDisplay
+                        charValue={currentBike.maxSpeed}
+                        charMetrica="км/ч"
+                        charDescription="Макс. скорость"
+                      />
+
+                      <MotoCharDisplay
+                        charValue={currentBike.weight}
+                        charMetrica="кг"
+                        charDescription="Масса"
+                      />
+                      <MotoCharDisplay
+                        charValue={currentBike.engine}
+                        charMetrica="см/куб"
+                        charDescription="Двигатель"
+                      />
+                    </Box>
                   </Box>
                 )}
-                <Box>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={toggleView}
-                  >
-                    {showPrices ? "Назад" : "Подробнее"}
-                  </Button>
-                </Box>
               </Box>
             </Box>
             <Box
@@ -326,6 +572,27 @@ const MotoPark = () => {
                 justifyContent: "space-between",
               }}
             >
+              <Box
+                sx={{
+                  position: "absolute",
+                  right: 0,
+                  bottom: "190px",
+                }}
+              >
+                {showPrices ? (
+                  <ShowMore
+                    direction="backward"
+                    label="НАЗАД"
+                    onClick={toggleView}
+                  />
+                ) : (
+                  <ShowMore
+                    direction="forward"
+                    label="ПОДРОБНЕЕ"
+                    onClick={toggleView}
+                  />
+                )}
+              </Box>
               <Box
                 className="title_container"
                 sx={{
@@ -415,10 +682,15 @@ const MotoPark = () => {
                       borderRadius: 0,
                       clipPath:
                         "polygon(0% 100%, 16.42% 0%, 99% 0.01%, 82.2% 100%)",
+                      "&:hover": {
+                        backgroundColor: theme.custom.pallete?.background?.dark,
+                        color: "white",
+                      },
                     }}
                   >
                     <ArrowBackIosIcon
                       sx={{
+                        marginLeft: "14px",
                         fontSize: 50,
                       }}
                     />
@@ -432,10 +704,15 @@ const MotoPark = () => {
                       borderRadius: 0,
                       clipPath:
                         "polygon(0% 100%, 16.42% 0%, 99% 0.01%, 82.2% 100%)",
+                      "&:hover": {
+                        backgroundColor: theme.custom.pallete?.background?.dark,
+                        color: "white",
+                      },
                     }}
                   >
                     <ArrowForwardIosIcon
                       sx={{
+                        // marginLeft: "14px",
                         fontSize: 50,
                       }}
                     />
