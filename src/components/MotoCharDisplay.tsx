@@ -42,7 +42,7 @@ export default function MotoCharDisplay({
           sx={{
             fontStyle: "italic",
             fontWeight: 600,
-            fontSize: 40, // Adjust the font size
+            fontSize: { md: 35, lg: 40 },
             lineHeight: 1,
           }}
         >
@@ -52,7 +52,7 @@ export default function MotoCharDisplay({
           className={roboto.className}
           component="span"
           sx={{
-            fontSize: 15,
+            fontSize: { md: 14, lg: 15 },
             fontWeight: 600,
             fontStyle: "italic",
             writingMode: "vertical-rl",
@@ -79,7 +79,7 @@ export default function MotoCharDisplay({
         sx={{
           fontStyle: "italic",
           fontWeight: 800,
-          fontSize: 16, // Adjust the font size
+          fontSize: { md: 14, lg: 16 },
         }}
       >
         {charDescription}

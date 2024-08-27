@@ -37,7 +37,32 @@ const motorcycles = [
       exhaust: "Akrapovic",
     },
     price: "3000",
-    priceList: ["฿ 3000", "฿ 3200", "฿ 3500"], // Example price list
+    priceList: [
+      {
+        duration: "От 2 до 3 дней",
+        price: "5998",
+      },
+      {
+        duration: "От 4 до 7 дней",
+        price: "4998",
+      },
+      {
+        duration: "Oт 8 до 14 дней",
+        price: "3998",
+      },
+      {
+        duration: "Oт 15 до 29 дней",
+        price: "2998",
+      },
+      {
+        duration: "Oт 30+ дней",
+        price: "2498",
+      },
+      {
+        duration: "Для членов клуба",
+        price: "1998",
+      },
+    ],
   },
   {
     brand: "Yamaha",
@@ -53,7 +78,32 @@ const motorcycles = [
       exhaust: "Akrapovic",
     },
     price: "3200",
-    priceList: ["฿ 3000", "฿ 3200", "฿ 3500"], // Example price list
+    priceList: [
+      {
+        duration: "От 2 до 3 дней",
+        price: "5998",
+      },
+      {
+        duration: "От 4 до 7 дней",
+        price: "4998",
+      },
+      {
+        duration: "Oт 8 до 14 дней",
+        price: "3998",
+      },
+      {
+        duration: "Oт 15 до 29 дней",
+        price: "2998",
+      },
+      {
+        duration: "Oт 30+ дней",
+        price: "2498",
+      },
+      {
+        duration: "Для членов клуба",
+        price: "1998",
+      },
+    ],
   },
   {
     brand: "Yamaha",
@@ -69,7 +119,32 @@ const motorcycles = [
       exhaust: "Termignoni",
     },
     price: "3500",
-    priceList: ["฿ 3000", "฿ 3200", "฿ 3500"], // Example price list
+    priceList: [
+      {
+        duration: "От 2 до 3 дней",
+        price: "5998",
+      },
+      {
+        duration: "От 4 до 7 дней",
+        price: "4998",
+      },
+      {
+        duration: "Oт 8 до 14 дней",
+        price: "3998",
+      },
+      {
+        duration: "Oт 15 до 29 дней",
+        price: "2998",
+      },
+      {
+        duration: "Oт 30+ дней",
+        price: "2498",
+      },
+      {
+        duration: "Для членов клуба",
+        price: "1998",
+      },
+    ],
   },
   {
     brand: "Kawasaki",
@@ -85,7 +160,32 @@ const motorcycles = [
       exhaust: "Yoshimura",
     },
     price: "4000",
-    priceList: ["฿ 3000", "฿ 3200", "฿ 3500"], // Example price list
+    priceList: [
+      {
+        duration: "От 2 до 3 дней",
+        price: "5998",
+      },
+      {
+        duration: "От 4 до 7 дней",
+        price: "4998",
+      },
+      {
+        duration: "Oт 8 до 14 дней",
+        price: "3998",
+      },
+      {
+        duration: "Oт 15 до 29 дней",
+        price: "2998",
+      },
+      {
+        duration: "Oт 30+ дней",
+        price: "2498",
+      },
+      {
+        duration: "Для членов клуба",
+        price: "1998",
+      },
+    ],
   },
 ];
 
@@ -330,9 +430,10 @@ const MotoPark = () => {
           sx={{
             position: "absolute",
             zIndex: 0,
-            height: "100%",
-            // maxHeight: "630px",
+            height: "830px",
+            maxHeight: "830px",
             width: "100%",
+            maxWidth: theme.custom.maxPageWidth,
             backgroundColor: "transparent",
             display: "flex",
             flexDirection: "row",
@@ -340,7 +441,8 @@ const MotoPark = () => {
         >
           <Box
             sx={{
-              width: "35%",
+              width: "27%",
+              marginRight: "1px",
               backgroundColor: {
                 xs: theme.custom.pallete?.greycatalog,
                 sm: theme.custom.pallete?.greycatalog,
@@ -349,7 +451,7 @@ const MotoPark = () => {
           ></Box>
           <Box
             sx={{
-              width: "225px",
+              width: "20%",
               backgroundColor: theme.custom.pallete?.greycatalog,
               backgroundImage: "url('/images/slider_background.svg')",
               backgroundRepeat: "no-repeat",
@@ -359,7 +461,7 @@ const MotoPark = () => {
           ></Box>
           <Box
             sx={{
-              width: "55%",
+              width: "53%",
               backgroundColor: {
                 xs: theme.palette.primary.main,
               },
@@ -393,19 +495,59 @@ const MotoPark = () => {
                 sx={{
                   position: "relative",
                   top: "6px",
-                  right: "120px",
-                  width: "50%",
+                  right: { md: "55px", lg: "120px" },
+                  width: { md: "40%", lg: "50%" },
                   display: "flex",
                   alignItems: "end",
                   // position: "absolute",
                 }}
               >
+                {/* 
+              xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      
+      */}
                 <Box
                   sx={{
                     position: "absolute",
-                    width: "650px",
+                    "@media (min-width: 1920px)": {
+                      width: "650px",
+                      marginLeft: "30px",
+                    },
+                    "@media (max-width: 1920px)": {
+                      width: "650px",
+                      marginLeft: "30px",
+                    },
+                    "@media (max-width: 1280px)": {
+                      width: "570px",
+                      marginLeft: "30px",
+                    },
+                    "@media (max-width: 1140px)": {
+                      width: "650px",
+                      marginLeft: "-185px",
+                    },
+                    "@media (max-width: 960px)": {
+                      marginLeft: "30px",
+                      width: "540px",
+                    },
+                    "@media (max-width: 600px)": {
+                      width: "500px",
+                    },
+                    "@media (max-width: 0px)": {
+                      width: "650px",
+                    },
+                    // width: {
+                    //   xs: "650px",
+                    //   sm: "500px",
+                    //   md: "540px",
+                    //   lg: "630px",
+                    //   xl: "650px",
+                    // },
+
                     height: "auto",
-                    marginLeft: "30px",
                   }}
                 >
                   <Image
@@ -424,24 +566,89 @@ const MotoPark = () => {
               <Box
                 className="info_container"
                 sx={{
-                  width: "50%",
+                  height: { md: "540px", lg: "580px" },
+                  width: { md: "50%", lg: "50%" },
+                  minHeight: "auto",
+                  paddingLeft: { md: "176px", lg: 0 },
                 }}
               >
                 {showPrices ? (
-                  <Box>
-                    <Typography variant="h4" gutterBottom>
+                  <Box
+                    sx={{
+                      float: "right",
+                      width: "491px",
+                      marginRight: "0 auto",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "end",
+                      gap: 3,
+                    }}
+                  >
+                    {/* <Typography variant="h4" gutterBottom>
                       Цены:
-                    </Typography>
+                    </Typography> */}
                     {currentBike.priceList.map((price, index) => (
-                      <Typography key={index} variant="body1">
-                        {price}
-                      </Typography>
+                      <Box
+                        key={index}
+                        className={`itemPrice-${index}`}
+                        sx={{
+                          display: "flex",
+                          flexDirection: "row",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            marginRight: "-1px",
+                            width: "20px",
+                            height: "auto",
+                            // backgroundColor: "grey",
+                            backgroundColor:
+                              theme.custom.pallete?.background?.dark,
+                            clipPath:
+                              "polygon(0 100%, 100% 100%, 100% 0%, 80% 0%)",
+                          }}
+                        ></Box>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            // gap: "200px",
+                            width: 450 + index * 23.5 + "px",
+                            py: 1.5,
+                            paddingLeft: 2,
+                            paddingRight: 3,
+                            backgroundColor:
+                              theme.custom.pallete?.background?.dark,
+                          }}
+                        >
+                          <Typography
+                            variant="body1"
+                            className={roboto.className}
+                            sx={{
+                              fontSize: 21,
+                              fontStyle: "italic",
+                            }}
+                          >
+                            {price.duration}
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            className={roboto.className}
+                            sx={{
+                              fontSize: 21,
+                              fontStyle: "italic",
+                            }}
+                          >
+                            {price.price}
+                          </Typography>
+                        </Box>
+                      </Box>
                     ))}
                   </Box>
                 ) : (
                   <Box
                     sx={{
-                      pt: 10,
+                      pt: 8,
                       pb: 21,
                       display: "flex",
                       flexDirection: "row",
@@ -453,9 +660,9 @@ const MotoPark = () => {
                       sx={{
                         display: "flex",
                         flexDirection: "column",
-                        width: "70%",
-                        marginTop: "-14px",
-                        gap: 4,
+                        width: "90%",
+                        marginTop: { md: "-10px", lg: "-14px" },
+                        gap: { md: 3, lg: 4 },
                       }}
                     >
                       <Typography
@@ -465,7 +672,7 @@ const MotoPark = () => {
                           textTransform: "uppercase",
                           fontStyle: "italic",
                           fontWeight: 600,
-                          fontSize: 49,
+                          fontSize: { md: 45, lg: 49 },
                         }}
                       >
                         {currentBike.features.type}
@@ -478,7 +685,7 @@ const MotoPark = () => {
                             textTransform: "uppercase",
                             fontStyle: "italic",
                             fontWeight: 600,
-                            fontSize: 36,
+                            fontSize: { md: 33, lg: 36 },
                             color: theme.custom.pallete?.background?.dark,
                             marginLeft: "-27px",
                           }}
@@ -496,7 +703,7 @@ const MotoPark = () => {
                           textTransform: "uppercase",
                           fontStyle: "italic",
                           fontWeight: 600,
-                          fontSize: 36,
+                          fontSize: { md: 33, lg: 36 },
                           marginLeft: "-51px",
                           color: theme.custom.pallete?.background?.dark,
                         }}
@@ -518,7 +725,7 @@ const MotoPark = () => {
                           textTransform: "uppercase",
                           fontStyle: "italic",
                           fontWeight: 600,
-                          fontSize: 36,
+                          fontSize: { md: 33, lg: 36 },
                           color: theme.custom.pallete?.background?.dark,
                           marginLeft: "-76px",
                         }}
@@ -538,8 +745,8 @@ const MotoPark = () => {
                       sx={{
                         display: "flex",
                         flexDirection: "column",
-                        gap: 5,
-                        width: "30%",
+                        gap: { md: 4, lg: 5 },
+                        width: { md: "23%", lg: "30%" },
                       }}
                     >
                       <MotoCharDisplay
