@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Box } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import theme from "@/theme/theme";
@@ -14,51 +14,87 @@ export default function ShowMore({
 }) {
   const isForward = direction === "forward";
   return (
-    <Button
-      onClick={onClick}
+    <Box
       sx={{
-        backgroundColor: "transparent", // Red background color
-        color: "#333", // Dark text color
-        textTransform: "none", // Keep the original casing
-        padding: "10px 20px",
-
-        display: "flex",
-        alignItems: "center",
-        justifyContent: isForward ? "space-between" : "space-between",
-        width: "fit-content",
+        display: { xs: "flex", md: "block" },
       }}
     >
-      {!isForward && (
-        <ArrowBackIcon
-          sx={{
-            fontSize: "24px",
-            marginRight: "10px",
-            color: theme.custom.pallete?.background?.dark,
-          }}
-        />
-      )}
-      <Typography
+      {" "}
+      <Box
         sx={{
-          fontSize: 23,
-          fontStyle: "italic",
-          fontWeight: "700",
-          color: theme.custom.pallete?.background?.dark,
-          borderBottom: "2px solid " + theme.custom.pallete?.background?.dark,
-          marginRight: isForward ? "10px" : "0px",
-          marginLeft: !isForward ? "10px" : "0px",
+          display: { xs: "block", md: "none" },
+          marginRight: "-2px",
+          width: "31px",
+          height: "49px",
+          zIndex: 100,
+          // backgroundColor: "grey",
+          backgroundColor: theme.palette.primary.main,
+          clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 55% 0%)",
+        }}
+      ></Box>
+      <Button
+        onClick={onClick}
+        sx={{
+          backgroundColor: {
+            xs: theme.palette.primary.main,
+            md: "transparent",
+          }, // Red background color
+          color: "#333", // Dark text color
+          textTransform: "none", // Keep the original casing
+          padding: {
+            xs: !isForward ? "10px 67px 10px 44px" : "10px 30px 10px 30px",
+            md: "10px 20px",
+          },
+          zIndex: 100,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: isForward ? "space-between" : "space-between",
+          width: "fit-content",
+          "&:hover": {
+            backgroundColor: theme.palette.primary.main,
+          },
         }}
       >
-        {label}
-      </Typography>
-      {isForward && (
-        <ArrowForwardIcon
+        {!isForward && (
+          <ArrowBackIcon
+            sx={{
+              display: { xs: "none", md: "block" },
+              fontSize: "24px",
+              marginRight: "10px",
+              color: theme.custom.pallete?.background?.dark,
+            }}
+          />
+        )}
+        <Typography
           sx={{
-            fontSize: "24px",
-            marginLeft: "10px",
-            color: theme.custom.pallete?.background?.dark,
+            fontSize: { xs: 15, sm: 19, md: 23 },
+            fontStyle: "italic",
+            fontWeight: "700",
+            color: {
+              xs: theme.palette.background.paper,
+              md: theme.custom.pallete?.background?.dark,
+            },
+            borderBottom: {
+              xs: "none",
+              md: "2px solid " + theme.custom.pallete?.background?.dark,
+            },
+            marginRight: isForward ? "10px" : "0px",
+            marginLeft: !isForward ? "10px" : "0px",
           }}
-        />
-      )}
-    </Button>
+        >
+          {label}
+        </Typography>
+        {isForward && (
+          <ArrowForwardIcon
+            sx={{
+              display: { xs: "none", md: "block" },
+              fontSize: "24px",
+              marginLeft: "10px",
+              color: theme.custom.pallete?.background?.dark,
+            }}
+          />
+        )}
+      </Button>
+    </Box>
   );
 }

@@ -6,6 +6,7 @@ import {
   IconButton,
   Container,
   Box,
+  useMediaQuery,
 } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -199,6 +200,7 @@ const MotoPark = () => {
   const filteredModels = motorcycles.filter(
     (bike) => bike.brand === selectedBrand
   );
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const nextBike = () => {
     if (currentIndex < filteredModels.length - 1) {
@@ -250,6 +252,8 @@ const MotoPark = () => {
             pb: 2.2,
           }}
         >
+          {/* Previous Button - Rounded for xs and sm */}
+
           <Typography
             variant="h2"
             component="h2"
@@ -453,7 +457,10 @@ const MotoPark = () => {
             sx={{
               width: "20%",
               backgroundColor: theme.custom.pallete?.greycatalog,
-              backgroundImage: "url('/images/slider_background.svg')",
+              backgroundImage: {
+                xs: "none",
+                md: "url('/images/slider_background.svg')",
+              },
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right",
               backgroundSize: "cover",
@@ -463,7 +470,8 @@ const MotoPark = () => {
             sx={{
               width: "53%",
               backgroundColor: {
-                xs: theme.palette.primary.main,
+                xs: "none",
+                md: theme.palette.primary.main,
               },
             }}
           ></Box>
@@ -474,6 +482,53 @@ const MotoPark = () => {
             zIndex: 1,
           }}
         >
+          {isSmallScreen && (
+            // <IconButton
+            //   onClick={prevBike}
+            //   sx={{
+            //     position: "absolute",
+            //     top: "50%",
+            //     left: "2px",
+            //     transform: "translateY(-50%)",
+            //     backgroundColor: theme.palette.background.paper,
+            //     borderRadius: "50%",
+            //     width: "50px",
+            //     height: "50px",
+            //     boxShadow: theme.shadows[3],
+            //     "&:hover": {
+            //       backgroundColor: theme.palette.grey[400],
+            //     },
+            //   }}
+            // >
+            <IconButton
+              onClick={nextBike}
+              className="nextButtonMobile"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "4px",
+                transform: "translateY(-100%)",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                border: "2px solid",
+                borderRadius: "50%",
+                borderColor: theme.palette.primary.main,
+                width: "60px",
+                height: "58px",
+                // boxShadow: theme.shadows[3],
+                "&:hover": {
+                  backgroundColor: theme.palette.grey[400],
+                },
+              }}
+            >
+              <ArrowBackIosIcon
+                sx={{
+                  fontSize: 30,
+                  marginLeft: "8px",
+                  color: theme.palette.primary.main,
+                }}
+              />
+            </IconButton>
+          )}
           <Box
             sx={{
               pb: 0,
@@ -485,7 +540,7 @@ const MotoPark = () => {
               className="top_container"
               sx={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: { sm: "column", md: "row" },
                 justifyContent: "space-between",
                 // height: "490px",
               }}
@@ -499,6 +554,8 @@ const MotoPark = () => {
                   width: { md: "40%", lg: "50%" },
                   display: "flex",
                   alignItems: "end",
+                  order: { md: 0, sm: 1 },
+                  justifyContent: "center",
                   // position: "absolute",
                 }}
               >
@@ -525,19 +582,22 @@ const MotoPark = () => {
                       width: "570px",
                       marginLeft: "30px",
                     },
-                    "@media (max-width: 1140px)": {
+                    "@media (max-width: 1190px)": {
                       width: "650px",
                       marginLeft: "-185px",
                     },
                     "@media (max-width: 960px)": {
-                      marginLeft: "30px",
+                      display: showPrices ? "none" : "block",
+                      marginLeft: "0px",
                       width: "540px",
                     },
                     "@media (max-width: 600px)": {
                       width: "500px",
+                      marginLeft: "0px",
                     },
                     "@media (max-width: 0px)": {
                       width: "650px",
+                      marginLeft: "0px",
                     },
                     // width: {
                     //   xs: "650px",
@@ -566,22 +626,26 @@ const MotoPark = () => {
               <Box
                 className="info_container"
                 sx={{
-                  height: { md: "540px", lg: "580px" },
-                  width: { md: "50%", lg: "50%" },
+                  height: { xs: "432px  ", md: "532px", lg: "580px" },
+                  width: { sm: "100%", md: "50%", lg: "50%" },
                   minHeight: "auto",
-                  paddingLeft: { md: "176px", lg: 0 },
+                  display: "flex",
+                  justifyContent: "end",
+                  order: { md: 1, sm: 0 },
+                  // paddingLeft: { md: "176px", lg: 0 },
                 }}
               >
                 {showPrices ? (
                   <Box
                     sx={{
-                      float: "right",
+                      float: "left",
                       width: "491px",
-                      marginRight: "0 auto",
+                      marginRight: "0",
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "end",
-                      gap: 3,
+                      alignItems: { xs: "start", md: "end" },
+                      marginLeft: { xs: 0, md: 0 },
+                      gap: { xs: 1.7, md: 3 },
                     }}
                   >
                     {/* <Typography variant="h4" gutterBottom>
@@ -594,10 +658,12 @@ const MotoPark = () => {
                         sx={{
                           display: "flex",
                           flexDirection: "row",
+                          marginLeft: -index * 13.5 + "px",
                         }}
                       >
                         <Box
                           sx={{
+                            display: { xs: "block", md: "block" },
                             marginRight: "-1px",
                             width: "20px",
                             height: "auto",
@@ -613,10 +679,15 @@ const MotoPark = () => {
                             display: "flex",
                             justifyContent: "space-between",
                             // gap: "200px",
-                            width: 450 + index * 23.5 + "px",
-                            py: 1.5,
-                            paddingLeft: 2,
-                            paddingRight: 3,
+                            width: {
+                              xs: 600 + index * 13.5 + "px",
+                              md: 350 + index * 23.5 + "px",
+                              lg: 450 + index * 23.5 + "px",
+                            },
+                            py: { xs: 1.2, md: 1.2, lg: 1.5 },
+                            paddingLeft: { xs: 4, md: 2 },
+                            paddingRight: { xs: 24.3, md: 3 },
+                            // marginLeft: -index * 13.5 + "px",
                             backgroundColor:
                               theme.custom.pallete?.background?.dark,
                           }}
@@ -642,25 +713,41 @@ const MotoPark = () => {
                             {price.price}
                           </Typography>
                         </Box>
+                        {/* <Box
+                          sx={{
+                            display: { xs: "block", md: "none" },
+                            marginLeft: "-1px",
+                            width: "11px",
+                            height: "100",
+                            backgroundColor:
+                              theme.custom.pallete?.background?.dark,
+                            clipPath:
+                              "polygon(0% 0%, 45% 0%, 100% 100%, 0% 100%)",
+                          }}
+                        ></Box> */}
                       </Box>
                     ))}
                   </Box>
                 ) : (
                   <Box
                     sx={{
-                      pt: 8,
+                      pt: { sm: 2, md: 8 },
                       pb: 21,
                       display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "end",
-                      gap: "160px",
+                      flexDirection: { sm: "column", md: "row" },
+                      justifyContent: "space-between",
+                      width: "100%",
+                      alignItems: "center",
+                      gap: { sm: 2, md: 0 },
+                      // gap: "140px",
                     }}
                   >
                     <Box
                       sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        width: "90%",
+                        order: { sm: 1, md: 0 },
+                        display: { xs: "none", md: "flex" },
+                        flexDirection: { sm: "row", md: "column" },
+                        width: "80%",
                         marginTop: { md: "-10px", lg: "-14px" },
                         gap: { md: 3, lg: 4 },
                       }}
@@ -688,6 +775,7 @@ const MotoPark = () => {
                             fontSize: { md: 33, lg: 36 },
                             color: theme.custom.pallete?.background?.dark,
                             marginLeft: "-27px",
+                            width: "150%",
                           }}
                         >
                           {" "}
@@ -706,6 +794,7 @@ const MotoPark = () => {
                           fontSize: { md: 33, lg: 36 },
                           marginLeft: "-51px",
                           color: theme.custom.pallete?.background?.dark,
+                          width: "150%",
                         }}
                       >
                         Шины{" "}
@@ -728,6 +817,7 @@ const MotoPark = () => {
                           fontSize: { md: 33, lg: 36 },
                           color: theme.custom.pallete?.background?.dark,
                           marginLeft: "-76px",
+                          width: "150%",
                         }}
                       >
                         Выхлоп{" "}
@@ -743,10 +833,13 @@ const MotoPark = () => {
                     </Box>
                     <Box
                       sx={{
+                        order: { sm: 0, md: 1 },
                         display: "flex",
-                        flexDirection: "column",
-                        gap: { md: 4, lg: 5 },
-                        width: { md: "23%", lg: "30%" },
+                        flexDirection: { sm: "row", md: "column" },
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: { sm: 6, md: 4, lg: 5 },
+                        width: { md: "20%", lg: "20%" },
                       }}
                     >
                       <MotoCharDisplay
@@ -783,7 +876,7 @@ const MotoPark = () => {
                 sx={{
                   position: "absolute",
                   right: 0,
-                  bottom: "190px",
+                  bottom: { xs: "101px", md: "150px", lg: "190px" },
                 }}
               >
                 {showPrices ? (
@@ -807,8 +900,8 @@ const MotoPark = () => {
                   flexDirection: "row",
                   backgroundColor: theme.custom.pallete?.background?.dark,
                   justifyContent: "space-between",
-                  width: "70%",
-                  height: "95px",
+                  width: { xs: "83.5%", md: "63.5%", lg: "70%" },
+                  height: { xs: "63px", sm: "78px", md: "95px" },
                   alignItems: "center",
                   // pl: 20,
                 }}
@@ -820,45 +913,58 @@ const MotoPark = () => {
                     height: "100.9%",
                     // backgroundColor: "grey",
                     backgroundColor: theme.custom.pallete?.greycatalog,
-                    clipPath: "polygon(0 0, 100% 0, 45% 100%, 0% 100%)",
+                    clipPath: "polygon(0 0%, 100% 0, 45% 100%, 0% 100%)",
                   }}
                 ></Box>
-                <Typography
-                  variant="h4"
+                <Box
                   sx={{
-                    fontSize: 46,
-                    fontWeight: 800,
-                    fontStyle: "italic",
+                    position: "absolute",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    width: { sm: "96%", md: "71%", lg: "76%" },
+                    paddingLeft: { sm: "100px", md: "100px", lg: "170px" },
+                    zIndex: 10,
                   }}
                 >
-                  <span
-                    style={{
-                      textTransform: "uppercase",
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontSize: { sm: 30, md: 36, lg: 46 },
+                      fontWeight: 800,
+                      fontStyle: "italic",
                     }}
                   >
-                    {currentBike.brand}
-                  </span>
-                  <span
-                    style={{
-                      marginLeft: "15px",
-                      color: theme.palette.primary.main,
-                      textTransform: "uppercase",
+                    <span
+                      style={{
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {currentBike.brand}
+                    </span>
+                    <span
+                      style={{
+                        marginLeft: "15px",
+                        color: theme.palette.primary.main,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {currentBike.model}
+                    </span>
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontSize: { sm: 30, md: 36, lg: 46 },
+                      fontWeight: 800,
+                      fontStyle: "italic",
+                      paddingRight: 10,
                     }}
                   >
-                    {currentBike.model}
-                  </span>
-                </Typography>
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontSize: 46,
-                    fontWeight: 800,
-                    fontStyle: "italic",
-                    paddingRight: 10,
-                  }}
-                >
-                  ฿ {currentBike.price}
-                </Typography>
+                    ฿ {currentBike.price}
+                  </Typography>
+                </Box>
                 <Box
                   sx={{
                     marginRight: "-32px",
@@ -866,11 +972,16 @@ const MotoPark = () => {
                     height: "100%",
                     // backgroundColor: "grey",
                     backgroundColor: theme.custom.pallete?.background?.dark,
-                    clipPath: "polygon(0 0, 100% 0, 45% 100%, 0% 100%)",
+                    clipPath: "polygon(0 -1%, 100% 0, 45% 100%, 0% 100%)",
                   }}
                 ></Box>
               </Box>
-              <Box className="nav_container">
+              <Box
+                className="nav_container"
+                sx={{
+                  display: { sm: "none", md: "block" },
+                }}
+              >
                 {" "}
                 <Box
                   className="slider__nav-buttons"
@@ -928,6 +1039,36 @@ const MotoPark = () => {
               </Box>
             </Box>
           </Box>
+          {isSmallScreen && (
+            <IconButton
+              onClick={nextBike}
+              className="nextButtonMobile"
+              sx={{
+                position: "absolute",
+                top: "50%",
+                right: "4px",
+                transform: "translateY(-100%)",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
+                border: "2px solid",
+                borderRadius: "50%",
+                borderColor: theme.palette.primary.main,
+                width: "60px",
+                height: "58px",
+                // boxShadow: theme.shadows[3],
+                "&:hover": {
+                  backgroundColor: theme.palette.grey[400],
+                },
+              }}
+            >
+              <ArrowForwardIosIcon
+                sx={{
+                  fontSize: 30,
+                  marginRight: "-4px",
+                  color: theme.palette.primary.main,
+                }}
+              />
+            </IconButton>
+          )}
         </Container>
       </Box>
     </Box>
