@@ -22,8 +22,9 @@ export default function MotoCharDisplay({
     <Box
       sx={{
         textAlign: "center",
-        width: { sm: "150px", md: "100%" }, // Adjust as needed
+        width: { xs: "90px", sm: "110px", md: "110px", lg: "130px" }, // Adjust as needed
         color: theme.custom.pallete?.background?.dark, // Dark text color
+        height: { xs: "40px", sm: "45px", md: "80px" },
       }}
     >
       <Box
@@ -33,6 +34,7 @@ export default function MotoCharDisplay({
           gap: 1,
           justifyContent: "center",
           alignItems: "center",
+          height: { xs: "40px", sm: "45px", md: "50px" },
         }}
       >
         <Typography
@@ -42,7 +44,7 @@ export default function MotoCharDisplay({
           sx={{
             fontStyle: "italic",
             fontWeight: 600,
-            fontSize: { sm: 32, md: 35, lg: 40 },
+            fontSize: { xs: 30, sm: 32, md: 35, lg: 40 },
             lineHeight: 1,
           }}
         >
@@ -52,7 +54,7 @@ export default function MotoCharDisplay({
           className={roboto.className}
           component="span"
           sx={{
-            fontSize: { sm: 14, md: 12, lg: 15 },
+            fontSize: { xs: 11, sm: 11, md: 12, lg: 15 },
             fontWeight: 600,
             fontStyle: "italic",
             writingMode: "vertical-rl",
@@ -79,7 +81,7 @@ export default function MotoCharDisplay({
         sx={{
           fontStyle: "italic",
           fontWeight: 800,
-          fontSize: { sm: 14, md: 14, lg: 16 },
+          fontSize: { xs: 10, sm: 14, md: 14, lg: 16 },
         }}
       >
         {charDescription}

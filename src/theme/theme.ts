@@ -2,6 +2,19 @@
 import { createTheme } from "@mui/material/styles";
 import { Inter } from "@next/font/google";
 
+// Define your custom breakpoint
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    prices: true; // adds the `xxs` breakpoint
+    bikeTitle: true; // adds the `xxs` breakpoint
+    xs: true; // keeps `xs` breakpoint
+    sm: true; // keeps `sm` breakpoint
+    md: true; // keeps `md` breakpoint
+    lg: true; // keeps `lg` breakpoint
+    xl: true; // keeps `xl` breakpoint
+  }
+}
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -216,6 +229,8 @@ const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
+      prices: 450,
+      bikeTitle: 500,
       sm: 600,
       md: 960,
       lg: 1280,
