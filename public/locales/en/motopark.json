@@ -1,0 +1,18 @@
+{
+  "tires": "Tires",
+  "exhaust": "Exhaust",
+  "more": "DETAILS",
+  "back": "BACK",
+  "speed": {
+    "title": "Max. speed",
+    "metric": "km/h"
+  },
+  "weight": {
+    "title": "Weight",
+    "metric": "kg"
+  },
+  "engine": {
+    "title": "Engine",
+    "metric": "cm/cub"
+  }
+}

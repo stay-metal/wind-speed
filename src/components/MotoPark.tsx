@@ -15,6 +15,8 @@ import { Roboto } from "@next/font/google";
 import MotoCharDisplay from "./MotoCharDisplay";
 import ShowMore from "./ShowMore";
 import Image from "next/image";
+import { motoData } from "@/data/motopark";
+import { useTranslation } from "next-i18next";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -23,502 +25,8 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const motorcycles = [
-  {
-    brand: "Yamaha",
-    model: "FZ 8",
-    image: "/images/bike.png",
-    maxSpeed: "296",
-    weight: "226",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Dunlop",
-      exhaust: "Akrapovic",
-    },
-    price: "3000",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "FZ 9",
-    image: "/images/bike2.png",
-    maxSpeed: "290",
-    weight: "220",
-    engine: "889",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Michelin",
-      exhaust: "Akrapovic",
-    },
-    price: "3200",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "TSX",
-    image: "/images/bike3.png",
-    maxSpeed: "310",
-    weight: "210",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Pirelli",
-      exhaust: "Termignoni",
-    },
-    price: "3500",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "TSX",
-    image: "/images/bike3.png",
-    maxSpeed: "310",
-    weight: "210",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Pirelli",
-      exhaust: "Termignoni",
-    },
-    price: "3500",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "TSX",
-    image: "/images/bike3.png",
-    maxSpeed: "310",
-    weight: "210",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Pirelli",
-      exhaust: "Termignoni",
-    },
-    price: "3500",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "TSX",
-    image: "/images/bike3.png",
-    maxSpeed: "310",
-    weight: "210",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Pirelli",
-      exhaust: "Termignoni",
-    },
-    price: "3500",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "TSX",
-    image: "/images/bike3.png",
-    maxSpeed: "310",
-    weight: "210",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Pirelli",
-      exhaust: "Termignoni",
-    },
-    price: "3500",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Yamaha",
-    model: "TSXTSXTSXTSXTSX",
-    image: "/images/bike3.png",
-    maxSpeed: "310",
-    weight: "210",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Pirelli",
-      exhaust: "Termignoni",
-    },
-    price: "3500",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Kawasaki",
-    model: "ZX-10R",
-    image: "/images/bike.png",
-    maxSpeed: "299",
-    weight: "207",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Bridgestone",
-      exhaust: "Yoshimura",
-    },
-    price: "4000",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Harley",
-    model: "ZX-10R",
-    image: "/images/bike.png",
-    maxSpeed: "299",
-    weight: "207",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Bridgestone",
-      exhaust: "Yoshimura",
-    },
-    price: "4000",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Honda",
-    model: "Hero",
-    image: "/images/bike.png",
-    maxSpeed: "299",
-    weight: "207",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Bridgestone",
-      exhaust: "Yoshimura",
-    },
-    price: "4000",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-  {
-    brand: "Ducatti",
-    model: "Hero",
-    image: "/images/bike.png",
-    maxSpeed: "299",
-    weight: "207",
-    engine: "998",
-    features: {
-      type: "Спортбайк",
-      abs: true,
-      tires: "Bridgestone",
-      exhaust: "Yoshimura",
-    },
-    price: "4000",
-    priceList: [
-      {
-        duration: "От 2 до 3 дней",
-        price: "5998",
-      },
-      {
-        duration: "От 4 до 7 дней",
-        price: "4998",
-      },
-      {
-        duration: "Oт 8 до 14 дней",
-        price: "3998",
-      },
-      {
-        duration: "Oт 15 до 29 дней",
-        price: "2998",
-      },
-      {
-        duration: "Oт 30+ дней",
-        price: "2498",
-      },
-      {
-        duration: "Для членов клуба",
-        price: "1998",
-      },
-    ],
-  },
-];
-
 const MotoPark = () => {
+  const { t } = useTranslation("motopark");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedBrand, setSelectedBrand] = useState("Yamaha");
   const [showPrices, setShowPrices] = useState(false);
@@ -526,43 +34,44 @@ const MotoPark = () => {
   const modelRef = useRef(null);
   const brandContainerRef = useRef(null);
   const modelContainerRef = useRef(null);
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
 
-  const brands = [...new Set(motorcycles.map((bike) => bike.brand))];
+  const brands = [...new Set(motoData.map((bike) => bike.brand))];
 
-  const filteredModels = motorcycles.filter(
+  const filteredModels = motoData.filter(
     (bike) => bike.brand === selectedBrand
   );
+
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   const scrollToElement = (ref, containerRef, offset, direction) => {
     if (ref.current && containerRef.current) {
       const container = containerRef.current;
       const element = ref.current;
 
-      // Calculate the offset of the element relative to the container
       let elementOffsetLeft;
       if (direction === "right") {
-        // Align to the left margin when moving right
         elementOffsetLeft = element.offsetLeft - offset;
       } else if (direction === "left") {
-        // Align to the right margin when moving left
         elementOffsetLeft =
           element.offsetLeft -
           (container.clientWidth - element.clientWidth) +
           offset;
       }
-      // Set the container's scrollLeft so that the element is aligned with the left margin
       container.scrollTo({
         left: elementOffsetLeft,
         behavior: "smooth",
       });
     }
   };
+
   useEffect(() => {
-    scrollToElement(brandRef, brandContainerRef, 25, "right"); // Assuming moving right initially
+    scrollToElement(brandRef, brandContainerRef, 25, "right");
   }, [selectedBrand]);
 
   useEffect(() => {
-    scrollToElement(modelRef, modelContainerRef, 24, "right"); // Assuming moving right initially
+    scrollToElement(modelRef, modelContainerRef, 24, "right");
   }, [currentIndex]);
 
   const nextBike = () => {
@@ -588,22 +97,20 @@ const MotoPark = () => {
       const prevBrand = brands[prevBrandIndex];
       setSelectedBrand(prevBrand);
       setCurrentIndex(
-        motorcycles.filter((bike) => bike.brand === prevBrand).length - 1
+        motoData.filter((bike) => bike.brand === prevBrand).length - 1
       );
       scrollToElement(brandRef, brandContainerRef, 25, "left");
     }
   };
 
   const toggleView = () => {
-    // console.log("click");
     setShowPrices(!showPrices);
   };
 
   const currentBike = filteredModels[currentIndex];
+
   return (
-    <Box
-    // sx={{ maxHeight: "100dvh" }}
-    >
+    <Box>
       <Box
         sx={{
           backgroundColor: {
@@ -617,8 +124,6 @@ const MotoPark = () => {
             pb: 2.2,
           }}
         >
-          {/* Previous Button - Rounded for xs and sm */}
-
           <Typography
             variant="h2"
             component="h2"
@@ -659,7 +164,6 @@ const MotoPark = () => {
                     marginRight: "-1px",
                     width: "10px",
                     height: "100%",
-                    // backgroundColor: "grey",
                     backgroundColor:
                       brand === selectedBrand
                         ? theme.palette.text.primary
@@ -679,7 +183,6 @@ const MotoPark = () => {
                   }
                   sx={{
                     cursor: "pointer",
-                    // marginRight: "15px",
                     textTransform: "uppercase",
                     fontStyle: "italic",
                     fontSize: "16px",
@@ -692,7 +195,7 @@ const MotoPark = () => {
                   onClick={() => {
                     setSelectedBrand(brand);
                     setCurrentIndex(0);
-                    setShowPrices(false); // Reset to characteristics view when brand is changed
+                    setShowPrices(false);
                   }}
                 >
                   {brand}
@@ -701,8 +204,7 @@ const MotoPark = () => {
                   sx={{
                     marginLeft: "-1px",
                     width: "11px",
-                    height: "100",
-                    // backgroundColor: "grey",
+                    height: "100%",
                     backgroundColor:
                       brand === selectedBrand
                         ? theme.palette.text.primary
@@ -740,7 +242,6 @@ const MotoPark = () => {
                     marginRight: "-1px",
                     width: "10px",
                     height: "100%",
-                    // backgroundColor: "grey",
                     backgroundColor:
                       index === currentIndex
                         ? theme.palette.primary.main
@@ -752,11 +253,7 @@ const MotoPark = () => {
                   variant="body1"
                   py={0.4}
                   px={{ xs: 2, md: 4 }}
-                  color={
-                    index === currentIndex
-                      ? theme.palette.background.paper
-                      : theme.palette.background.paper
-                  }
+                  color={theme.palette.background.paper}
                   sx={{
                     cursor: "pointer",
                     textTransform: "uppercase",
@@ -773,7 +270,7 @@ const MotoPark = () => {
                   }}
                   onClick={() => {
                     setCurrentIndex(index);
-                    setShowPrices(false); // Reset to characteristics view when model is changed
+                    setShowPrices(false);
                   }}
                 >
                   {bike.model}
@@ -782,8 +279,7 @@ const MotoPark = () => {
                   sx={{
                     marginLeft: "-1px",
                     width: "11px",
-                    height: "100",
-                    // backgroundColor: "grey",
+                    height: "100%",
                     backgroundColor:
                       index === currentIndex
                         ? theme.palette.primary.main
@@ -803,10 +299,6 @@ const MotoPark = () => {
             xs: theme.custom.pallete?.greycatalog,
             sm: theme.custom.pallete?.greycatalog,
           },
-          // backgroundImage: "url('/images/slider_background.svg')",
-          // backgroundRepeat: "no-repeat",
-          // backgroundPosition: "right",
-          // backgroundSize: "contain",
         }}
       >
         <Box
@@ -826,10 +318,7 @@ const MotoPark = () => {
             sx={{
               width: "27%",
               marginRight: "1px",
-              backgroundColor: {
-                xs: theme.custom.pallete?.greycatalog,
-                sm: theme.custom.pallete?.greycatalog,
-              },
+              backgroundColor: theme.custom.pallete?.greycatalog,
             }}
           ></Box>
           <Box
@@ -862,23 +351,6 @@ const MotoPark = () => {
           }}
         >
           {isSmallScreen && (
-            // <IconButton
-            //   onClick={prevBike}
-            //   sx={{
-            //     position: "absolute",
-            //     top: "50%",
-            //     left: "2px",
-            //     transform: "translateY(-50%)",
-            //     backgroundColor: theme.palette.background.paper,
-            //     borderRadius: "50%",
-            //     width: "50px",
-            //     height: "50px",
-            //     boxShadow: theme.shadows[3],
-            //     "&:hover": {
-            //       backgroundColor: theme.palette.grey[400],
-            //     },
-            //   }}
-            // >
             <IconButton
               onClick={prevBike}
               className="nextButtonMobile"
@@ -894,7 +366,6 @@ const MotoPark = () => {
                 width: "60px",
                 height: "58px",
                 zIndex: 100,
-                // boxShadow: theme.shadows[3],
                 "&:hover": {
                   backgroundColor: theme.palette.grey[400],
                 },
@@ -922,7 +393,6 @@ const MotoPark = () => {
                 display: "flex",
                 flexDirection: { xs: "column", sm: "column", md: "row" },
                 justifyContent: "space-between",
-                // height: "490px",
               }}
             >
               <Box
@@ -936,17 +406,8 @@ const MotoPark = () => {
                   alignItems: "end",
                   order: { xs: 1, sm: 1, md: 0 },
                   justifyContent: "center",
-                  // position: "absolute",
                 }}
               >
-                {/* 
-              xs: 0,
-      sm: 600,
-      md: 960,
-      lg: 1280,
-      xl: 1920,
-      
-      */}
                 <Box
                   sx={{
                     position: "absolute",
@@ -975,18 +436,6 @@ const MotoPark = () => {
                       width: "540px",
                       marginLeft: "-280px",
                     },
-                    "@media (max-width: 0px)": {
-                      width: "650px",
-                      marginLeft: "0px",
-                    },
-                    // width: {
-                    //   xs: "650px",
-                    //   sm: "500px",
-                    //   md: "540px",
-                    //   lg: "630px",
-                    //   xl: "650px",
-                    // },
-
                     height: "auto",
                   }}
                 >
@@ -1017,7 +466,6 @@ const MotoPark = () => {
                   display: "flex",
                   justifyContent: "end",
                   order: { xs: 0, md: 1, sm: 0 },
-                  // paddingLeft: { md: "176px", lg: 0 },
                 }}
               >
                 {showPrices ? (
@@ -1033,9 +481,6 @@ const MotoPark = () => {
                       gap: { xs: 1.7, md: 3 },
                     }}
                   >
-                    {/* <Typography variant="h4" gutterBottom>
-                      Цены:
-                    </Typography> */}
                     {currentBike.priceList.map((price, index) => (
                       <Box
                         key={index}
@@ -1045,7 +490,6 @@ const MotoPark = () => {
                           flexDirection: "row",
                           marginLeft: {
                             xs: -index * 18.5 + "px",
-                            prices: -70 - index * 18.5 + "px",
                             sm: -20 - index * 14.5 + "px",
                             md: -70 - index * 18.5 + "px",
                           },
@@ -1058,7 +502,6 @@ const MotoPark = () => {
                             width: "20px",
                             height: "auto",
                             zIndex: -1,
-                            // backgroundColor: "grey",
                             backgroundColor:
                               theme.custom.pallete?.background?.dark,
                             clipPath:
@@ -1069,10 +512,8 @@ const MotoPark = () => {
                           sx={{
                             display: "flex",
                             justifyContent: "space-between",
-                            // gap: "200px",
                             width: {
                               xs: 450 + index * 18.5 + "px",
-                              prices: 490 + index * 18.5 + "px",
                               sm: 710 + index * 13.5 + "px",
                               md: 350 + index * 23.5 + "px",
                               lg: 450 + index * 23.5 + "px",
@@ -1080,7 +521,6 @@ const MotoPark = () => {
                             py: { xs: 1.02, sm: 1.2, md: 1.2, lg: 1.5 },
                             paddingLeft: { xs: 2, sm: 4, md: 2 },
                             paddingRight: { xs: 31.3, sm: 39.3, md: 3 },
-                            // marginLeft: -index * 13.5 + "px",
                             backgroundColor:
                               theme.custom.pallete?.background?.dark,
                           }}
@@ -1093,7 +533,7 @@ const MotoPark = () => {
                               fontStyle: "italic",
                             }}
                           >
-                            {price.duration}
+                            {price.duration[currentLang]}
                           </Typography>
                           <Typography
                             variant="body1"
@@ -1106,18 +546,6 @@ const MotoPark = () => {
                             {price.price}
                           </Typography>
                         </Box>
-                        {/* <Box
-                          sx={{
-                            display: { xs: "block", md: "none" },
-                            marginLeft: "-1px",
-                            width: "11px",
-                            height: "100",
-                            backgroundColor:
-                              theme.custom.pallete?.background?.dark,
-                            clipPath:
-                              "polygon(0% 0%, 45% 0%, 100% 100%, 0% 100%)",
-                          }}
-                        ></Box> */}
                       </Box>
                     ))}
                   </Box>
@@ -1132,7 +560,6 @@ const MotoPark = () => {
                       width: "100%",
                       alignItems: "center",
                       gap: { xs: 2, sm: 2, md: 0 },
-                      // gap: "140px",
                     }}
                   >
                     <Box
@@ -1155,9 +582,9 @@ const MotoPark = () => {
                           fontSize: { md: 45, lg: 49 },
                         }}
                       >
-                        {currentBike.features.type}
+                        {currentBike.features.type[currentLang]}
                       </Typography>
-                      {currentBike.features.tires ? (
+                      {currentBike.features.abs && (
                         <Typography
                           variant="body1"
                           className={roboto.className}
@@ -1171,11 +598,8 @@ const MotoPark = () => {
                             width: "150%",
                           }}
                         >
-                          {" "}
-                          ABS{" "}
+                          ABS
                         </Typography>
-                      ) : (
-                        ""
                       )}
                       <Typography
                         variant="body1"
@@ -1190,7 +614,7 @@ const MotoPark = () => {
                           width: "150%",
                         }}
                       >
-                        Шины{" "}
+                        {t("tires")}{" "}
                         <span
                           style={{
                             fontWeight: 400,
@@ -1213,7 +637,7 @@ const MotoPark = () => {
                           width: "150%",
                         }}
                       >
-                        Выхлоп{" "}
+                        {t("exhaust")}{" "}
                         <span
                           style={{
                             fontWeight: 400,
@@ -1230,29 +654,26 @@ const MotoPark = () => {
                         display: "flex",
                         flexDirection: { xs: "row", sm: "row", md: "column" },
                         alignItems: "center",
-                        justifyContent: {
-                          xs: "space-between",
-                          bikeTitle: "space-evenly",
-                        },
+                        justifyContent: "space-evenly",
                         gap: { xs: 2, sm: 6, md: 4, lg: 5 },
                         width: { xs: "100%", sm: "auto", md: "20%", lg: "20%" },
                       }}
                     >
                       <MotoCharDisplay
                         charValue={currentBike.maxSpeed}
-                        charMetrica="км/ч"
-                        charDescription="Макс. скорость"
+                        charMetrica={t("speed.metric")}
+                        charDescription={t("speed.title")}
                       />
 
                       <MotoCharDisplay
                         charValue={currentBike.weight}
-                        charMetrica="кг"
-                        charDescription="Масса"
+                        charMetrica={t("weight.metric")}
+                        charDescription={t("weight.title")}
                       />
                       <MotoCharDisplay
                         charValue={currentBike.engine}
-                        charMetrica="см/куб"
-                        charDescription="Двигатель"
+                        charMetrica={t("engine.metric")}
+                        charDescription={t("engine.title")}
                       />
                     </Box>
                   </Box>
@@ -1274,7 +695,6 @@ const MotoPark = () => {
                   right: 0,
                   bottom: {
                     xs: "117px",
-                    bikeTitle: "102px",
                     sm: "101px",
                     md: "150px",
                     lg: "190px",
@@ -1284,13 +704,13 @@ const MotoPark = () => {
                 {showPrices ? (
                   <ShowMore
                     direction="backward"
-                    label="НАЗАД"
+                    label={t("back")}
                     onClick={toggleView}
                   />
                 ) : (
                   <ShowMore
                     direction="forward"
-                    label="ПОДРОБНЕЕ"
+                    label={t("more")}
                     onClick={toggleView}
                   />
                 )}
@@ -1305,12 +725,10 @@ const MotoPark = () => {
                   width: { xs: "93.5%", md: "63.5%", lg: "70%" },
                   height: {
                     xs: "93px",
-                    bikeTitle: "78px",
                     sm: "78px",
                     md: "95px",
                   },
                   alignItems: "center",
-                  // pl: 20,
                 }}
               >
                 <Box
@@ -1318,7 +736,6 @@ const MotoPark = () => {
                     marginRight: "-32px",
                     width: "50px",
                     height: "100.9%",
-                    // backgroundColor: "grey",
                     backgroundColor: theme.custom.pallete?.greycatalog,
                     clipPath: "polygon(0 0%, 100% 0, 45% 100%, 0% 100%)",
                   }}
@@ -1332,14 +749,12 @@ const MotoPark = () => {
                     alignItems: "center",
                     width: {
                       xs: "116%",
-                      bikeTitle: "114%",
                       sm: "105%",
                       md: "71%",
                       lg: "76%",
                     },
                     paddingLeft: {
                       xs: "99px",
-                      bikeTitle: "99px",
                       sm: "99px",
                       md: "99px",
                       lg: "170px",
@@ -1352,11 +767,11 @@ const MotoPark = () => {
                       display: "flex",
                       flexDirection: {
                         xs: "column",
-                        bikeTitle: "row",
+                        sm: "row",
                       },
                       gap: {
                         xs: 0.6,
-                        bikeTitle: 0,
+                        sm: 0,
                       },
                     }}
                   >
@@ -1365,7 +780,6 @@ const MotoPark = () => {
                       sx={{
                         fontSize: {
                           xs: 27,
-                          bikeTitle: 30,
                           sm: 30,
                           md: 36,
                           lg: 46,
@@ -1387,14 +801,13 @@ const MotoPark = () => {
                       sx={{
                         fontSize: {
                           xs: 27,
-                          bikeTitle: 30,
                           sm: 30,
                           md: 36,
                           lg: 46,
                         },
                         fontWeight: 800,
                         fontStyle: "italic",
-                        marginLeft: { xs: "0px", bikeTitle: "15px" },
+                        marginLeft: { xs: "0px", sm: "15px" },
                       }}
                     >
                       <span
@@ -1424,7 +837,6 @@ const MotoPark = () => {
                     marginRight: "-32px",
                     width: "50px",
                     height: "100%",
-                    // backgroundColor: "grey",
                     backgroundColor: theme.custom.pallete?.background?.dark,
                     clipPath: "polygon(0 -1%, 100% 0, 45% 100%, 0% 100%)",
                   }}
@@ -1436,7 +848,6 @@ const MotoPark = () => {
                   display: { xs: "none", md: "block" },
                 }}
               >
-                {" "}
                 <Box
                   className="slider__nav-buttons"
                   sx={{
@@ -1484,7 +895,6 @@ const MotoPark = () => {
                   >
                     <ArrowForwardIosIcon
                       sx={{
-                        // marginLeft: "14px",
                         fontSize: 50,
                       }}
                     />
@@ -1508,7 +918,6 @@ const MotoPark = () => {
                 borderColor: theme.palette.primary.main,
                 width: "60px",
                 height: "58px",
-                // boxShadow: theme.shadows[3],
                 "&:hover": {
                   backgroundColor: theme.palette.grey[400],
                 },
