@@ -6,7 +6,7 @@ import nextI18NextConfig from "../next-i18next.config";
 
 i18n
   .use(HttpApi) // Use the HTTP backend
-  .use(LanguageDetector) // Use the language detector
+  // .use(LanguageDetector)
   .use(initReactI18next) // Pass the i18n instance to react-i18next
   .init({
     fallbackLng: nextI18NextConfig.i18n.defaultLocale,

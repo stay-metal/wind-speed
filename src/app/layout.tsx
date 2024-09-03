@@ -1,12 +1,13 @@
 "use client";
-import { ReactNode } from "react";
-import { CssBaseline, ThemeProvider, Box, Container } from "@mui/material";
+import { ReactNode, useEffect, useState } from "react";
+import { CssBaseline, ThemeProvider, Box } from "@mui/material";
 import theme from "@/theme/theme";
 import { Inter } from "@next/font/google";
 import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import I18nProvider from "@/providers/I18nProvider";
+import { useTranslation } from "react-i18next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,8 +16,15 @@ const inter = Inter({
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState<string>("en");
+
+  useEffect(() => {
+    setLanguage(i18n.language || "en");
+  }, [i18n.language]);
+
   return (
-    <html lang="en" className={inter.className}>
+    <html lang={language} className={inter.className}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Wind Speed Moto Rentals</title>

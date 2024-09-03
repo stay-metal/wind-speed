@@ -1,6 +1,7 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Box, Typography, IconButton, Container } from "@mui/material";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import {
   FacebookOutlined,
   Telegram,
@@ -20,17 +21,143 @@ const kulim = Kulim_Park({
   display: "swap",
 });
 
+// Custom Framer Motion Variants for Smooth Animations
+const variants = {
+  initial: { opacity: 0, y: 50 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.medium,
+      ease: theme?.custom?.animation?.easing?.easeInOut,
+    },
+  },
+};
+
+const fadeInMedium = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.medium,
+      ease: theme?.custom?.animation?.easing?.easeInOut,
+    },
+  },
+};
+
+const fadeInSlow = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.slow,
+      ease: theme?.custom?.animation?.easing?.easeInOut,
+    },
+  },
+};
+
+const heroImage = {
+  initial: { opacity: 0, scale: 0.98 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.slow,
+      ease: theme?.custom?.animation?.easing?.easeInOut,
+    },
+  },
+};
+
+const socAppearance = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.medium,
+      ease: theme?.custom?.animation?.easing?.easeIn,
+      delay: 0.8,
+    },
+  },
+};
+
+const arrowAppearance = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.medium,
+      ease: theme?.custom?.animation?.easing?.easeIn,
+      delay: 0.8,
+    },
+  },
+};
+
+const phoneAppearance = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.medium,
+      ease: theme?.custom?.animation?.easing?.easeIn,
+      delay: 0.8,
+    },
+  },
+};
+
+const scaleSlow = {
+  initial: { opacity: 0, scale: 0.95 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.medium,
+      ease: theme?.custom?.animation?.easing?.easeInOut,
+      delay: 0.5,
+    },
+  },
+};
+
+const fadeInVerySlow = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: theme?.custom?.animation?.duration?.verySlow,
+      ease: theme?.custom?.animation?.easing?.easeInOut,
+    },
+  },
+};
+
 const StyledSocButton = styled(IconButton)(({ theme }) => ({
   color: theme.palette.text.primary,
   backgroundColor: theme.palette.background.paper,
-  width: "39px",
-  height: "39px",
-  fontSize: "70px",
-  "&:hover": {
-    backgroundColor: theme.palette.primary.main,
+  width: "42px",
+  height: "42px",
+  fontSize: "74px",
+  cursor: "pointer",
+  zIndex: 100,
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    bottom: "-100%", // Start outside the button at the bottom left
+    left: "-100%", // Start outside the button at the bottom left
+    width: "170%", // Cover diagonal movement
+    height: "200%",
+    backgroundColor: theme.palette.primary.main, // Red background
+    zIndex: -1,
+    transition: "transform 0.5s ease", // Smooth diagonal slide transition
+    transform: "translate(-50%, 50%) rotate(45deg)", // Start off-screen and rotate the background
+  },
+  "&:hover::before": {
+    transform: "translate(50%, -50%) rotate(45deg)", // Move the background diagonally to top right
   },
   "& .MuiSvgIcon-root": {
-    fontSize: "1.6rem", // Adjust the icon size here
+    fontSize: "1.7rem", // Adjust the icon size here
+    zIndex: 1, // Ensure icon stays on top
+    transition: "color 0.2s ease", // Sync color transition with background
+    transitionDelay: "0.05s", // Delay the color change to match when the red background touches the icon
     [theme.breakpoints.down("lg")]: {
       fontSize: "1.3rem",
     },
@@ -58,6 +185,12 @@ const StyledSocButton = styled(IconButton)(({ theme }) => ({
     width: "39px",
     height: "39px",
   },
+  "&:hover": {
+    backgroundColor: theme.palette.background.paper,
+    "& .MuiSvgIcon-root": {
+      color: "white",
+    },
+  },
 }));
 
 const ArrowDownIcon = (props) => (
@@ -78,11 +211,19 @@ const ArrowDownIcon = (props) => (
 
 const HeroBanner = () => {
   const { t } = useTranslation("hero");
+  const [initialHeight, setInitialHeight] = useState("100dvh");
+
+  useEffect(() => {
+    // Capture the initial viewport height in pixels
+    const height = window.innerHeight;
+    setInitialHeight(`${height}px`);
+  }, []);
+
   return (
     <Box
       sx={{
-        height: { xs: "100dvh", md: "100dvh" },
-        maxHeight: "934px",
+        height: initialHeight,
+        maxHeight: "980px",
         // maxHeight: { xs: "700px", md: "700px", lg: "734px", xl: "934px" },
         width: "100%",
         backgroundImage: 'url("/images/hero-banner.jpg")',
@@ -112,12 +253,17 @@ const HeroBanner = () => {
         },
       }}
       component={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      initial="initial"
+      animate="animate"
+      transition={{ duration: theme.custom?.animation?.duration?.slow }}
+      variants={heroImage}
     >
       <Container
         className={"container_text"}
+        component={motion.div}
+        initial="initial"
+        animate="animate"
+        variants={fadeInMedium}
         sx={{
           position: "relative",
           zIndex: 2,
@@ -137,19 +283,26 @@ const HeroBanner = () => {
             // maxWidth: { xs: "100%", md: "100%" },
             // px: { xs: 2, md: 4 },
           }}
+          component={motion.div}
+          initial="initial"
+          animate="animate"
+          variants={scaleSlow}
         >
           <Typography
             variant="h1"
-            component="h1"
+            component={motion.div}
             sx={{
               width: { xs: "100%", sm: "65%", md: "100%" },
               maxWidth: { xs: "365px", sm: "100%", md: "100%" },
               pb: { xs: 3, lg: 4 },
               lineHeight: "130%",
-              fontSize: { xs: 40, sm: 45, md: 48 },
+              fontSize: { xs: 40, sm: 45, md: 48, xl: 52 },
               fontStyle: "italic",
             }}
             dangerouslySetInnerHTML={{ __html: t("title.h1") }}
+            initial="initial"
+            animate="animate"
+            variants={fadeInSlow}
           />
 
           <Typography
@@ -157,7 +310,7 @@ const HeroBanner = () => {
             text={t("title.subtitle")}
             sx={{
               color: "white",
-              fontSize: { xs: 24, sm: 26, md: 28, lg: 29 },
+              fontSize: { xs: 24, sm: 26, md: 28, lg: 29, xl: 31 },
               pb: { xs: 3, sm: 12, md: 14, lg: 7 },
               fontStyle: "italic",
               fontWeight: "100",
@@ -165,6 +318,9 @@ const HeroBanner = () => {
               wordWrap: "break-word",
             }}
             dangerouslySetInnerHTML={{ __html: t("title.subtitle") }}
+            initial="initial"
+            animate="animate"
+            variants={fadeInSlow}
           />
         </Box>
 
@@ -180,6 +336,10 @@ const HeroBanner = () => {
             height: "100%",
             gap: 2,
           }}
+          component={motion.div}
+          initial="initial"
+          animate="animate"
+          variants={fadeInSlow}
         >
           {/* Social Media Icons */}
           <Box
@@ -188,6 +348,10 @@ const HeroBanner = () => {
               display: "flex",
               gap: { xs: 4, lg: 6 },
             }}
+            component={motion.div}
+            initial="initial"
+            animate="animate"
+            variants={socAppearance}
           >
             <StyledSocButton
               aria-label="Facebook"
@@ -235,6 +399,10 @@ const HeroBanner = () => {
               alignItems: "center",
               gap: 1,
             }}
+            component={motion.div}
+            initial="initial"
+            animate="animate"
+            variants={phoneAppearance}
           >
             <Typography
               variant="h6"
@@ -260,6 +428,8 @@ const HeroBanner = () => {
               justifyContent: "center",
               width: "100%",
             }}
+            component={motion.div}
+            variants={arrowAppearance}
           >
             <IconButton
               aria-label="Scroll Down"

@@ -1,3 +1,4 @@
+"use client";
 import { useState, useRef, useEffect } from "react";
 import {
   Button,
@@ -35,14 +36,22 @@ const MotoPark = () => {
   const brandContainerRef = useRef(null);
   const modelContainerRef = useRef(null);
   const { i18n } = useTranslation();
-  const currentLang = i18n.language;
+  const [isMounted, setIsMounted] = useState(false);
+  // const [currentLang, setCurrentLang] = useState(i18n.language);
+  const currentLang = i18n.language as "en" | "ru";
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // useEffect(() => {
+  //   setCurrentLang(i18n.language);
+  // }, [i18n.language]);
 
   const brands = [...new Set(motoData.map((bike) => bike.brand))];
-
   const filteredModels = motoData.filter(
     (bike) => bike.brand === selectedBrand
   );
-
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const scrollToElement = (ref, containerRef, offset, direction) => {
@@ -136,7 +145,7 @@ const MotoPark = () => {
               },
             }}
           >
-            Мотопарк
+            {t("title")}
           </Typography>
 
           {/* Brand Selection */}
@@ -582,7 +591,9 @@ const MotoPark = () => {
                           fontSize: { md: 45, lg: 49 },
                         }}
                       >
-                        {currentBike.features.type[currentLang]}
+                        {isMounted
+                          ? currentBike.features.type[currentLang]
+                          : ""}
                       </Typography>
                       {currentBike.features.abs && (
                         <Typography

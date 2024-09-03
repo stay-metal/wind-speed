@@ -39,6 +39,12 @@ declare module "@mui/material/styles" {
           fast: number;
           medium: number;
           slow: number;
+          verySlow: number;
+        };
+        easing?: {
+          easeInOut?: string;
+          easeOut?: string;
+          easeIn?: string;
         };
       };
       borderRadius?: {
@@ -64,6 +70,12 @@ declare module "@mui/material/styles" {
           fast: number;
           medium: number;
           slow: number;
+          verySlow: number;
+        };
+        easing?: {
+          easeInOut?: string;
+          easeOut?: string;
+          easeIn?: string;
         };
       };
       borderRadius?: {
@@ -253,6 +265,12 @@ const theme = createTheme({
         fast: 0.2,
         medium: 0.5,
         slow: 1,
+        verySlow: 1.8,
+      },
+      easing: {
+        easeInOut: "easeInOut",
+        easeOut: "easeOut",
+        easeIn: "easeIn",
       },
     },
     borderRadius: {
