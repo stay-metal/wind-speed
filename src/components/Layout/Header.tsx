@@ -149,6 +149,7 @@ const Header = () => {
             {isMenuOpen && (
               <AnimateBox
                 sx={{
+                  display: "flex",
                   paddingRight: "30px",
                   paddingLeft: "30px",
                   overflow: "hidden",
