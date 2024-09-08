@@ -153,7 +153,7 @@ const MotoPark = () => {
             sx={{
               display: "flex",
               flexDirection: "row",
-              width: { xs: "110%", md: "auto" },
+              width: { xs: "105%", md: "auto" },
               overflowX: "auto",
               paddingBottom: 1,
             }}
@@ -231,7 +231,7 @@ const MotoPark = () => {
             sx={{
               display: "flex",
               flexDirection: "row",
-              width: { xs: "110%", md: "auto" },
+              width: { xs: "104%", md: "auto" },
               paddingBottom: 1,
               overflowX: "auto",
             }}
@@ -411,6 +411,7 @@ const MotoPark = () => {
                   top: "6px",
                   right: { md: "55px", lg: "120px" },
                   width: { md: "40%", lg: "50%" },
+                  marginBottom: { md: "6px", xl: "6px" },
                   display: "flex",
                   alignItems: "end",
                   order: { xs: 1, sm: 1, md: 0 },
@@ -768,7 +769,7 @@ const MotoPark = () => {
                       xs: "99px",
                       sm: "99px",
                       md: "99px",
-                      lg: "170px",
+                      lg: "110px",
                     },
                     zIndex: 10,
                   }}
