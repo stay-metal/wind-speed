@@ -1,8 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import {
-  Button,
-  Grid,
   Typography,
   IconButton,
   Container,
@@ -13,11 +11,12 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import theme from "@/theme/theme";
 import { Roboto } from "@next/font/google";
-import MotoCharDisplay from "./MotoCharDisplay";
+import MotoChars from "./MotoChars";
 import ShowMore from "./ShowMore";
 import Image from "next/image";
 import { motoData } from "@/data/motopark";
 import { useTranslation } from "next-i18next";
+import PriceList from "./PriceList";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -153,7 +152,7 @@ const MotoPark = () => {
             sx={{
               display: "flex",
               flexDirection: "row",
-              width: { xs: "105%", md: "auto" },
+              width: { xs: "105%", md: "105%", lg: "auto" },
               overflowX: "auto",
               paddingBottom: 1,
             }}
@@ -231,7 +230,8 @@ const MotoPark = () => {
             sx={{
               display: "flex",
               flexDirection: "row",
-              width: { xs: "104%", md: "auto" },
+              width: { xs: "104%", md: "104%", lg: "auto" },
+              height: "auto",
               paddingBottom: 1,
               overflowX: "auto",
             }}
@@ -270,8 +270,10 @@ const MotoPark = () => {
                     fontSize: "16px",
                     position: "relative",
                     minWidth: "80px",
-                    width: "100%",
+                    maxWidth: "200px",
+                    width: "auto",
                     textAlign: "center",
+                    whiteSpace: "nowrap",
                     backgroundColor:
                       index === currentIndex
                         ? theme.palette.primary.main
@@ -365,7 +367,7 @@ const MotoPark = () => {
               className="nextButtonMobile"
               sx={{
                 position: "absolute",
-                top: "50%",
+                top: "46%",
                 left: "4px",
                 transform: "translateY(-100%)",
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
@@ -376,7 +378,7 @@ const MotoPark = () => {
                 height: "58px",
                 zIndex: 100,
                 "&:hover": {
-                  backgroundColor: theme.palette.grey[400],
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
                 },
               }}
             >
@@ -411,7 +413,12 @@ const MotoPark = () => {
                   top: "6px",
                   right: { md: "55px", lg: "120px" },
                   width: { md: "40%", lg: "50%" },
-                  marginBottom: { md: "6px", xl: "6px" },
+                  marginBottom: {
+                    xs: "5px",
+                    sm: "4px",
+                    md: "5.5px",
+                    xl: "5.5px",
+                  },
                   display: "flex",
                   alignItems: "end",
                   order: { xs: 1, sm: 1, md: 0 },
@@ -423,15 +430,15 @@ const MotoPark = () => {
                     position: "absolute",
                     "@media (min-width: 1920px)": {
                       width: "650px",
-                      marginLeft: "30px",
+                      marginLeft: "140px",
                     },
                     "@media (max-width: 1920px)": {
                       width: "650px",
-                      marginLeft: "30px",
+                      marginLeft: "140px",
                     },
                     "@media (max-width: 1280px)": {
                       width: "570px",
-                      marginLeft: "30px",
+                      marginLeft: "140px",
                     },
                     "@media (max-width: 1190px)": {
                       width: "650px",
@@ -443,8 +450,8 @@ const MotoPark = () => {
                       width: "540px",
                     },
                     "@media (max-width: 600px)": {
-                      width: "540px",
-                      marginLeft: "-280px",
+                      width: "520px",
+                      marginLeft: "-270px",
                     },
                     height: "auto",
                   }}
@@ -479,216 +486,22 @@ const MotoPark = () => {
                 }}
               >
                 {showPrices ? (
-                  <Box
-                    sx={{
-                      float: "right",
-                      width: { xs: "261px", sm: "461px", md: "491px" },
-                      marginRight: "0",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: { xs: "start", md: "end" },
-                      marginLeft: { xs: 0, sm: 0, md: 0 },
-                      gap: { xs: 1.7, md: 3 },
-                    }}
-                  >
-                    {currentBike.priceList.map((price, index) => (
-                      <Box
-                        key={index}
-                        className={`itemPrice-${index}`}
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          marginLeft: {
-                            xs: -index * 18.5 + "px",
-                            sm: -20 - index * 14.5 + "px",
-                            md: -70 - index * 18.5 + "px",
-                          },
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: { xs: "block", md: "block" },
-                            marginRight: "-1px",
-                            width: "20px",
-                            height: "auto",
-                            zIndex: -1,
-                            backgroundColor:
-                              theme.custom.pallete?.background?.dark,
-                            clipPath:
-                              "polygon(0 100%, 100% 100%, 100% 0%, 80% 0%)",
-                          }}
-                        ></Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            width: {
-                              xs: 450 + index * 18.5 + "px",
-                              sm: 710 + index * 13.5 + "px",
-                              md: 350 + index * 23.5 + "px",
-                              lg: 450 + index * 23.5 + "px",
-                            },
-                            py: { xs: 1.02, sm: 1.2, md: 1.2, lg: 1.5 },
-                            paddingLeft: { xs: 2, sm: 4, md: 2 },
-                            paddingRight: { xs: 31.3, sm: 39.3, md: 3 },
-                            backgroundColor:
-                              theme.custom.pallete?.background?.dark,
-                          }}
-                        >
-                          <Typography
-                            variant="body1"
-                            className={roboto.className}
-                            sx={{
-                              fontSize: { xs: 19, sm: 21 },
-                              fontStyle: "italic",
-                            }}
-                          >
-                            {price.duration[currentLang]}
-                          </Typography>
-                          <Typography
-                            variant="body1"
-                            className={roboto.className}
-                            sx={{
-                              fontSize: { xs: 19, sm: 21 },
-                              fontStyle: "italic",
-                            }}
-                          >
-                            {price.price}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
+                  <PriceList
+                    priceList={currentBike.priceList}
+                    currentLang={currentLang}
+                  />
                 ) : (
-                  <Box
-                    sx={{
-                      pt: { sm: 2, md: 8 },
-                      pb: 21,
-                      display: "flex",
-                      flexDirection: { xs: "column", sm: "column", md: "row" },
-                      justifyContent: "space-between",
-                      width: "100%",
-                      alignItems: "center",
-                      gap: { xs: 2, sm: 2, md: 0 },
+                  <MotoChars
+                    features={currentBike.features}
+                    charData={{
+                      maxSpeed: currentBike.maxSpeed,
+                      weight: currentBike.weight,
+                      engine: currentBike.engine,
                     }}
-                  >
-                    <Box
-                      sx={{
-                        order: { xs: 1, sm: 1, md: 0 },
-                        display: { xs: "none", md: "flex" },
-                        flexDirection: { sm: "row", md: "column" },
-                        width: "80%",
-                        marginTop: { md: "-10px", lg: "-14px" },
-                        gap: { xs: 3, md: 3, lg: 4 },
-                      }}
-                    >
-                      <Typography
-                        variant="body1"
-                        className={roboto.className}
-                        sx={{
-                          textTransform: "uppercase",
-                          fontStyle: "italic",
-                          fontWeight: 600,
-                          fontSize: { md: 45, lg: 49 },
-                        }}
-                      >
-                        {isMounted
-                          ? currentBike.features.type[currentLang]
-                          : ""}
-                      </Typography>
-                      {currentBike.features.abs && (
-                        <Typography
-                          variant="body1"
-                          className={roboto.className}
-                          sx={{
-                            textTransform: "uppercase",
-                            fontStyle: "italic",
-                            fontWeight: 600,
-                            fontSize: { md: 33, lg: 36 },
-                            color: theme.custom.pallete?.background?.dark,
-                            marginLeft: "-27px",
-                            width: "150%",
-                          }}
-                        >
-                          ABS
-                        </Typography>
-                      )}
-                      <Typography
-                        variant="body1"
-                        className={roboto.className}
-                        sx={{
-                          textTransform: "uppercase",
-                          fontStyle: "italic",
-                          fontWeight: 600,
-                          fontSize: { md: 33, lg: 36 },
-                          marginLeft: "-51px",
-                          color: theme.custom.pallete?.background?.dark,
-                          width: "150%",
-                        }}
-                      >
-                        {t("tires")}{" "}
-                        <span
-                          style={{
-                            fontWeight: 400,
-                            color: theme.palette.background?.paper,
-                          }}
-                        >
-                          {currentBike.features.tires}
-                        </span>
-                      </Typography>
-                      <Typography
-                        className={roboto.className}
-                        variant="body1"
-                        sx={{
-                          textTransform: "uppercase",
-                          fontStyle: "italic",
-                          fontWeight: 600,
-                          fontSize: { md: 33, lg: 36 },
-                          color: theme.custom.pallete?.background?.dark,
-                          marginLeft: "-76px",
-                          width: "150%",
-                        }}
-                      >
-                        {t("exhaust")}{" "}
-                        <span
-                          style={{
-                            fontWeight: 400,
-                            color: theme.palette.background?.paper,
-                          }}
-                        >
-                          {currentBike.features.exhaust}
-                        </span>
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        order: { sm: 0, md: 1 },
-                        display: "flex",
-                        flexDirection: { xs: "row", sm: "row", md: "column" },
-                        alignItems: "center",
-                        justifyContent: "space-evenly",
-                        gap: { xs: 2, sm: 6, md: 4, lg: 5 },
-                        width: { xs: "100%", sm: "auto", md: "20%", lg: "20%" },
-                      }}
-                    >
-                      <MotoCharDisplay
-                        charValue={currentBike.maxSpeed}
-                        charMetrica={t("speed.metric")}
-                        charDescription={t("speed.title")}
-                      />
-
-                      <MotoCharDisplay
-                        charValue={currentBike.weight}
-                        charMetrica={t("weight.metric")}
-                        charDescription={t("weight.title")}
-                      />
-                      <MotoCharDisplay
-                        charValue={currentBike.engine}
-                        charMetrica={t("engine.metric")}
-                        charDescription={t("engine.title")}
-                      />
-                    </Box>
-                  </Box>
+                    currentLang={currentLang}
+                    t={t}
+                    isMounted={isMounted}
+                  />
                 )}
               </Box>
             </Box>
@@ -793,7 +606,7 @@ const MotoPark = () => {
                         fontSize: {
                           xs: 27,
                           sm: 30,
-                          md: 36,
+                          md: 34,
                           lg: 46,
                         },
                         fontWeight: 800,
@@ -803,6 +616,7 @@ const MotoPark = () => {
                       <span
                         style={{
                           textTransform: "uppercase",
+                          color: theme.palette.background.paper,
                         }}
                       >
                         {currentBike.brand}
@@ -812,9 +626,9 @@ const MotoPark = () => {
                       variant="h4"
                       sx={{
                         fontSize: {
-                          xs: 27,
+                          xs: 24,
                           sm: 30,
-                          md: 36,
+                          md: 34,
                           lg: 46,
                         },
                         fontWeight: 800,
@@ -835,10 +649,11 @@ const MotoPark = () => {
                   <Typography
                     variant="h5"
                     sx={{
-                      fontSize: { sm: 30, md: 36, lg: 46 },
+                      fontSize: { sm: 30, md: 34, lg: 46 },
                       fontWeight: 800,
                       fontStyle: "italic",
                       paddingRight: 10,
+                      color: theme.palette.background.paper,
                     }}
                   >
                     ฿ {currentBike.price}
@@ -921,7 +736,7 @@ const MotoPark = () => {
               className="nextButtonMobile"
               sx={{
                 position: "absolute",
-                top: "50%",
+                top: "46%",
                 right: "4px",
                 transform: "translateY(-100%)",
                 backgroundColor: "rgba(255, 255, 255, 0.7)",
@@ -931,7 +746,7 @@ const MotoPark = () => {
                 width: "60px",
                 height: "58px",
                 "&:hover": {
-                  backgroundColor: theme.palette.grey[400],
+                  backgroundColor: "rgba(255, 255, 255, 0.7)",
                 },
               }}
             >

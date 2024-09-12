@@ -22,42 +22,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "3998 THB",
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "3198 THB",
+        price: {
+          en: "3198 THB",
+          ru: "3198 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "2598 THB",
+        price: {
+          en: "2598 THB",
+          ru: "2598 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "1498 THB",
+        price: {
+          en: "1498 THB",
+          ru: "1498 бат",
+        },
       },
       {
         duration: {
           en: "Deposit",
           ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -84,42 +102,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "5998",
+        price: {
+          en: "5998 THB",
+          ru: "5998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "4998",
+        price: {
+          en: "4998 THB",
+          ru: "4998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "3998",
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "2998",
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "2498",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -146,42 +182,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "5998",
+        price: {
+          en: "5998 THB",
+          ru: "5998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "4998",
+        price: {
+          en: "4998 THB",
+          ru: "4998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "3998",
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "2998",
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "2498",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -208,42 +262,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "6998",
+        price: {
+          en: "6998 THB",
+          ru: "6998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "5998",
+        price: {
+          en: "5998 THB",
+          ru: "5998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "4998",
+        price: {
+          en: "4998 THB",
+          ru: "4998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "3998",
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "2498",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -270,42 +342,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "5998",
+        price: {
+          en: "5998 THB",
+          ru: "5998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "4998",
+        price: {
+          en: "4998 THB",
+          ru: "4998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "3998",
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "2998",
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "2498",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "For club members",
           ru: "Для членов клуба",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -332,42 +422,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "3298 THB",
+        price: {
+          en: "3298 THB",
+          ru: "3298 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -394,42 +502,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "2898 THB",
+        price: {
+          en: "2898 THB",
+          ru: "2898 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1698 THB",
+        price: {
+          en: "1698 THB",
+          ru: "1698 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1298 THB",
+        price: {
+          en: "1298 THB",
+          ru: "1298 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "30000 бат или паспорт",
+        price: {
+          en: "Passport or 30000 THB",
+          ru: "Паспорт или 30000 бат",
+        },
       },
     ],
   },
@@ -456,42 +582,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "3298 THB",
+        price: {
+          en: "3298 THB",
+          ru: "3298 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -518,42 +662,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1898 THB",
+        price: {
+          en: "1898 THB",
+          ru: "1898 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "898 THB",
+        price: {
+          en: "898 THB",
+          ru: "898 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "35000 бат или паспорт",
+        price: {
+          en: "Passport or 35000 THB",
+          ru: "Паспорт или 35000 бат",
+        },
       },
     ],
   },
@@ -580,42 +742,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "2898 THB",
+        price: {
+          en: "2898 THB",
+          ru: "2898 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1698 THB",
+        price: {
+          en: "1698 THB",
+          ru: "1698 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1298 THB",
+        price: {
+          en: "1298 THB",
+          ru: "1298 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "30000 бат или паспорт",
+        price: {
+          en: "Passport or 30000 THB",
+          ru: "Паспорт или 30000 бат",
+        },
       },
     ],
   },
@@ -642,42 +822,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "4998 THB",
+        price: {
+          en: "4998 THB",
+          ru: "4998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "3998 THB",
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "3498 THB",
+        price: {
+          en: "3498 THB",
+          ru: "3498 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "2998 THB",
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "For club members",
           ru: "Для членов клуба",
         },
-        price: "50000 бат или паспорт",
+        price: {
+          en: "Passport or 50000 THB",
+          ru: "Паспорт или 50000 бат",
+        },
       },
     ],
   },
@@ -704,42 +902,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "3198 THB",
+        price: {
+          en: "3198 THB",
+          ru: "3198 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "2598 THB",
+        price: {
+          en: "2598 THB",
+          ru: "2598 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1498 THB",
+        price: {
+          en: "1498 THB",
+          ru: "1498 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "1298 THB",
+        price: {
+          en: "1298 THB",
+          ru: "1298 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -766,42 +982,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "3298 THB",
+        price: {
+          en: "3298 THB",
+          ru: "3298 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
           en: "For club members",
           ru: "Для членов клуба",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
@@ -829,48 +1063,66 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "3298 THB",
+        price: {
+          en: "3298 THB",
+          ru: "3298 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1998 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "40000 бат или паспорт",
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
       },
     ],
   },
   {
     brand: "Kawasaki",
-    model: "Vulcan 650S",
+    model: "650S",
     image: "/images/bikes/kawasaki/vulkan-s650.png",
     maxSpeed: "175",
     weight: "229",
@@ -891,42 +1143,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1898 THB",
+        price: {
+          en: "1898 THB",
+          ru: "1898 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "898 THB",
+        price: {
+          en: "898 THB",
+          ru: "898 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "25000 бат или паспорт",
+        price: {
+          en: "Passport or 25000 THB",
+          ru: "Паспорт или 25000 бат",
+        },
       },
     ],
   },
@@ -953,42 +1223,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "2498 THB",
+        price: {
+          en: "3298 THB",
+          ru: "3298 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1898 THB",
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "898 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "25000 бат или паспорт",
+        price: {
+          en: "Passport or 25000 THB",
+          ru: "Паспорт или 25000 бат",
+        },
       },
     ],
   },
@@ -1015,42 +1303,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "2198 THB",
+        price: {
+          en: "2198 THB",
+          ru: "2198 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1598 THB",
+        price: {
+          en: "1598 THB",
+          ru: "1598 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "1298 THB",
+        price: {
+          en: "1298 THB",
+          ru: "1298 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "698 THB",
+        price: {
+          en: "698 THB",
+          ru: "698 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "20000 бат или паспорт",
+        price: {
+          en: "Passport or 20000 THB",
+          ru: "Паспорт или 20000 бат",
+        },
       },
     ],
   },
@@ -1077,42 +1383,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "1398 THB",
+        price: {
+          en: "1398 THB",
+          ru: "1398 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "798 THB",
+        price: {
+          en: "798 THB",
+          ru: "798 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "598 THB",
+        price: {
+          en: "598 THB",
+          ru: "598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "398 THB",
+        price: {
+          en: "398 THB",
+          ru: "398 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "15000 бат или паспорт",
+        price: {
+          en: "Passport or 15000 THB",
+          ru: "Паспорт или 15000 бат",
+        },
       },
     ],
   },
@@ -1139,42 +1463,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "1398 THB",
+        price: {
+          en: "1398 THB",
+          ru: "1398 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "798 THB",
+        price: {
+          en: "798 THB",
+          ru: "798 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "598 THB",
+        price: {
+          en: "598 THB",
+          ru: "598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "398 THB",
+        price: {
+          en: "398 THB",
+          ru: "398 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "15000 бат или паспорт",
+        price: {
+          en: "Passport or 15000 THB",
+          ru: "Паспорт или 15000 бат",
+        },
       },
     ],
   },
@@ -1201,42 +1543,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "1398 THB",
+        price: {
+          en: "1398 THB",
+          ru: "1398 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "798 THB",
+        price: {
+          en: "798 THB",
+          ru: "798 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "598 THB",
+        price: {
+          en: "598 THB",
+          ru: "598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "398 THB",
+        price: {
+          en: "398 THB",
+          ru: "398 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "15000 бат или паспорт",
+        price: {
+          en: "Passport or 15000 THB",
+          ru: "Паспорт или 15000 бат",
+        },
       },
     ],
   },
@@ -1263,111 +1623,67 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "1398 THB",
+        price: {
+          en: "1398 THB",
+          ru: "1398 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "998 THB",
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "798 THB",
+        price: {
+          en: "798 THB",
+          ru: "798 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "598 THB",
+        price: {
+          en: "598 THB",
+          ru: "598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "398 THB",
+        price: {
+          en: "398 THB",
+          ru: "398 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "15000 бат или паспорт",
-      },
-    ],
-  },
-  {
-    brand: "KTM",
-    model: "duke 390",
-    image: "/images/bikes/ktm/ktm-duke-390.png",
-    maxSpeed: "175",
-    weight: "150",
-    engine: "373",
-    features: {
-      type: {
-        en: "Naked",
-        ru: "Нейкед",
-      },
-      abs: true,
-      tires: "Dunlop",
-      exhaust: "Standart",
-    },
-    price: "1398",
-    priceList: [
-      {
-        duration: {
-          en: "2 - 3 days",
-          ru: "От 2 до 3 дней",
+        price: {
+          en: "Passport or 15000 THB",
+          ru: "Паспорт или 15000 бат",
         },
-        price: "1398 THB",
-      },
-      {
-        duration: {
-          en: "4 - 7 days",
-          ru: "От 4 до 7 дней",
-        },
-        price: "998 THB",
-      },
-      {
-        duration: {
-          en: "8 - 14 days",
-          ru: "Oт 8 до 14 дней",
-        },
-        price: "798 THB",
-      },
-      {
-        duration: {
-          en: "15 - 29 days",
-          ru: "Oт 15 до 29 дней",
-        },
-        price: "598 THB",
-      },
-      {
-        duration: {
-          en: "30+ days",
-          ru: "Oт 30+ дней",
-        },
-        price: "398 THB",
-      },
-      {
-        duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
-        },
-        price: "15000 бат или паспорт",
       },
     ],
   },
   {
     brand: "Honda",
     model: "cb 300",
-    image: "/images/bikes/ktm/honda-cb-300.png",
+    image: "/images/bikes/honda/honda-cb-300.png",
     maxSpeed: "145",
     weight: "143",
     engine: "286",
@@ -1387,42 +1703,60 @@ export const motoData = [
           en: "2 - 3 days",
           ru: "От 2 до 3 дней",
         },
-        price: "1398 THB",
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
       },
       {
         duration: {
           en: "4 - 7 days",
           ru: "От 4 до 7 дней",
         },
-        price: "1198 THB",
+        price: {
+          en: "1198 THB",
+          ru: "1198 бат",
+        },
       },
       {
         duration: {
           en: "8 - 14 days",
           ru: "Oт 8 до 14 дней",
         },
-        price: "898 THB",
+        price: {
+          en: "898 THB",
+          ru: "898 бат",
+        },
       },
       {
         duration: {
           en: "15 - 29 days",
           ru: "Oт 15 до 29 дней",
         },
-        price: "598 THB",
+        price: {
+          en: "598 THB",
+          ru: "598 бат",
+        },
       },
       {
         duration: {
           en: "30+ days",
           ru: "Oт 30+ дней",
         },
-        price: "498 THB",
+        price: {
+          en: "498 THB",
+          ru: "498 бат",
+        },
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
-        price: "20000 бат или паспорт",
+        price: {
+          en: "Passport or 20000 THB",
+          ru: "Паспорт или 20000 бат",
+        },
       },
     ],
   },

@@ -34,7 +34,7 @@ export default function MotoCharDisplay({
           gap: 1,
           justifyContent: "center",
           alignItems: "center",
-          height: { xs: "40px", sm: "45px", md: "50px" },
+          height: { xs: "40px", sm: "45px", md: "60px" },
         }}
       >
         <Typography

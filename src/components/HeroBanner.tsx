@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Box, Typography, IconButton, Container } from "@mui/material";
+import Lottie from "react-lottie-player";
+import LottieScrolDown from "./Animations/Lottie/arrow_down.json";
 import { delay, motion } from "framer-motion";
 import {
   FacebookOutlined,
@@ -423,7 +425,7 @@ const HeroBanner = () => {
           <Box
             sx={{
               position: "absolute",
-              bottom: { xs: 0, md: 20, lg: 43 }, // Distance from the bottom
+              bottom: { xs: 0, md: 20, lg: 0 }, // Distance from the bottom
               display: { xs: "none", sm: "none", md: "flex" },
               justifyContent: "center",
               width: "100%",
@@ -436,7 +438,12 @@ const HeroBanner = () => {
               href="#your-section-id" // Link to the section you want to scroll down to
               sx={{ color: "#fff" }}
             >
-              <ArrowDownIcon sx={{ width: { lg: "20px", xl: "30px" } }} />
+              <Lottie
+                loop
+                animationData={LottieScrolDown}
+                play
+                style={{ width: 100, height: 100 }}
+              />
             </IconButton>
           </Box>
         </Box>
