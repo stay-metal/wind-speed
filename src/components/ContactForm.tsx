@@ -80,6 +80,9 @@ const ContactForm = () => {
           "& .MuiOutlinedInput-root": {
             padding: 0, // Removes padding from the specified component
           },
+          "& .MuiInputBase-inputMultiline": {
+            padding: "15px", // Add padding directly to the textarea
+          },
           // padding: { xs: 0, sm: 4 },
         }}
       />

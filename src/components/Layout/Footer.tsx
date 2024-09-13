@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Typography,
@@ -40,14 +41,20 @@ const Footer = () => {
         <Box>
           <Logo footer />
         </Box>
-        <Box>
+        <Box
+          sx={{
+            whiteSpace: "nowrap",
+            display: "flex",
+            gap: { xs: 2, sm: 2, md: 4, lg: 5, xl: 6 },
+          }}
+        >
           <Link
             href="#"
             color="inherit"
             underline="none"
             sx={{
               fontSize: { xs: 12, sm: 15, md: 16, lg: 18 },
-              mr: { xs: 3, sm: 6, md: 8, lg: 10 },
+              // mr: { xs: 0, sm: 6, md: 8, lg: 10 },
             }}
           >
             Каталог
@@ -58,7 +65,7 @@ const Footer = () => {
             underline="none"
             sx={{
               fontSize: { xs: 12, sm: 15, md: 16, lg: 18 },
-              mr: { xs: 3, sm: 6, md: 8, lg: 10 },
+              // mr: { xs: 0, sm: 6, md: 8, lg: 10 },
             }}
           >
             Преимущества
@@ -67,20 +74,20 @@ const Footer = () => {
             href="#"
             color="inherit"
             underline="none"
-            sx={{
-              fontSize: { xs: 12, sm: 15, md: 16, lg: 18 },
-              mr: { xs: 3, sm: 6, md: 8, lg: 10 },
-            }}
+            sx={{ fontSize: { xs: 12, sm: 15, md: 16, lg: 18 } }}
           >
-            Как мы работаем
+            Контакты
           </Link>
           <Link
             href="#"
             color="inherit"
             underline="none"
-            sx={{ fontSize: { xs: 12, sm: 15, md: 16, lg: 18 } }}
+            sx={{
+              fontSize: { xs: 12, sm: 15, md: 16, lg: 18 },
+              // mr: { xs: 0, sm: 6, md: 8, lg: 10 },
+            }}
           >
-            Контакты
+            Как мы работаем
           </Link>
         </Box>
         <Box>
@@ -193,23 +200,29 @@ const Footer = () => {
             }}
           >
             <Typography
-              variant="body2"
               sx={{
                 textAlign: { xs: "start", sm: "end" },
                 fontSize: { xs: 13, sm: 14, md: 16, lg: 18 },
                 width: { xs: "50%", sm: "100%" },
                 fontWeight: "200",
+                textDecoration: "none !important",
+                "& a": {
+                  textDecoration: "none !important",
+                },
               }}
             >
               +6 66 470146 47
             </Typography>
             <Typography
-              variant="body2"
               sx={{
                 textAlign: "end",
                 fontSize: { xs: 11, sm: 12, md: 14, lg: 16 },
                 width: { xs: "50%", sm: "100%" },
                 fontWeight: "200",
+                textDecoration: "none !important",
+                "& a": {
+                  textDecoration: "none !important",
+                },
               }}
             >
               windspeedbike@gmail.com

@@ -1,3 +1,4 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import { Roboto } from "@next/font/google";
 import theme from "@/theme/theme";

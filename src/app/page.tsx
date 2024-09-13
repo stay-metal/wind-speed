@@ -10,8 +10,11 @@ const HomePage: React.FC = () => {
     <>
       <HeroBanner />
       <MotoPark />
+      <section id="howWeWork"></section>
       <HowWeWork />
+      <section id="benefits"></section>
       <Advantages />
+      <section id="contacts"></section>
       <Contacts />
       {/* <ContactForm />
       <ContactMap /> */}

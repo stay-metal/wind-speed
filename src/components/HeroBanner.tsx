@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Box, Typography, IconButton, Container } from "@mui/material";
-import Lottie from "react-lottie-player";
+
 import LottieScrolDown from "./Animations/Lottie/arrow_down.json";
 import { delay, motion } from "framer-motion";
 import {
@@ -14,8 +14,13 @@ import { useTranslation } from "next-i18next";
 import { Kulim_Park } from "@next/font/google";
 import theme from "@/theme/theme";
 import { styled } from "@mui/material";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 
-// Initialize Roboto font styles
+const Lottie = dynamic(() => import("react-lottie-player"), {
+  ssr: false,
+});
+
 const kulim = Kulim_Park({
   subsets: ["latin"],
   weight: ["200", "300", "400", "600", "700"],
@@ -59,7 +64,7 @@ const fadeInSlow = {
 };
 
 const heroImage = {
-  initial: { opacity: 0, scale: 0.98 },
+  initial: { opacity: 0, scale: 1 },
   animate: {
     opacity: 1,
     scale: 1,
@@ -195,7 +200,7 @@ const StyledSocButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-const ArrowDownIcon = (props) => (
+const ArrowDownIcon = (props: any) => (
   <svg
     width="41"
     height="38"
@@ -433,18 +438,20 @@ const HeroBanner = () => {
             component={motion.div}
             variants={arrowAppearance}
           >
-            <IconButton
-              aria-label="Scroll Down"
-              href="#your-section-id" // Link to the section you want to scroll down to
-              sx={{ color: "#fff" }}
-            >
-              <Lottie
-                loop
-                animationData={LottieScrolDown}
-                play
-                style={{ width: 100, height: 100 }}
-              />
-            </IconButton>
+            <Link href="#catalog" passHref>
+              <IconButton
+                aria-label="Scroll Down"
+                href="#your-section-id" // Link to the section you want to scroll down to
+                sx={{ color: "#fff" }}
+              >
+                <Lottie
+                  loop
+                  animationData={LottieScrolDown}
+                  play
+                  style={{ width: 100, height: 100 }}
+                />
+              </IconButton>
+            </Link>
           </Box>
         </Box>
       </Container>

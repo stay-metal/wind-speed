@@ -17,6 +17,7 @@ import Image from "next/image";
 import { motoData } from "@/data/motopark";
 import { useTranslation } from "next-i18next";
 import PriceList from "./PriceList";
+import { motion } from "framer-motion";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -24,6 +25,23 @@ const roboto = Roboto({
   style: ["italic", "normal"],
   display: "swap",
 });
+
+const variants = {
+  hidden: { opacity: 0, x: 100 }, // Start hidden (offscreen right)
+  visible: { opacity: 1, x: 0 }, // Animate to visible (onscreen)
+  exit: { opacity: 0, x: -100 }, // Exit to left (offscreen left)
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, x: -50 }, // Start offscreen to the right
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }, // Animate into view
+  exit: { opacity: 0, x: -50, transition: { duration: 0.5 } }, // Animate out to the left
+};
+const pricesVariants = {
+  hidden: { opacity: 0, x: 50 }, // Start offscreen to the right
+  visible: { opacity: 1, x: 0, transition: { delay: 0.1, duration: 0.5 } }, // Animate into view
+  exit: { opacity: 0, x: 50, transition: { duration: 0.5 } }, // Animate out to the left
+};
 
 const MotoPark = () => {
   const { t } = useTranslation("motopark");
@@ -36,7 +54,6 @@ const MotoPark = () => {
   const modelContainerRef = useRef(null);
   const { i18n } = useTranslation();
   const [isMounted, setIsMounted] = useState(false);
-  // const [currentLang, setCurrentLang] = useState(i18n.language);
   const currentLang = i18n.language as "en" | "ru";
 
   useEffect(() => {
@@ -116,6 +133,11 @@ const MotoPark = () => {
   };
 
   const currentBike = filteredModels[currentIndex];
+  const fadeInOut = {
+    initial: { opacity: 0, x: 100 },
+    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, x: -100, transition: { duration: 0.5 } },
+  };
 
   return (
     <Box>
@@ -132,6 +154,8 @@ const MotoPark = () => {
             pb: 2.2,
           }}
         >
+          {" "}
+          <section id="catalog"></section>
           <Typography
             variant="h2"
             component="h2"
@@ -146,7 +170,6 @@ const MotoPark = () => {
           >
             {t("title")}
           </Typography>
-
           {/* Brand Selection */}
           <Box
             sx={{
@@ -155,6 +178,18 @@ const MotoPark = () => {
               width: { xs: "105%", md: "105%", lg: "auto" },
               overflowX: "auto",
               paddingBottom: 1,
+              "&::-webkit-scrollbar": {
+                height: "3px",
+                background: theme.palette.grey[200],
+                borderRadius: "10px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: theme.palette.grey[700],
+                borderRadius: "10px",
+              },
+              "&::-webkit-scrollbar-track": {
+                backgroundColor: "transparent",
+              },
             }}
             ref={brandContainerRef}
           >
@@ -223,7 +258,6 @@ const MotoPark = () => {
               </Box>
             ))}
           </Box>
-
           {/* Model Selection */}
           <Box
             mt={{ xs: 1.3, md: 2.2 }}
@@ -234,6 +268,21 @@ const MotoPark = () => {
               height: "auto",
               paddingBottom: 1,
               overflowX: "auto",
+
+              // Custom scrollbar styles for the models
+              "&::-webkit-scrollbar": {
+                height: "3px", // Set the height of the scrollbar
+                background: theme.palette.grey[200],
+                borderRadius: "10px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: theme.palette.grey[700],
+                // backgroundColor: theme.palette.text.primary
+                borderRadius: "10px",
+              },
+              "&::-webkit-scrollbar-track": {
+                backgroundColor: "transparent", // Color of the scroll track
+              },
             }}
             ref={modelContainerRef}
           >
@@ -456,17 +505,25 @@ const MotoPark = () => {
                     height: "auto",
                   }}
                 >
-                  <Image
-                    src={currentBike.image}
-                    alt={currentBike.model}
-                    width="801"
-                    height="406"
-                    objectFit="fit"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                    }}
-                  />
+                  <motion.div
+                    key={currentBike.model} // This ensures the animation triggers on bike change
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={imageVariants}
+                  >
+                    <Image
+                      src={currentBike.image}
+                      alt={currentBike.model}
+                      width="801"
+                      height="406"
+                      objectFit="fit"
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                      }}
+                    />
+                  </motion.div>
                 </Box>
               </Box>
               <Box
@@ -486,10 +543,18 @@ const MotoPark = () => {
                 }}
               >
                 {showPrices ? (
-                  <PriceList
-                    priceList={currentBike.priceList}
-                    currentLang={currentLang}
-                  />
+                  <motion.div
+                    key={currentBike.model} // This ensures the animation triggers on bike change
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={pricesVariants}
+                  >
+                    <PriceList
+                      priceList={currentBike.priceList}
+                      currentLang={currentLang}
+                    />
+                  </motion.div>
                 ) : (
                   <MotoChars
                     features={currentBike.features}
@@ -517,7 +582,7 @@ const MotoPark = () => {
               <Box
                 sx={{
                   position: "absolute",
-                  right: 0,
+                  right: { xs: 0, sm: 0, md: "7px", lg: "7px" },
                   bottom: {
                     xs: "117px",
                     sm: "101px",

@@ -1,3 +1,4 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import { Roboto } from "@next/font/google";
 import theme from "@/theme/theme";
@@ -24,7 +25,7 @@ const PriceList: React.FC<PriceListProps> = ({ priceList, currentLang }) => {
     <Box
       sx={{
         float: "right",
-        width: { xs: "70%", sm: "461px", md: "491px" },
+        width: { xs: "58%", sm: "461px", md: "491px" },
         marginRight: "0",
         display: "flex",
         flexDirection: "column",
@@ -74,7 +75,7 @@ const PriceList: React.FC<PriceListProps> = ({ priceList, currentLang }) => {
               paddingLeft: { xs: 2, sm: 4, md: 2 },
               //   paddingRight: { xs: 28.3, sm: 39.3, md: 3 },
               paddingRight: {
-                xs: 218 + index * 11 + "px",
+                xs: 200 + index * 11 + "px",
                 sm: 70 + index * 15 + "px",
                 md: 3,
               },

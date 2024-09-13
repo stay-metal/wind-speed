@@ -13,6 +13,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 const AnimateMenuButton = motion(MenuButton);
 const AnimateBox = motion(Box);
+import Link from "next/link";
 
 const list = { hidden: { x: -10, opacity: 0 } };
 
@@ -77,19 +78,19 @@ const Header = () => {
       catalog: { width: 134, left: -9 },
       howWeWork: { width: 224, left: -6 },
       benefits: { width: 256, left: -3 },
-      contacts: { width: 134 },
+      contacts: { width: 134, left: 0 },
     },
     lg: {
       catalog: { width: 134, left: -9 },
       howWeWork: { width: 224, left: -6 },
       benefits: { width: 256, left: -3 },
-      contacts: { width: 134 },
+      contacts: { width: 134, left: 0 },
     },
     md: {
       catalog: { width: 100, left: -9 },
       howWeWork: { width: 160, left: -6 },
       benefits: { width: 190, left: -3 },
-      contacts: { width: 100 },
+      contacts: { width: 100, left: 0 },
     },
     sm: {
       catalog: { width: 160, left: 90 },
@@ -118,7 +119,7 @@ const Header = () => {
             animate="animate"
             variants={logoMotion}
           >
-            <Logo />
+            <Logo footer={null} />
           </Box>
           <Box
             sx={{
@@ -169,6 +170,7 @@ const Header = () => {
                   },
                   [theme.breakpoints.down("sm")]: {
                     top: "60px",
+                    gap: 1.7,
                   },
                 }}
                 animate="hidden"
@@ -184,47 +186,55 @@ const Header = () => {
                     order: { xs: 0, md: 0 },
                   }}
                 >
-                  <AnimateMenuButton
-                    text={t("menu.catalog")}
-                    width={selectedSize.catalog.width}
-                    left={selectedSize.catalog.left}
-                  />
+                  <Link href="#catalog" passHref>
+                    <AnimateMenuButton
+                      text={t("menu.catalog")}
+                      width={selectedSize.catalog.width}
+                      left={selectedSize.catalog.left}
+                    />
+                  </Link>
                 </Box>
                 <Box
                   sx={{
                     order: { xs: 2, md: 1 },
                   }}
                 >
-                  <AnimateMenuButton
-                    text={t("menu.howWeWork")}
-                    width={selectedSize.howWeWork.width}
-                    left={selectedSize.howWeWork.left}
-                    animate={{ x: 100 }}
-                  />
+                  <Link href="#howWeWork" passHref>
+                    <AnimateMenuButton
+                      text={t("menu.howWeWork")}
+                      width={selectedSize.howWeWork.width}
+                      left={selectedSize.howWeWork.left}
+                      animate={{ x: 100 }}
+                    />
+                  </Link>
                 </Box>
                 <Box
                   sx={{
                     order: { xs: 3, md: 2 },
                   }}
                 >
-                  <AnimateMenuButton
-                    text={t("menu.benefits")}
-                    width={selectedSize.benefits.width}
-                    left={selectedSize.benefits.left}
-                    animate={{ x: 100 }}
-                  />
+                  <Link href="#benefits" passHref>
+                    <AnimateMenuButton
+                      text={t("menu.benefits")}
+                      width={selectedSize.benefits.width}
+                      left={selectedSize.benefits.left}
+                      animate={{ x: 100 }}
+                    />
+                  </Link>
                 </Box>
                 <Box
                   sx={{
                     order: { xs: 1, md: 3 },
                   }}
                 >
-                  <AnimateMenuButton
-                    text={t("menu.contacts")}
-                    width={selectedSize.contacts.width}
-                    left={selectedSize.contacts.left}
-                    animate={{ x: 100 }}
-                  />
+                  <Link href="#contacts" passHref>
+                    <AnimateMenuButton
+                      text={t("menu.contacts")}
+                      width={selectedSize.contacts.width}
+                      left={selectedSize.contacts.left}
+                      animate={{ x: 100 }}
+                    />
+                  </Link>
                 </Box>
               </AnimateBox>
             )}

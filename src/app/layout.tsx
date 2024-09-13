@@ -20,7 +20,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<string>("en");
 
   useEffect(() => {
-    setLanguage(i18n.language || "en");
+    const storedLanguage = localStorage.getItem("language") || "en";
+    setLanguage(storedLanguage);
+    i18n.changeLanguage(storedLanguage); // Set the language in i18n
+  }, [i18n]);
+  useEffect(() => {
+    if (i18n.language) {
+      localStorage.setItem("language", i18n.language);
+      setLanguage(i18n.language);
+    }
   }, [i18n.language]);
 
   return (

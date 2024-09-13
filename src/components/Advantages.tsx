@@ -1,9 +1,8 @@
 "use client";
-import { Box, Typography, Grid, Container } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import Image from "next/image"; // Assuming you are using Next.js
 import theme from "@/theme/theme";
 import { useTranslation } from "next-i18next";
-import { relative } from "path";
 
 const Advantages = () => {
   const { t } = useTranslation("advantages");

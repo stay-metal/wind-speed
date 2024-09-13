@@ -1,4 +1,4 @@
-"use client"; // Ensure this is a client component
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Button, Typography } from "@mui/material";

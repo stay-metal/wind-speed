@@ -129,6 +129,9 @@ const theme = createTheme({
         // fontSize: "0.875rem",
       },
     },
+    body2: {
+      textDecoration: "none",
+    },
   },
   components: {
     MuiCssBaseline: {
