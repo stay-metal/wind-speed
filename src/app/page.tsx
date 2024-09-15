@@ -4,6 +4,7 @@ import MotoPark from "@/components/MotoPark";
 import HowWeWork from "@/components/HowWeWork";
 import Advantages from "@/components/Advantages";
 import Contacts from "@/components/Contacts";
+import BackToTopButton from "@/components/BackToTopButton";
 
 const HomePage: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage: React.FC = () => {
       <Contacts />
       {/* <ContactForm />
       <ContactMap /> */}
+      <BackToTopButton />
     </>
   );
 };

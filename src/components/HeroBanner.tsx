@@ -324,7 +324,13 @@ const HeroBanner = () => {
               lineHeight: "130%",
               wordWrap: "break-word",
             }}
-            dangerouslySetInnerHTML={{ __html: t("title.subtitle") }}
+            dangerouslySetInnerHTML={{
+              __html:
+                t("title.subtitle") +
+                `<a href="/#contacts" style="color: white; text-decoration: underline;">${t(
+                  "title.link"
+                )}</a>`,
+            }}
             initial="initial"
             animate="animate"
             variants={fadeInSlow}

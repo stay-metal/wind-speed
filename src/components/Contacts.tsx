@@ -99,9 +99,9 @@ const Contacts = () => {
                 {/* {t("address.title")} <br />  */}
                 {t("address.value")}
               </Box>
-              {/* <Box>
-                  {t("phone.title")} <br /> {t("phone.value")}
-                </Box> */}
+              <Box>
+                {t("phone.title")} {t("phone.value")}
+              </Box>
             </Typography>
             <Box>
               <ContactForm />

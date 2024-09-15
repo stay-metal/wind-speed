@@ -14,8 +14,11 @@ import {
   WhatsApp,
 } from "@mui/icons-material";
 import Logo from "../Navigation/Logo";
+import { useTranslation } from "next-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation("footer");
+
   return (
     <Box
       sx={{
@@ -45,7 +48,7 @@ const Footer = () => {
           sx={{
             whiteSpace: "nowrap",
             display: "flex",
-            gap: { xs: 2, sm: 2, md: 4, lg: 5, xl: 6 },
+            gap: { xs: 1, sm: 2, md: 4, lg: 5, xl: 6 },
           }}
         >
           <Link
@@ -57,7 +60,7 @@ const Footer = () => {
               // mr: { xs: 0, sm: 6, md: 8, lg: 10 },
             }}
           >
-            Каталог
+            {t("menu.catalog")}
           </Link>
           <Link
             href="#"
@@ -68,7 +71,7 @@ const Footer = () => {
               // mr: { xs: 0, sm: 6, md: 8, lg: 10 },
             }}
           >
-            Преимущества
+            {t("menu.benefits")}
           </Link>
           <Link
             href="#"
@@ -76,7 +79,7 @@ const Footer = () => {
             underline="none"
             sx={{ fontSize: { xs: 12, sm: 15, md: 16, lg: 18 } }}
           >
-            Контакты
+            {t("menu.contacts")}
           </Link>
           <Link
             href="#"
@@ -87,7 +90,7 @@ const Footer = () => {
               // mr: { xs: 0, sm: 6, md: 8, lg: 10 },
             }}
           >
-            Как мы работаем
+            {t("menu.howWeWork")}
           </Link>
         </Box>
         <Box>
@@ -174,7 +177,7 @@ const Footer = () => {
                 width: { xs: "80%", sm: "50%" },
               }}
             >
-              Таиланд, Пхукет
+              {t("address")}
             </Typography>
             <Typography
               variant="body2"
@@ -185,7 +188,7 @@ const Footer = () => {
                 width: { xs: "100%", sm: "100%" },
               }}
             >
-              ул. 88/14 Khrongkan Ban Rawai-Ban Nai Han Rd.
+              88/14 Khrongkan Ban Rawai-Ban Nai Han Rd.
             </Typography>
           </Box>
           <Box
@@ -237,7 +240,7 @@ const Footer = () => {
               fontSize: { xs: 11, sm: 12, md: 14, lg: 16 },
             }}
           >
-            © {new Date().getFullYear()} WindSpeed. Все права защищены.
+            © {new Date().getFullYear()} {t("copyright")}
           </Typography>
         </Box>
       </Container>
