@@ -367,8 +367,8 @@ const HeroBanner = () => {
             variants={socAppearance}
           >
             <StyledSocButton
-              aria-label="Facebook"
-              href="https://www.facebook.com"
+              aria-label="Telegram"
+              href="https://t.me/Che_Smotrish_555"
               target="_blank"
               rel="noopener noreferrer"
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}
@@ -376,8 +376,8 @@ const HeroBanner = () => {
               <Telegram />
             </StyledSocButton>
             <StyledSocButton
-              aria-label="Twitter"
-              href="https://www.twitter.com"
+              aria-label="Facebook"
+              href="https://www.facebook.com/profile.php?id=61565481077083"
               target="_blank"
               rel="noopener noreferrer"
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}
@@ -386,7 +386,7 @@ const HeroBanner = () => {
             </StyledSocButton>
             <StyledSocButton
               aria-label="Instagram"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/windspeed_rent_bike_phuket"
               target="_blank"
               rel="noopener noreferrer"
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}
@@ -394,8 +394,8 @@ const HeroBanner = () => {
               <Instagram />
             </StyledSocButton>
             <StyledSocButton
-              aria-label="LinkedIn"
-              href="https://www.linkedin.com"
+              aria-label="WhatsApp"
+              href="https://wa.me/+66647014647"
               target="_blank"
               rel="noopener noreferrer"
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}
@@ -427,8 +427,15 @@ const HeroBanner = () => {
                 fontSize: { xs: 33, sm: 32, md: 32, lg: 37 },
               }}
             >
-              <span style={{ color: theme.palette.primary.main }}>+66 6 </span>
-              470 146 47
+              <a
+                href="tel:+66647014647"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <span style={{ color: theme.palette.primary.main }}>
+                  +66 6{" "}
+                </span>
+                470 146 47
+              </a>
             </Typography>
           </Box>
 
@@ -439,7 +446,10 @@ const HeroBanner = () => {
               bottom: { xs: 0, md: 20, lg: 0 }, // Distance from the bottom
               display: { xs: "none", sm: "none", md: "flex" },
               justifyContent: "center",
-              width: "100%",
+              width: "20%", // Set the width to 20%
+              margin: "0 auto", // Horizontally center the element
+              left: 0, // Ensure it's aligned with the viewport
+              right: 0, // This combined with 'margin: auto' ensures centering
             }}
             component={motion.div}
             variants={arrowAppearance}

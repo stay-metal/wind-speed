@@ -108,7 +108,7 @@ const Footer = () => {
             <FacebookOutlined />
           </IconButton>
           <IconButton
-            href="#"
+            href="https://www.instagram.com/windspeed_rent_bike_phuket"
             color="inherit"
             sx={{
               mr: { xs: 2, sm: 2, md: 2, lg: 4 },
@@ -121,7 +121,7 @@ const Footer = () => {
             <Instagram />
           </IconButton>
           <IconButton
-            href="#"
+            href="https://t.me/Che_Smotrish_555"
             color="inherit"
             sx={{
               mr: { xs: 2, sm: 2, md: 2, lg: 4 },
@@ -134,7 +134,7 @@ const Footer = () => {
             <Telegram />
           </IconButton>
           <IconButton
-            href="#"
+            href="https://wa.me/+66647014647"
             color="inherit"
             sx={{
               // mr: { sm: 2, md: 2, lg: 4 },
@@ -193,6 +193,7 @@ const Footer = () => {
           </Box>
           <Box
             sx={{
+              position: "relative",
               display: "flex",
               flexDirection: { xs: "row", sm: "column" },
               justifyContent: { xs: "space-between", sm: "start" },
@@ -200,6 +201,7 @@ const Footer = () => {
               gap: 1,
               width: { xs: "100%", sm: "50%" },
               order: { xs: 0, sm: 1 },
+              zIndex: 10000,
             }}
           >
             <Typography
@@ -208,13 +210,20 @@ const Footer = () => {
                 fontSize: { xs: 13, sm: 14, md: 16, lg: 18 },
                 width: { xs: "50%", sm: "100%" },
                 fontWeight: "200",
+                zIndex: 10000,
                 textDecoration: "none !important",
                 "& a": {
                   textDecoration: "none !important",
                 },
               }}
             >
-              +6 66 470146 47
+              {" "}
+              <a
+                href="tel:+66647014647"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                +6 66 470146 47
+              </a>
             </Typography>
             <Typography
               sx={{
@@ -228,7 +237,12 @@ const Footer = () => {
                 },
               }}
             >
-              windspeedbike@gmail.com
+              <a
+                href="mailto:windspeedbike@gmail.com"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                windspeedbike@gmail.com
+              </a>
             </Typography>
           </Box>
         </Box>
