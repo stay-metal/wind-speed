@@ -8,6 +8,9 @@ const nextConfig = {
     // Disable ESLint checks during build
     ignoreDuringBuilds: true,
   },
+  env: {
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+  },
 };
 
 export default nextConfig;
