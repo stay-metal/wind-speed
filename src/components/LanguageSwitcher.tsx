@@ -46,7 +46,7 @@ const LanguageSwitcher = () => {
         justifyContent: "center",
         color: "white",
         fontWeight: "700",
-        fontSize: "32.84px",
+        // fontSize: "32.84px",
         fontFamily: '"Inter", Arial, sans-serif',
         fontStyle: "italic",
         "&:hover": {
@@ -65,28 +65,28 @@ const LanguageSwitcher = () => {
           color:
             language === "EN"
               ? theme.palette.primary.main
-              : theme.palette.background.paper, // Underline active language
+              : theme.palette.background.paper,
         }}
       >
         EN
       </Typography>
       <Typography
-        variant="body1"
-        component="span"
+        // variant="body1"
+        component="div"
         sx={{
           fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
           fontWeight: "700",
           marginRight: 0.3,
           transition: "0.2s",
-          color: theme.palette.background.paper, // Underline active language
+          color: theme.palette.background.paper,
         }}
       >
         /
       </Typography>
 
       <Typography
-        variant="body1"
-        component="span"
+        // variant="body1"
+        component="div"
         sx={{
           fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
           fontWeight: "700",
