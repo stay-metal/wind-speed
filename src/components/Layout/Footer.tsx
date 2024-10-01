@@ -6,6 +6,11 @@ import {
   Grid,
   IconButton,
   Container,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Button,
 } from "@mui/material";
 import {
   FacebookOutlined,
@@ -15,10 +20,21 @@ import {
 } from "@mui/icons-material";
 import Logo from "../Navigation/Logo";
 import { useTranslation } from "next-i18next";
+import { useState } from "react";
+import theme from "@/theme/theme";
 
 const Footer = () => {
   const { t } = useTranslation("footer");
+  // Открытие модального окна
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
+  // Закрытие модального окна
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Box
       sx={{
@@ -247,7 +263,21 @@ const Footer = () => {
           </Box>
         </Box>
         <Box sx={{ pt: { xs: 1, sm: 2 } }}>
-          {/* <Typography variant="body2">Политика конфиденциальности</Typography> */}
+          <Typography
+            component="button"
+            onClick={handleClickOpen}
+            sx={{
+              fontSize: { xs: 11, sm: 12, md: 14, lg: 16 },
+              pb: { xs: 1, sm: 2 },
+              border: "none",
+              background: "none",
+              color: "inherit",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+          >
+            {t("policy")}
+          </Typography>
           <Typography
             variant="body2"
             sx={{
@@ -258,6 +288,84 @@ const Footer = () => {
           </Typography>
         </Box>
       </Container>
+      {/* Модальное окно с текстом Политики Конфиденциальности */}
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        fullWidth
+        maxWidth="sm"
+        aria-labelledby="privacy-policy-title"
+        aria-describedby="privacy-policy-description"
+        sx={{
+          zIndex: 10000,
+          "&::-webkit-scrollbar": {
+            height: "3px",
+            background: theme.palette.grey[200],
+            borderRadius: "10px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: theme.palette.grey[700],
+            borderRadius: "10px",
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "transparent",
+          },
+        }}
+      >
+        <DialogTitle id="privacy-policy-title">
+          {t("policyTitle")} {/* Заголовок модального окна */}
+        </DialogTitle>
+        <DialogContent
+          sx={{
+            "&::-webkit-scrollbar": {
+              height: "3px",
+              background: theme.palette.grey[200],
+              borderRadius: "10px",
+              width: "5px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: theme.palette.grey[700],
+              borderRadius: "10px",
+              width: "5px",
+            },
+            "&::-webkit-scrollbar-track": {
+              backgroundColor: "transparent",
+            },
+          }}
+        >
+          <Typography
+            variant="body2"
+            id="privacy-policy-description"
+            sx={{
+              fontSize: {
+                xs: 12,
+                sm: 14,
+                whiteSpace: "pre-line",
+                "&::-webkit-scrollbar": {
+                  height: "3px",
+                  background: theme.palette.grey[200],
+                  borderRadius: "10px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: theme.palette.grey[700],
+                  borderRadius: "10px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  backgroundColor: "transparent",
+                },
+              },
+            }}
+          >
+            {t("policyText")}{" "}
+            {/* Здесь будет текст Политики Конфиденциальности */}
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary" autoFocus>
+            {t("closeButton")} {/* Кнопка закрытия */}
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };
