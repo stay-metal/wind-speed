@@ -1,37 +1,47 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
 
-const API_KEY = process.env.SENDGRID_API_KEY || "";
-sgMail.setApiKey(API_KEY);
+export async function POST(request: Request) {
+  const API_KEY = process.env.SENDGRID_API_KEY || "";
+  if (!API_KEY) {
+    console.error("SendGrid API key is missing.");
+    return NextResponse.json(
+      { error: "SendGrid API key is missing" },
+      { status: 500 }
+    );
+  }
+  sgMail.setApiKey(API_KEY);
+  console.log("SendGrid API Key:", API_KEY);
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method === "POST") {
-    const { name, phone, email, text } = req.body;
+  try {
+    const { name, phone, email, text } = await request.json();
+    console.log("Received data:", { name, phone, email, text });
 
     const msg = {
-      to: "your-email@example.com", // Replace with your email
-      from: "noreply@yourdomain.com", // Replace with your verified sender
-      subject: "New Contact Form Submission",
+      to: "kittenDread@gmail.com",
+      from: "vadlambrianov@gmail.com", // Replace with your verified sender
+      subject: "WindSpeed.com: Запрос обратной связи",
       text: `
-        Name: ${name}
-        Phone: ${phone}
+        Имя: ${name}
+        Телефон: ${phone}
         Email: ${email}
-        Message: ${text}
+        Текст сообщения: ${text}
       `,
     };
 
-    try {
-      await sgMail.send(msg);
-      res.status(200).json({ message: "Email sent successfully" });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      res.status(500).json({ error: "Failed to send email" });
-    }
-  } else {
-    res.setHeader("Allow", ["POST"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    console.log("Sending email with message:", msg);
+    await sgMail.send(msg);
+    console.log("Email sent successfully");
+
+    return NextResponse.json(
+      { message: "Email sent successfully" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 }
+    );
   }
 }
