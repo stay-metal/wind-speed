@@ -17,7 +17,7 @@ import Image from "next/image";
 import { motoData } from "@/data/motopark";
 import { useTranslation } from "next-i18next";
 import PriceList from "./PriceList";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -33,14 +33,14 @@ const variants = {
 };
 
 const imageVariants = {
-  hidden: { opacity: 0, x: -50 }, // Start offscreen to the right
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }, // Animate into view
-  exit: { opacity: 0, x: -50, transition: { duration: 0.5 } }, // Animate out to the left
+  hidden: { opacity: 0.9, x: -50 }, // Start offscreen to the right
+  visible: { opacity: 1, x: 0, transition: { duration: 1 } }, // Animate into view
+  exit: { opacity: 0, x: -50, transition: { duration: 1 } }, // Animate out to the left
 };
 const pricesVariants = {
-  hidden: { opacity: 0, x: 50 }, // Start offscreen to the right
-  visible: { opacity: 1, x: 0, transition: { delay: 0.1, duration: 0.5 } }, // Animate into view
-  exit: { opacity: 0, x: 50, transition: { duration: 0.5 } }, // Animate out to the left
+  hidden: { opacity: 0, x: 25 }, // Start offscreen to the right
+  visible: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 0.9 } }, // Animate into view
+  exit: { opacity: 0, x: 25, transition: { duration: 0.9 } }, // Animate out to the left
 };
 
 const MotoPark = () => {
@@ -60,6 +60,11 @@ const MotoPark = () => {
     setIsMounted(true);
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8, ease: "easeInOut" } },
+    exit: { opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } },
+  };
   // useEffect(() => {
   //   setCurrentLang(i18n.language);
   // }, [i18n.language]);
@@ -132,6 +137,25 @@ const MotoPark = () => {
     setShowPrices(!showPrices);
   };
 
+  // Preload the next 5 images
+  useEffect(() => {
+    const preloadImages = () => {
+      const preloadCount = 5;
+      const startIndex = currentIndex + 1;
+      const endIndex = Math.min(
+        startIndex + preloadCount,
+        filteredModels.length
+      );
+
+      for (let i = startIndex; i < endIndex; i++) {
+        const img = new window.Image();
+        img.src = filteredModels[i].image;
+      }
+    };
+
+    preloadImages();
+  }, [currentIndex, filteredModels]);
+
   const currentBike = filteredModels[currentIndex];
   const fadeInOut = {
     initial: { opacity: 0, x: 100 },
@@ -139,6 +163,8 @@ const MotoPark = () => {
     exit: { opacity: 0, x: -100, transition: { duration: 0.5 } },
   };
 
+  const MotionModelBox = motion(Box);
+  const MotionInfoBikeBox = motion(Box);
   return (
     <Box>
       <Box
@@ -259,97 +285,110 @@ const MotoPark = () => {
             ))}
           </Box>
           {/* Model Selection */}
-          <Box
-            mt={{ xs: 1.3, md: 2.2 }}
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              width: { xs: "104%", md: "104%", lg: "auto" },
-              height: "auto",
-              paddingBottom: 1,
-              overflowX: "auto",
+          {/* <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          > */}
+          <AnimatePresence>
+            <MotionModelBox
+              // key={selectedBrand}
+              // variants={containerVariants}
+              // initial="hidden"
+              // animate="visible"
+              // exit="exit"
+              mt={{ xs: 1.3, md: 2.2 }}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                width: { xs: "104%", md: "104%", lg: "auto" },
+                height: "auto",
+                paddingBottom: 1,
+                overflowX: "auto",
 
-              // Custom scrollbar styles for the models
-              "&::-webkit-scrollbar": {
-                height: "3px", // Set the height of the scrollbar
-                background: theme.palette.grey[200],
-                borderRadius: "10px",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                backgroundColor: theme.palette.grey[700],
-                // backgroundColor: theme.palette.text.primary
-                borderRadius: "10px",
-              },
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: "transparent", // Color of the scroll track
-              },
-            }}
-            ref={modelContainerRef}
-          >
-            {filteredModels.map((bike, index) => (
-              <Box
-                key={index}
-                ref={index === currentIndex ? modelRef : null}
-                sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                }}
-              >
+                // Custom scrollbar styles for the models
+                "&::-webkit-scrollbar": {
+                  height: "3px", // Set the height of the scrollbar
+                  background: theme.palette.grey[200],
+                  borderRadius: "10px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: theme.palette.grey[700],
+                  // backgroundColor: theme.palette.text.primary
+                  borderRadius: "10px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  backgroundColor: "transparent", // Color of the scroll track
+                },
+              }}
+              ref={modelContainerRef}
+            >
+              {filteredModels.map((bike, index) => (
                 <Box
+                  key={index}
+                  ref={index === currentIndex ? modelRef : null}
                   sx={{
-                    marginRight: "-1px",
-                    width: "10px",
-                    height: "100%",
-                    backgroundColor:
-                      index === currentIndex
-                        ? theme.palette.primary.main
-                        : "#FF9393",
-                    clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 55% 0%)",
-                  }}
-                ></Box>
-                <Typography
-                  variant="body1"
-                  py={0.4}
-                  px={{ xs: 2, md: 4 }}
-                  color={theme.palette.background.paper}
-                  sx={{
-                    cursor: "pointer",
-                    textTransform: "uppercase",
-                    fontStyle: "italic",
-                    fontSize: "16px",
-                    position: "relative",
-                    minWidth: "80px",
-                    maxWidth: "200px",
-                    width: "auto",
-                    textAlign: "center",
-                    whiteSpace: "nowrap",
-                    backgroundColor:
-                      index === currentIndex
-                        ? theme.palette.primary.main
-                        : "#FF9393",
-                  }}
-                  onClick={() => {
-                    setCurrentIndex(index);
-                    setShowPrices(false);
+                    display: "flex",
+                    flexDirection: "row",
                   }}
                 >
-                  {bike.model}
-                </Typography>
-                <Box
-                  sx={{
-                    marginLeft: "-1px",
-                    width: "11px",
-                    height: "100%",
-                    backgroundColor:
-                      index === currentIndex
-                        ? theme.palette.primary.main
-                        : "#FF9393",
-                    clipPath: "polygon(0 0, 100% 0, 45% 100%, 0% 100%)",
-                  }}
-                ></Box>
-              </Box>
-            ))}
-          </Box>
+                  <Box
+                    sx={{
+                      marginRight: "-1px",
+                      width: "10px",
+                      height: "100%",
+                      backgroundColor:
+                        index === currentIndex
+                          ? theme.palette.primary.main
+                          : "#FF9393",
+                      clipPath: "polygon(0 100%, 100% 100%, 100% 0%, 55% 0%)",
+                    }}
+                  ></Box>
+                  <Typography
+                    variant="body1"
+                    py={0.4}
+                    px={{ xs: 2, md: 4 }}
+                    color={theme.palette.background.paper}
+                    sx={{
+                      cursor: "pointer",
+                      textTransform: "uppercase",
+                      fontStyle: "italic",
+                      fontSize: "16px",
+                      position: "relative",
+                      minWidth: "80px",
+                      maxWidth: "200px",
+                      width: "auto",
+                      textAlign: "center",
+                      whiteSpace: "nowrap",
+                      backgroundColor:
+                        index === currentIndex
+                          ? theme.palette.primary.main
+                          : "#FF9393",
+                    }}
+                    onClick={() => {
+                      setCurrentIndex(index);
+                      setShowPrices(false);
+                    }}
+                  >
+                    {bike.model}
+                  </Typography>
+                  <Box
+                    sx={{
+                      marginLeft: "-1px",
+                      width: "11px",
+                      height: "100%",
+                      backgroundColor:
+                        index === currentIndex
+                          ? theme.palette.primary.main
+                          : "#FF9393",
+                      clipPath: "polygon(0 0, 100% 0, 45% 100%, 0% 100%)",
+                    }}
+                  ></Box>
+                </Box>
+              ))}
+            </MotionModelBox>
+          </AnimatePresence>
         </Container>
       </Box>
 
@@ -526,7 +565,11 @@ const MotoPark = () => {
                   </motion.div>
                 </Box>
               </Box>
-              <Box
+              <MotionInfoBikeBox
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
                 className="info_container"
                 sx={{
                   height: {
@@ -568,7 +611,7 @@ const MotoPark = () => {
                     isMounted={isMounted}
                   />
                 )}
-              </Box>
+              </MotionInfoBikeBox>
             </Box>
             <Box
               className="bottom_container"

@@ -1,32 +1,23 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import { Button, Typography } from "@mui/material";
 import theme from "@/theme/theme";
-import { useTranslation } from "react-i18next"; // Use from react-i18next
+import { useTranslation } from "react-i18next";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
-
-  // Ensure language is either 'en' or 'ru', falling back to 'en' if undefined
-  const currentLang = i18n.language || "en";
-
-  // State to track the current language, defaulting to the current i18n language
   const [language, setLanguage] = useState<"EN" | "RU">(
-    currentLang.toUpperCase() as "EN" | "RU"
+    (i18n.language?.toUpperCase() as "EN" | "RU") || "EN"
   );
 
-  // Synchronize the state with the current i18n language
   useEffect(() => {
     const currentLanguage = i18n.language ? i18n.language.toUpperCase() : "EN";
     setLanguage(currentLanguage as "EN" | "RU");
   }, [i18n.language]);
 
-  // Toggle between languages
   const toggleLanguage = () => {
-    const newLanguage = language === "EN" ? "ru" : "en"; // Toggle between 'en' and 'ru'
-    i18n.changeLanguage(newLanguage).catch(console.error); // Ensure async handling
-    setLanguage(newLanguage.toUpperCase() as "EN" | "RU"); // Update local state
+    const newLanguage = language === "EN" ? "ru" : "en";
+    i18n.changeLanguage(newLanguage).catch(console.error);
+    setLanguage(newLanguage.toUpperCase() as "EN" | "RU");
   };
 
   return (
@@ -35,23 +26,21 @@ const LanguageSwitcher = () => {
       disableRipple
       disableFocusRipple
       sx={{
-        fontSize: { xs: "24px", sm: "24px", md: "25px", lg: "28px" },
+        // fontSize: { xs: "24px", sm: "24px", md: "25px", lg: "28px" },
         backgroundColor: "transparent",
         borderRadius: 2,
         height: "46px",
         paddingRight: "20px",
-        minWidth: 80,
+        minWidth: 100,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         color: "white",
         fontWeight: "700",
-        // fontSize: "32.84px",
         fontFamily: '"Inter", Arial, sans-serif',
         fontStyle: "italic",
-        "&:hover": {
-          // backgroundColor: "#ff9100",
-        },
+        overflow: "visible",
+        width: "100%",
       }}
     >
       <Typography
@@ -70,13 +59,13 @@ const LanguageSwitcher = () => {
       >
         EN
       </Typography>
+
       <Typography
-        // variant="body1"
         component="div"
         sx={{
-          fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
+          fontSize: { xs: "45px", sm: "28px", md: "28px", lg: "28px" },
           fontWeight: "700",
-          marginRight: 0.3,
+          marginX: 0.5,
           transition: "0.2s",
           color: theme.palette.background.paper,
         }}
@@ -85,17 +74,15 @@ const LanguageSwitcher = () => {
       </Typography>
 
       <Typography
-        // variant="body1"
         component="div"
         sx={{
-          fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
+          fontSize: { xs: "45px", sm: "28px", md: "28px", lg: "28px" },
           fontWeight: "700",
           transition: "0.2s",
-          marginLeft: 0,
           color:
             language === "RU"
               ? theme.palette.primary.main
-              : theme.palette.background.paper, // Underline active language
+              : theme.palette.background.paper,
         }}
       >
         RU

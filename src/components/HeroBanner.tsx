@@ -1,6 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Box, Typography, IconButton, Container } from "@mui/material";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Container,
+  IconButtonProps,
+} from "@mui/material";
 
 import LottieScrolDown from "./Animations/Lottie/arrow_down.json";
 import { delay, motion } from "framer-motion";
@@ -368,15 +374,18 @@ const HeroBanner = () => {
           >
             <StyledSocButton
               aria-label="Telegram"
+              component="a"
               href="https://t.me/Che_Smotrish_555"
               target="_blank"
               rel="noopener noreferrer"
+
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}
             >
               <Telegram />
             </StyledSocButton>
             <StyledSocButton
               aria-label="Facebook"
+              component="a"
               href="https://www.facebook.com/profile.php?id=61565481077083"
               target="_blank"
               rel="noopener noreferrer"
@@ -386,6 +395,7 @@ const HeroBanner = () => {
             </StyledSocButton>
             <StyledSocButton
               aria-label="Instagram"
+              component="a"
               href="https://www.instagram.com/windspeed_rent_bike_phuket"
               target="_blank"
               rel="noopener noreferrer"
@@ -395,6 +405,7 @@ const HeroBanner = () => {
             </StyledSocButton>
             <StyledSocButton
               aria-label="WhatsApp"
+              component="a"
               href="https://wa.me/+66647014647"
               target="_blank"
               rel="noopener noreferrer"

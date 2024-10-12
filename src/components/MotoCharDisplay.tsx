@@ -2,6 +2,7 @@
 import { Box, Typography } from "@mui/material";
 import theme from "@/theme/theme";
 import { Roboto } from "@next/font/google";
+import { useEffect, useState } from "react";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -19,6 +20,52 @@ export default function MotoCharDisplay({
   charMetrica: string;
   charDescription: string;
 }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const target = parseInt(charValue, 10);
+    if (isNaN(target)) return;
+
+    let start = 0;
+    const duration = 500; // Общая длительность анимации в миллисекундах
+    const incrementTime = 20; // Время между обновлениями в миллисекундах
+    const increment = target / (duration / incrementTime);
+    const singleIncrementThreshold = 20; // Последние 20 счетов будут увеличиваться на единицу
+    const slowedIncrementTime = incrementTime * 2; // Уменьшение скорости в 2 раза
+
+    const timer = setInterval(() => {
+      const remaining = target - start;
+
+      if (remaining <= singleIncrementThreshold) {
+        start += 1;
+
+        // Если в последних 20, используем удвоенное время задержки
+        if (remaining === singleIncrementThreshold) {
+          clearInterval(timer);
+          const slowedTimer = setInterval(() => {
+            start += 1;
+            if (start >= target) {
+              start = target;
+              clearInterval(slowedTimer);
+            }
+            setCount(Math.floor(start));
+          }, slowedIncrementTime);
+        }
+      } else {
+        start += increment;
+      }
+
+      if (start >= target) {
+        start = target;
+        clearInterval(timer);
+      }
+
+      setCount(Math.floor(start));
+    }, incrementTime);
+
+    return () => clearInterval(timer);
+  }, [charValue]);
+
   return (
     <Box
       sx={{
@@ -49,7 +96,7 @@ export default function MotoCharDisplay({
             lineHeight: 1,
           }}
         >
-          {charValue}
+          {count}
         </Typography>
         <Typography
           className={roboto.className}
