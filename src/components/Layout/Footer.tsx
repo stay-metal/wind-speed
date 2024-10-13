@@ -68,7 +68,7 @@ const Footer = () => {
           }}
         >
           <Link
-            href="#"
+            href="#catalog"
             color="inherit"
             underline="none"
             sx={{
@@ -79,7 +79,7 @@ const Footer = () => {
             {t("menu.catalog")}
           </Link>
           <Link
-            href="#"
+            href="#benefits"
             color="inherit"
             underline="none"
             sx={{
@@ -90,7 +90,7 @@ const Footer = () => {
             {t("menu.benefits")}
           </Link>
           <Link
-            href="#"
+            href="#contacts"
             color="inherit"
             underline="none"
             sx={{ fontSize: { xs: 12, sm: 15, md: 16, lg: 18 } }}
@@ -98,7 +98,7 @@ const Footer = () => {
             {t("menu.contacts")}
           </Link>
           <Link
-            href="#"
+            href="#howWeWork"
             color="inherit"
             underline="none"
             sx={{
@@ -204,7 +204,7 @@ const Footer = () => {
                 width: { xs: "100%", sm: "100%" },
               }}
             >
-              88/14 Khrongkan Ban Rawai-Ban Nai Han Rd.
+              60/83 Soi Muban Chana Kan Delight Chalong
             </Typography>
           </Box>
           <Box

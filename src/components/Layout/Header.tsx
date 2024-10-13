@@ -113,7 +113,12 @@ const Header = () => {
       <Container>
         <Toolbar disableGutters>
           <Box
-            sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexGrow: 1,
+              marginTop: { xs: 0.13, sm: 0.13, md: 0 },
+            }}
             component={motion.div}
             initial="initial"
             animate="animate"

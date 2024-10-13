@@ -26,7 +26,7 @@ const Contacts = () => {
             sm: "linear-gradient(-10deg, rgba(0,0,0,0.5), rgba(255,255,255,0))",
           },
           pt: { xs: 0, sm: 3, md: 3, lg: 3 },
-          pb: { xs: 0, sm: 3, md: 3, lg: 8 },
+          pb: { xs: 2, sm: 5, md: 5, lg: 3 },
         }}
       >
         <Container
@@ -34,10 +34,10 @@ const Contacts = () => {
           sx={{
             height: "100%",
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: { xs: "column", sm: "column" },
             justifyContent: "space-between",
             pt: { xs: 0, sm: 3, md: 3, lg: 3 },
-            gap: { xs: 4, md: 6, lg: 8 },
+            gap: { xs: 1, sm: 1.5, md: 2, lg: 2 },
             position: "relative", // Ensure the Container is the containing block for the overlay
             "::before": {
               content: '""',
@@ -60,7 +60,7 @@ const Contacts = () => {
               flexDirection: "column",
               justifyContent: "space-between",
               height: "auto",
-              width: { xs: "100%", sm: "50%" },
+              width: { xs: "100%", sm: "100%" },
             }}
           >
             <Typography
@@ -103,11 +103,19 @@ const Contacts = () => {
                 {t("phone.title")} {t("phone.value")}
               </Box>
             </Typography>
-            <Box>
+            {/* <Box>
               <ContactForm />
-            </Box>
+            </Box> */}
           </Box>
           <Box
+            sx={{
+              width: "100%",
+              height: { xs: "400px", sm: "400px", md: "550px", lg: "600px" },
+            }}
+          >
+            <ContactMap />
+          </Box>
+          {/* <Box
             sx={{
               position: "relative",
               width: { xs: "100%", sm: "50%" },
@@ -116,7 +124,7 @@ const Contacts = () => {
             }}
           >
             <ContactMap />
-          </Box>
+          </Box> */}
         </Container>
       </Box>
     </Box>

@@ -869,8 +869,8 @@ export const motoData = [
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
         price: {
           en: "Passport or 50000 THB",
@@ -1029,8 +1029,8 @@ export const motoData = [
       },
       {
         duration: {
-          en: "For club members",
-          ru: "Для членов клуба",
+          en: "Deposit",
+          ru: "Депозит",
         },
         price: {
           en: "Passport or 40000 THB",

@@ -30,7 +30,8 @@ const LanguageSwitcher = () => {
         backgroundColor: "transparent",
         borderRadius: 2,
         height: "46px",
-        paddingRight: "20px",
+        // paddingRight: "20px",
+        paddingRight: { xs: "10px", sm: "20px", md: "17px", lg: "10px" },
         minWidth: 100,
         display: "flex",
         alignItems: "center",
@@ -39,15 +40,15 @@ const LanguageSwitcher = () => {
         fontWeight: "700",
         fontFamily: '"Inter", Arial, sans-serif',
         fontStyle: "italic",
-        overflow: "visible",
         width: "100%",
+        marginTop: { xs: 0.4, sm: 0.2, md: 0, lg: 0 },
       }}
     >
       <Typography
         variant="body1"
         component="span"
         sx={{
-          fontSize: { xs: "24px", sm: "28px", md: "28px", lg: "28px" },
+          fontSize: { xs: "24px", sm: "28px", md: "30px", lg: "32px" },
           fontWeight: "700",
           marginRight: 0.3,
           transition: "0.2s",
@@ -61,9 +62,9 @@ const LanguageSwitcher = () => {
       </Typography>
 
       <Typography
-        component="div"
+        component="span"
         sx={{
-          fontSize: { xs: "45px", sm: "28px", md: "28px", lg: "28px" },
+          fontSize: { xs: "24px", sm: "28px", md: "30px", lg: "32px" },
           fontWeight: "700",
           marginX: 0.5,
           transition: "0.2s",
@@ -74,10 +75,11 @@ const LanguageSwitcher = () => {
       </Typography>
 
       <Typography
-        component="div"
+        component="span"
         sx={{
-          fontSize: { xs: "45px", sm: "28px", md: "28px", lg: "28px" },
+          fontSize: { xs: "24px", sm: "28px", md: "30px", lg: "32px" },
           fontWeight: "700",
+          width: "39px",
           transition: "0.2s",
           color:
             language === "RU"
