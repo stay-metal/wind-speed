@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
         borderRadius: 2,
         height: "46px",
         // paddingRight: "20px",
-        paddingRight: { xs: "10px", sm: "20px", md: "17px", lg: "10px" },
+        paddingRight: { xs: "10px", sm: "20px", md: "20px", lg: "10px" },
         minWidth: 100,
         display: "flex",
         alignItems: "center",
@@ -42,6 +42,7 @@ const LanguageSwitcher = () => {
         fontStyle: "italic",
         width: "100%",
         marginTop: { xs: 0.4, sm: 0.2, md: 0, lg: 0 },
+        marginRight: { xs: 2.5, sm: 2, md: 0, lg: 0 },
       }}
     >
       <Typography
@@ -66,7 +67,7 @@ const LanguageSwitcher = () => {
         sx={{
           fontSize: { xs: "24px", sm: "28px", md: "30px", lg: "32px" },
           fontWeight: "700",
-          marginX: 0.5,
+          marginX: 0.3,
           transition: "0.2s",
           color: theme.palette.background.paper,
         }}
