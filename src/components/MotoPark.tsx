@@ -139,22 +139,15 @@ const MotoPark = () => {
 
   // Preload the next 5 images
   useEffect(() => {
-    const preloadImages = () => {
-      const preloadCount = 5;
-      const startIndex = currentIndex + 1;
-      const endIndex = Math.min(
-        startIndex + preloadCount,
-        filteredModels.length
-      );
-
-      for (let i = startIndex; i < endIndex; i++) {
+    const preloadAllImages = () => {
+      filteredModels.forEach((bike) => {
         const img = new window.Image();
-        img.src = filteredModels[i].image;
-      }
+        img.src = bike.image;
+      });
     };
 
-    preloadImages();
-  }, [currentIndex, filteredModels]);
+    preloadAllImages();
+  }, [filteredModels]);
 
   const currentBike = filteredModels[currentIndex];
   const fadeInOut = {
