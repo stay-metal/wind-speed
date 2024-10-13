@@ -111,6 +111,7 @@ const Contacts = () => {
             sx={{
               width: "100%",
               height: { xs: "400px", sm: "400px", md: "550px", lg: "600px" },
+              zIndex: 10000,
             }}
           >
             <ContactMap />
