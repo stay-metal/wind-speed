@@ -204,7 +204,7 @@ const Footer = () => {
                 width: { xs: "100%", sm: "100%" },
               }}
             >
-              60/83 Soi Muban Chana Kan Delight Chalong
+              V82Q+WX7, Chalong, Mueang Phuket District, Phuket 83000
             </Typography>
           </Box>
           <Box
