@@ -42,6 +42,7 @@ const BackToTopButton = () => {
             color: "white", // White icon color
             opacity: 0.8,
             transition: "opacity 0.3s ease-in-out",
+            zIndex: 99999,
             "&:hover": {
               opacity: 1,
               backgroundColor: theme.palette.primary.main,
