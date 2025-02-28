@@ -12,12 +12,7 @@ import {
   DialogTitle,
   Button,
 } from "@mui/material";
-import {
-  FacebookOutlined,
-  Telegram,
-  Instagram,
-  WhatsApp,
-} from "@mui/icons-material";
+import { FacebookOutlined, Telegram, Instagram, WhatsApp } from "@mui/icons-material";
 import Logo from "../Navigation/Logo";
 import { useTranslation } from "next-i18next";
 import { useState } from "react";
@@ -89,12 +84,7 @@ const Footer = () => {
           >
             {t("menu.benefits")}
           </Link>
-          <Link
-            href="#contacts"
-            color="inherit"
-            underline="none"
-            sx={{ fontSize: { xs: 12, sm: 15, md: 16, lg: 18 } }}
-          >
+          <Link href="#contacts" color="inherit" underline="none" sx={{ fontSize: { xs: 12, sm: 15, md: 16, lg: 18 } }}>
             {t("menu.contacts")}
           </Link>
           <Link
@@ -137,7 +127,7 @@ const Footer = () => {
             <Instagram />
           </IconButton>
           <IconButton
-            href="https://t.me/Che_Smotrish_555"
+            href="https://t.me/Windspeedcom"
             color="inherit"
             sx={{
               mr: { xs: 2, sm: 2, md: 2, lg: 4 },
@@ -150,7 +140,7 @@ const Footer = () => {
             <Telegram />
           </IconButton>
           <IconButton
-            href="https://wa.me/+66647014647"
+            href="https://wa.me/+66614203594"
             color="inherit"
             sx={{
               // mr: { sm: 2, md: 2, lg: 4 },
@@ -234,11 +224,8 @@ const Footer = () => {
               }}
             >
               {" "}
-              <a
-                href="tel:+66647014647"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                +6 66 470146 47
+              <a href="tel:+66647014647" style={{ textDecoration: "none", color: "inherit" }}>
+                +66 61 420 35 94
               </a>
             </Typography>
             <Typography
@@ -253,10 +240,7 @@ const Footer = () => {
                 },
               }}
             >
-              <a
-                href="mailto:windspeedbike@gmail.com"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
+              <a href="mailto:windspeedbike@gmail.com" style={{ textDecoration: "none", color: "inherit" }}>
                 windspeedbike@gmail.com
               </a>
             </Typography>
@@ -356,8 +340,7 @@ const Footer = () => {
               },
             }}
           >
-            {t("policyText")}{" "}
-            {/* Здесь будет текст Политики Конфиденциальности */}
+            {t("policyText")} {/* Здесь будет текст Политики Конфиденциальности */}
           </Typography>
         </DialogContent>
         <DialogActions>

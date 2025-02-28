@@ -1,21 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  IconButton,
-  Container,
-  IconButtonProps,
-} from "@mui/material";
+import { Box, Typography, IconButton, Container, IconButtonProps } from "@mui/material";
 
 import LottieScrolDown from "./Animations/Lottie/arrow_down.json";
 import { delay, motion } from "framer-motion";
-import {
-  FacebookOutlined,
-  Telegram,
-  Instagram,
-  WhatsApp,
-} from "@mui/icons-material";
+import { FacebookOutlined, Telegram, Instagram, WhatsApp } from "@mui/icons-material";
 import { useTranslation } from "next-i18next";
 import { Kulim_Park } from "@next/font/google";
 import theme from "@/theme/theme";
@@ -207,14 +196,7 @@ const StyledSocButton = styled(IconButton)(({ theme }) => ({
 }));
 
 const ArrowDownIcon = (props: any) => (
-  <svg
-    width="41"
-    height="38"
-    viewBox="0 0 41 38"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
+  <svg width="41" height="38" viewBox="0 0 41 38" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M2.46849 0.280308L20.3186 18.1304L38.1686 0.280307L40.152 2.26365L20.3186 22.0971L0.485146 2.26365L2.46849 0.280308ZM2.42882 16.1074L20.2789 33.9574L38.129 16.1074L40.1123 18.0907L20.2789 37.9241L0.445478 18.0907L2.42882 16.1074Z"
       fill="#FF3518"
@@ -333,9 +315,7 @@ const HeroBanner = () => {
             dangerouslySetInnerHTML={{
               __html:
                 t("title.subtitle") +
-                `<a href="/#contacts" style="color: white; text-decoration: underline;">${t(
-                  "title.link"
-                )}</a>`,
+                `<a href="/#contacts" style="color: white; text-decoration: underline;">${t("title.link")}</a>`,
             }}
             initial="initial"
             animate="animate"
@@ -375,7 +355,7 @@ const HeroBanner = () => {
             <StyledSocButton
               aria-label="Telegram"
               component="a"
-              href="https://t.me/Che_Smotrish_555"
+              href="https://t.me/Windspeedcom"
               target="_blank"
               rel="noopener noreferrer"
 
@@ -406,7 +386,7 @@ const HeroBanner = () => {
             <StyledSocButton
               aria-label="WhatsApp"
               component="a"
-              href="https://wa.me/+66647014647"
+              href="https://wa.me/+66614203594"
               target="_blank"
               rel="noopener noreferrer"
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}
@@ -438,14 +418,9 @@ const HeroBanner = () => {
                 fontSize: { xs: 33, sm: 32, md: 32, lg: 37 },
               }}
             >
-              <a
-                href="tel:+66647014647"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <span style={{ color: theme.palette.primary.main }}>
-                  +66 6{" "}
-                </span>
-                470 146 47
+              <a href="tel:+66647014647" style={{ textDecoration: "none", color: "inherit" }}>
+                <span style={{ color: theme.palette.primary.main }}>+66 61 </span>
+                420 35 94
               </a>
             </Typography>
           </Box>
@@ -471,12 +446,7 @@ const HeroBanner = () => {
                 href="#your-section-id" // Link to the section you want to scroll down to
                 sx={{ color: "#fff" }}
               >
-                <Lottie
-                  loop
-                  animationData={LottieScrolDown}
-                  play
-                  style={{ width: 100, height: 100 }}
-                />
+                <Lottie loop animationData={LottieScrolDown} play style={{ width: 100, height: 100 }} />
               </IconButton>
             </Link>
           </Box>
