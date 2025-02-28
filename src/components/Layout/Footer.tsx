@@ -224,7 +224,7 @@ const Footer = () => {
               }}
             >
               {" "}
-              <a href="tel:+66647014647" style={{ textDecoration: "none", color: "inherit" }}>
+              <a href="tel:+66614203594" style={{ textDecoration: "none", color: "inherit" }}>
                 +66 61 420 35 94
               </a>
             </Typography>

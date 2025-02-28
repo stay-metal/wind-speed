@@ -418,7 +418,7 @@ const HeroBanner = () => {
                 fontSize: { xs: 33, sm: 32, md: 32, lg: 37 },
               }}
             >
-              <a href="tel:+66647014647" style={{ textDecoration: "none", color: "inherit" }}>
+              <a href="tel:+66614203594" style={{ textDecoration: "none", color: "inherit" }}>
                 <span style={{ color: theme.palette.primary.main }}>+66 61 </span>
                 420 35 94
               </a>
