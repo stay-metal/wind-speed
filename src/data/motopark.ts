@@ -1,6 +1,86 @@
 export const motoData = [
   {
     brand: "Yamaha",
+    model: "CB 500 F",
+    image: "/images/bikes/yamaha/cb-500-f.png",
+    maxSpeed: "172",
+    weight: "190",
+    engine: "471",
+    features: {
+      type: {
+        en: "Naked",
+        ru: "Нейкед",
+      },
+      abs: true,
+      tires: "Dunlop",
+      exhaust: "Akrapovic",
+    },
+    price: "1298",
+    priceList: [
+      {
+        duration: {
+          en: "2 - 3 days",
+          ru: "От 2 до 3 дней",
+        },
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "4 - 7 days",
+          ru: "От 4 до 7 дней",
+        },
+        price: {
+          en: "2398 THB",
+          ru: "2398 бат",
+        },
+      },
+      {
+        duration: {
+          en: "8 - 14 days",
+          ru: "Oт 8 до 14 дней",
+        },
+        price: {
+          en: "1798 THB",
+          ru: "1798 бат",
+        },
+      },
+      {
+        duration: {
+          en: "15 - 29 days",
+          ru: "Oт 15 до 29 дней",
+        },
+        price: {
+          en: "1498 THB",
+          ru: "1498 бат",
+        },
+      },
+      {
+        duration: {
+          en: "30+ days",
+          ru: "Oт 30+ дней",
+        },
+        price: {
+          en: "1298 THB",
+          ru: "1298 бат",
+        },
+      },
+      {
+        duration: {
+          en: "Deposit",
+          ru: "Депозит",
+        },
+        price: {
+          en: "Passport or 25000 THB",
+          ru: "Паспорт или 25000 бат",
+        },
+      },
+    ],
+  },
+  {
+    brand: "Yamaha",
     model: "YZF-R1",
     image: "/images/bikes/yamaha/Yamaha-YZF-R1.png",
     maxSpeed: "300",
@@ -65,6 +145,86 @@ export const motoData = [
         price: {
           en: "1498 THB",
           ru: "1498 бат",
+        },
+      },
+      {
+        duration: {
+          en: "Deposit",
+          ru: "Депозит",
+        },
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
+      },
+    ],
+  },
+  {
+    brand: "Ducati",
+    model: "Monster 937",
+    image: "/images/bikes/ducati/monster_937.png",
+    maxSpeed: "226",
+    weight: "166",
+    engine: "937",
+    features: {
+      type: {
+        en: "Naked",
+        ru: "Нейкед",
+      },
+      abs: true,
+      tires: "Michelin",
+      exhaust: "Stock",
+    },
+    price: "1998",
+    priceList: [
+      {
+        duration: {
+          en: "2 - 3 days",
+          ru: "От 2 до 3 дней",
+        },
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "4 - 7 days",
+          ru: "От 4 до 7 дней",
+        },
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "8 - 14 days",
+          ru: "Oт 8 до 14 дней",
+        },
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
+      },
+      {
+        duration: {
+          en: "15 - 29 days",
+          ru: "Oт 15 до 29 дней",
+        },
+        price: {
+          en: "2198 THB",
+          ru: "2198 бат",
+        },
+      },
+      {
+        duration: {
+          en: "30+ days",
+          ru: "Oт 30+ дней",
+        },
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
         },
       },
       {
@@ -482,7 +642,7 @@ export const motoData = [
   {
     brand: "Yamaha",
     model: "mt 07",
-    image: "/images/bikes/yamaha/yamaha-mt07.png",
+    image: "/images/bikes/yamaha/yamaha-mt07_2.png",
     maxSpeed: "229",
     weight: "182",
     engine: "689",
@@ -493,9 +653,9 @@ export const motoData = [
       },
       abs: true,
       tires: "Michelin",
-      exhaust: "Acrapovic",
+      exhaust: "Arrow",
     },
-    price: "2898",
+    price: "1698",
     priceList: [
       {
         duration: {
@@ -503,8 +663,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "2898 THB",
-          ru: "2898 бат",
+          en: "3498 THB",
+          ru: "3498 бат",
         },
       },
       {
@@ -513,8 +673,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "2998 THB",
+          ru: "2998 бат",
         },
       },
       {
@@ -523,8 +683,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1698 THB",
-          ru: "1698 бат",
+          en: "2498 THB",
+          ru: "2498 бат",
         },
       },
       {
@@ -533,8 +693,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1298 THB",
-          ru: "1298 бат",
+          en: "1998 THB",
+          ru: "1998 бат",
         },
       },
       {
@@ -543,8 +703,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "998 THB",
-          ru: "998 бат",
+          en: "1698 THB",
+          ru: "1698 бат",
         },
       },
       {
@@ -721,6 +881,86 @@ export const motoData = [
   },
   {
     brand: "Honda",
+    model: "grom msx 125",
+    image: "/images/bikes/honda/grom-msx-125.png",
+    maxSpeed: "94",
+    weight: "103",
+    engine: "125",
+    features: {
+      type: {
+        en: "Naked",
+        ru: "Нейкед",
+      },
+      abs: true,
+      tires: "Michelin",
+      exhaust: "Acrapovic",
+    },
+    price: "498",
+    priceList: [
+      {
+        duration: {
+          en: "2 - 3 days",
+          ru: "От 2 до 3 дней",
+        },
+        price: {
+          en: "1298 THB",
+          ru: "1298 бат",
+        },
+      },
+      {
+        duration: {
+          en: "4 - 7 days",
+          ru: "От 4 до 7 дней",
+        },
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "8 - 14 days",
+          ru: "Oт 8 до 14 дней",
+        },
+        price: {
+          en: "798 THB",
+          ru: "798 бат",
+        },
+      },
+      {
+        duration: {
+          en: "15 - 29 days",
+          ru: "Oт 15 до 29 дней",
+        },
+        price: {
+          en: "598 THB",
+          ru: "598 бат",
+        },
+      },
+      {
+        duration: {
+          en: "30+ days",
+          ru: "Oт 30+ дней",
+        },
+        price: {
+          en: "498 THB",
+          ru: "498 бат",
+        },
+      },
+      {
+        duration: {
+          en: "Deposit",
+          ru: "Депозит",
+        },
+        price: {
+          en: "Passport or 10000 THB",
+          ru: "Паспорт или 10000 бат",
+        },
+      },
+    ],
+  },
+  {
+    brand: "Honda",
     model: "cb 650",
     image: "/images/bikes/honda/honda-cb-650.png",
     maxSpeed: "230",
@@ -795,6 +1035,86 @@ export const motoData = [
         price: {
           en: "Passport or 30000 THB",
           ru: "Паспорт или 30000 бат",
+        },
+      },
+    ],
+  },
+  {
+    brand: "Kawasaki",
+    model: "zx-4r",
+    image: "/images/bikes/kawasaki/zx4r.png",
+    maxSpeed: "200",
+    weight: "189",
+    engine: "399",
+    features: {
+      type: {
+        en: "Sportbike",
+        ru: "Спортбайк",
+      },
+      abs: true,
+      tires: "Michelin",
+      exhaust: "Акrapovic",
+    },
+    price: "998",
+    priceList: [
+      {
+        duration: {
+          en: "2 - 3 days",
+          ru: "От 2 до 3 дней",
+        },
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
+      },
+      {
+        duration: {
+          en: "4 - 7 days",
+          ru: "От 4 до 7 дней",
+        },
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "8 - 14 days",
+          ru: "Oт 8 до 14 дней",
+        },
+        price: {
+          en: "1798 THB",
+          ru: "1798 бат",
+        },
+      },
+      {
+        duration: {
+          en: "15 - 29 days",
+          ru: "Oт 15 до 29 дней",
+        },
+        price: {
+          en: "1398 THB",
+          ru: "1398 бат",
+        },
+      },
+      {
+        duration: {
+          en: "30+ days",
+          ru: "Oт 30+ дней",
+        },
+        price: {
+          en: "998 THB",
+          ru: "998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "Deposit",
+          ru: "Депозит",
+        },
+        price: {
+          en: "Passport or 20000 THB",
+          ru: "Паспорт или 20000 бат",
         },
       },
     ],
@@ -879,10 +1199,11 @@ export const motoData = [
       },
     ],
   },
+
   {
     brand: "Triumph",
     model: "triple rs",
-    image: "/images/bikes/triumph/triumph-street-triple-rs.png",
+    image: "/images/bikes/triumph/triumph-street-triple-rs_2.png",
     maxSpeed: "240",
     weight: "166",
     engine: "948",
@@ -895,7 +1216,7 @@ export const motoData = [
       tires: "Pirelli",
       exhaust: "Акrapovic",
     },
-    price: "3998",
+    price: "1998",
     priceList: [
       {
         duration: {
@@ -903,8 +1224,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "3198 THB",
-          ru: "3198 бат",
+          en: "3998 THB",
+          ru: "3998 бат",
         },
       },
       {
@@ -913,8 +1234,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "2598 THB",
-          ru: "2598 бат",
+          en: "2998 THB",
+          ru: "2998 бат",
         },
       },
       {
@@ -923,8 +1244,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "2498 THB",
+          ru: "2498 бат",
         },
       },
       {
@@ -933,8 +1254,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1498 THB",
-          ru: "1498 бат",
+          en: "2198 THB",
+          ru: "2198 бат",
         },
       },
       {
@@ -943,8 +1264,88 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1298 THB",
-          ru: "1298 бат",
+          en: "1998 THB",
+          ru: "1998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "Deposit",
+          ru: "Депозит",
+        },
+        price: {
+          en: "Passport or 40000 THB",
+          ru: "Паспорт или 40000 бат",
+        },
+      },
+    ],
+  },
+  {
+    brand: "KTM",
+    model: "duke 890r",
+    image: "/images/bikes/ktm/duke-890.png",
+    maxSpeed: "237",
+    weight: "166",
+    engine: "890",
+    features: {
+      type: {
+        en: "Naked",
+        ru: "Нейкед",
+      },
+      abs: true,
+      tires: "Michelin",
+      exhaust: "Stock",
+    },
+    price: "1998",
+    priceList: [
+      {
+        duration: {
+          en: "2 - 3 days",
+          ru: "От 2 до 3 дней",
+        },
+        price: {
+          en: "3998 THB",
+          ru: "3998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "4 - 7 days",
+          ru: "От 4 до 7 дней",
+        },
+        price: {
+          en: "2998 THB",
+          ru: "2998 бат",
+        },
+      },
+      {
+        duration: {
+          en: "8 - 14 days",
+          ru: "Oт 8 до 14 дней",
+        },
+        price: {
+          en: "2498 THB",
+          ru: "2498 бат",
+        },
+      },
+      {
+        duration: {
+          en: "15 - 29 days",
+          ru: "Oт 15 до 29 дней",
+        },
+        price: {
+          en: "2198 THB",
+          ru: "2198 бат",
+        },
+      },
+      {
+        duration: {
+          en: "30+ days",
+          ru: "Oт 30+ дней",
+        },
+        price: {
+          en: "1998 THB",
+          ru: "1998 бат",
         },
       },
       {
