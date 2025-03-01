@@ -1,6 +1,6 @@
 export const motoData = [
   {
-    brand: "Yamaha",
+    brand: "Honda",
     model: "CB 500 F",
     image: "/images/bikes/yamaha/cb-500-f.png",
     maxSpeed: "172",
