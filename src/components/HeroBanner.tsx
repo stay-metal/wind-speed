@@ -376,7 +376,7 @@ const HeroBanner = () => {
             <StyledSocButton
               aria-label="Instagram"
               component="a"
-              href="https://www.instagram.com/windspeed_rent_bike_phuket"
+              href="http://instagram.com/windspeed_bike"
               target="_blank"
               rel="noopener noreferrer"
               // sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.5)" }}

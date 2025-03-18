@@ -114,7 +114,7 @@ const Footer = () => {
             <FacebookOutlined />
           </IconButton>
           <IconButton
-            href="https://www.instagram.com/windspeed_rent_bike_phuket"
+            href="http://instagram.com/windspeed_bike"
             color="inherit"
             sx={{
               mr: { xs: 2, sm: 2, md: 2, lg: 4 },
