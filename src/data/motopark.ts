@@ -15,7 +15,7 @@ export const motoData = [
       tires: "Dunlop",
       exhaust: "Akrapovic",
     },
-    price: "698",
+    price: "560",
     priceList: [
       {
         duration: {
@@ -33,8 +33,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1598 THB",
-          ru: "1598 бат",
+          en: "1100 THB",
+          ru: "1100 бат",
         },
       },
       {
@@ -43,8 +43,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1298 THB",
-          ru: "1298 бат",
+          en: "900 THB",
+          ru: "900 бат",
         },
       },
       {
@@ -53,8 +53,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "998 THB",
-          ru: "998 бат",
+          en: "700 THB",
+          ru: "700 бат",
         },
       },
       {
@@ -63,8 +63,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "698 THB",
-          ru: "698 бат",
+          en: "560 THB",
+          ru: "560 бат",
         },
       },
       {
@@ -73,8 +73,8 @@ export const motoData = [
           ru: "Депозит",
         },
         price: {
-          en: "Passport or 20000 THB",
-          ru: "Паспорт или 20000 бат",
+          en: "Passport or 15000 THB",
+          ru: "Паспорт или 15000 бат",
         },
       },
     ],
@@ -175,7 +175,7 @@ export const motoData = [
       tires: "Michelin",
       exhaust: "Stock",
     },
-    price: "1498",
+    price: "1130",
     priceList: [
       {
         duration: {
@@ -193,8 +193,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "3198 THB",
-          ru: "3198 бат",
+          en: "2400 THB",
+          ru: "2400 бат",
         },
       },
       {
@@ -203,8 +203,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "2598 THB",
-          ru: "2598 бат",
+          en: "1750 THB",
+          ru: "1750 бат",
         },
       },
       {
@@ -213,8 +213,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "1500 THB",
+          ru: "1500 бат",
         },
       },
       {
@@ -223,8 +223,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1498 THB",
-          ru: "1498 бат",
+          en: "1130 THB",
+          ru: "1130 бат",
         },
       },
       {
@@ -233,8 +233,8 @@ export const motoData = [
           ru: "Депозит",
         },
         price: {
-          en: "Passport or 40000 THB",
-          ru: "Паспорт или 40000 бат",
+          en: "Passport or 30000 THB",
+          ru: "Паспорт или 30000 бат",
         },
       },
     ],
@@ -655,7 +655,7 @@ export const motoData = [
       tires: "Michelin",
       exhaust: "Arrow",
     },
-    price: "998",
+    price: "860",
     priceList: [
       {
         duration: {
@@ -673,8 +673,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "1600 THB",
+          ru: "1600 бат",
         },
       },
       {
@@ -683,8 +683,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1698 THB",
-          ru: "1698 бат",
+          en: "1300 THB",
+          ru: "1300 бат",
         },
       },
       {
@@ -693,8 +693,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1298 THB",
-          ru: "1298 бат",
+          en: "1100 THB",
+          ru: "1100 бат",
         },
       },
       {
@@ -703,8 +703,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "998 THB",
-          ru: "998 бат",
+          en: "860 THB",
+          ru: "860 бат",
         },
       },
       {
@@ -713,8 +713,8 @@ export const motoData = [
           ru: "Депозит",
         },
         price: {
-          en: "Passport or 30000 THB",
-          ru: "Паспорт или 30000 бат",
+          en: "Passport or 20000 THB",
+          ru: "Паспорт или 20000 бат",
         },
       },
     ],
@@ -895,7 +895,7 @@ export const motoData = [
       tires: "Michelin",
       exhaust: "Acrapovic",
     },
-    price: "298",
+    price: "330",
     priceList: [
       {
         duration: {
@@ -913,8 +913,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "798 THB",
-          ru: "798 бат",
+          en: "650 THB",
+          ru: "650 бат",
         },
       },
       {
@@ -923,8 +923,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "698 THB",
-          ru: "698 бат",
+          en: "550 THB",
+          ru: "550 бат",
         },
       },
       {
@@ -933,8 +933,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "498 THB",
-          ru: "498 бат",
+          en: "450 THB",
+          ru: "450 бат",
         },
       },
       {
@@ -943,8 +943,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "298 THB",
-          ru: "298 бат",
+          en: "330 THB",
+          ru: "330 бат",
         },
       },
       {
@@ -1055,7 +1055,7 @@ export const motoData = [
       tires: "Michelin",
       exhaust: "Акrapovic",
     },
-    price: "598",
+    price: "860",
     priceList: [
       {
         duration: {
@@ -1073,8 +1073,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1598 THB",
-          ru: "1598 бат",
+          en: "1400 THB",
+          ru: "1400 бат",
         },
       },
       {
@@ -1083,8 +1083,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1298 THB",
-          ru: "1298 бат",
+          en: "1200 THB",
+          ru: "1200 бат",
         },
       },
       {
@@ -1093,8 +1093,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "998 THB",
-          ru: "998 бат",
+          en: "1000 THB",
+          ru: "1000 бат",
         },
       },
       {
@@ -1103,8 +1103,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "598 THB",
-          ru: "598 бат",
+          en: "860 THB",
+          ru: "860 бат",
         },
       },
       {
@@ -1113,8 +1113,8 @@ export const motoData = [
           ru: "Депозит",
         },
         price: {
-          en: "Passport or 20000 THB",
-          ru: "Паспорт или 20000 бат",
+          en: "Passport or 25000 THB",
+          ru: "Паспорт или 25000 бат",
         },
       },
     ],
@@ -1216,7 +1216,7 @@ export const motoData = [
       tires: "Pirelli",
       exhaust: "Акrapovic",
     },
-    price: "1998",
+    price: "1130",
     priceList: [
       {
         duration: {
@@ -1234,8 +1234,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "2998 THB",
-          ru: "2998 бат",
+          en: "2400 THB",
+          ru: "2400 бат",
         },
       },
       {
@@ -1244,8 +1244,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "2498 THB",
-          ru: "2498 бат",
+          en: "1750 THB",
+          ru: "1750 бат",
         },
       },
       {
@@ -1254,8 +1254,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "2198 THB",
-          ru: "2198 бат",
+          en: "1500 THB",
+          ru: "1500 бат",
         },
       },
       {
@@ -1264,8 +1264,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "1130 THB",
+          ru: "1130 бат",
         },
       },
       {
@@ -1274,8 +1274,8 @@ export const motoData = [
           ru: "Депозит",
         },
         price: {
-          en: "Passport or 40000 THB",
-          ru: "Паспорт или 40000 бат",
+          en: "Passport or 30000 THB",
+          ru: "Паспорт или 30000 бат",
         },
       },
     ],
@@ -1296,7 +1296,7 @@ export const motoData = [
       tires: "Michelin",
       exhaust: "Stock",
     },
-    price: "1998",
+    price: "1130",
     priceList: [
       {
         duration: {
@@ -1314,8 +1314,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "2998 THB",
-          ru: "2998 бат",
+          en: "2400 THB",
+          ru: "2400 бат",
         },
       },
       {
@@ -1324,8 +1324,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "2498 THB",
-          ru: "2498 бат",
+          en: "1750 THB",
+          ru: "1750 бат",
         },
       },
       {
@@ -1334,8 +1334,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "2198 THB",
-          ru: "2198 бат",
+          en: "1500 THB",
+          ru: "1500 бат",
         },
       },
       {
@@ -1344,8 +1344,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "1130 THB",
+          ru: "1130 бат",
         },
       },
       {
@@ -1354,8 +1354,8 @@ export const motoData = [
           ru: "Депозит",
         },
         price: {
-          en: "Passport or 40000 THB",
-          ru: "Паспорт или 40000 бат",
+          en: "Passport or 25000 THB",
+          ru: "Паспорт или 25000 бат",
         },
       },
     ],
