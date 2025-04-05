@@ -23,8 +23,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "2198 THB",
-          ru: "2198 бат",
+          en: "1100 THB",
+          ru: "1100 бат",
         },
       },
       {
@@ -33,8 +33,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1100 THB",
-          ru: "1100 бат",
+          en: "900 THB",
+          ru: "900 бат",
         },
       },
       {
@@ -43,8 +43,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "900 THB",
-          ru: "900 бат",
+          en: "700 THB",
+          ru: "700 бат",
         },
       },
       {
@@ -53,8 +53,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "700 THB",
-          ru: "700 бат",
+          en: "560 THB",
+          ru: "560 бат",
         },
       },
       {
@@ -63,8 +63,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "560 THB",
-          ru: "560 бат",
+          en: "",
+          ru: "",
         },
       },
       {
@@ -183,8 +183,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "3998 THB",
-          ru: "3998 бат",
+          en: "2400 THB",
+          ru: "2400 бат",
         },
       },
       {
@@ -193,8 +193,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "2400 THB",
-          ru: "2400 бат",
+          en: "1750 THB",
+          ru: "1750 бат",
         },
       },
       {
@@ -203,8 +203,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1750 THB",
-          ru: "1750 бат",
+          en: "1500 THB",
+          ru: "1500 бат",
         },
       },
       {
@@ -213,8 +213,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1500 THB",
-          ru: "1500 бат",
+          en: "1130 THB",
+          ru: "1130 бат",
         },
       },
       {
@@ -223,8 +223,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1130 THB",
-          ru: "1130 бат",
+          en: "",
+          ru: "",
         },
       },
       {
@@ -663,8 +663,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "2898 THB",
-          ru: "2898 бат",
+          en: "1600 THB",
+          ru: "1600 бат",
         },
       },
       {
@@ -673,8 +673,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1600 THB",
-          ru: "1600 бат",
+          en: "1300 THB",
+          ru: "1300 бат",
         },
       },
       {
@@ -683,8 +683,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1300 THB",
-          ru: "1300 бат",
+          en: "1100 THB",
+          ru: "1100 бат",
         },
       },
       {
@@ -693,8 +693,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1100 THB",
-          ru: "1100 бат",
+          en: "860 THB",
+          ru: "860 бат",
         },
       },
       {
@@ -703,8 +703,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "860 THB",
-          ru: "860 бат",
+          en: "",
+          ru: "",
         },
       },
       {
@@ -903,8 +903,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "998 THB",
-          ru: "998 бат",
+          en: "650 THB",
+          ru: "650 бат",
         },
       },
       {
@@ -913,8 +913,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "650 THB",
-          ru: "650 бат",
+          en: "550 THB",
+          ru: "550 бат",
         },
       },
       {
@@ -923,8 +923,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "550 THB",
-          ru: "550 бат",
+          en: "450 THB",
+          ru: "450 бат",
         },
       },
       {
@@ -933,8 +933,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "450 THB",
-          ru: "450 бат",
+          en: "330 THB",
+          ru: "330 бат",
         },
       },
       {
@@ -943,8 +943,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "330 THB",
-          ru: "330 бат",
+          en: "",
+          ru: "",
         },
       },
       {
@@ -1063,8 +1063,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "1998 THB",
-          ru: "1998 бат",
+          en: "1400 THB",
+          ru: "1400 бат",
         },
       },
       {
@@ -1073,8 +1073,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "1400 THB",
-          ru: "1400 бат",
+          en: "1200 THB",
+          ru: "1200 бат",
         },
       },
       {
@@ -1083,8 +1083,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1200 THB",
-          ru: "1200 бат",
+          en: "1000 THB",
+          ru: "1000 бат",
         },
       },
       {
@@ -1093,8 +1093,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1000 THB",
-          ru: "1000 бат",
+          en: "860 THB",
+          ru: "860 бат",
         },
       },
       {
@@ -1103,8 +1103,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "860 THB",
-          ru: "860 бат",
+          en: "",
+          ru: "",
         },
       },
       {
@@ -1224,8 +1224,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "3998 THB",
-          ru: "3998 бат",
+          en: "2400 THB",
+          ru: "2400 бат",
         },
       },
       {
@@ -1234,8 +1234,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "2400 THB",
-          ru: "2400 бат",
+          en: "1750 THB",
+          ru: "1750 бат",
         },
       },
       {
@@ -1244,8 +1244,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1750 THB",
-          ru: "1750 бат",
+          en: "1500 THB",
+          ru: "1500 бат",
         },
       },
       {
@@ -1254,8 +1254,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1500 THB",
-          ru: "1500 бат",
+          en: "1130 THB",
+          ru: "1130 бат",
         },
       },
       {
@@ -1264,8 +1264,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1130 THB",
-          ru: "1130 бат",
+          en: "",
+          ru: "",
         },
       },
       {
@@ -1304,8 +1304,8 @@ export const motoData = [
           ru: "От 2 до 3 дней",
         },
         price: {
-          en: "3998 THB",
-          ru: "3998 бат",
+          en: "2400 THB",
+          ru: "2400 бат",
         },
       },
       {
@@ -1314,8 +1314,8 @@ export const motoData = [
           ru: "От 4 до 7 дней",
         },
         price: {
-          en: "2400 THB",
-          ru: "2400 бат",
+          en: "1750 THB",
+          ru: "1750 бат",
         },
       },
       {
@@ -1324,8 +1324,8 @@ export const motoData = [
           ru: "Oт 8 до 14 дней",
         },
         price: {
-          en: "1750 THB",
-          ru: "1750 бат",
+          en: "1500 THB",
+          ru: "1500 бат",
         },
       },
       {
@@ -1334,8 +1334,8 @@ export const motoData = [
           ru: "Oт 15 до 29 дней",
         },
         price: {
-          en: "1500 THB",
-          ru: "1500 бат",
+          en: "1130 THB",
+          ru: "1130 бат",
         },
       },
       {
@@ -1344,8 +1344,8 @@ export const motoData = [
           ru: "Oт 30+ дней",
         },
         price: {
-          en: "1130 THB",
-          ru: "1130 бат",
+          en: "",
+          ru: "",
         },
       },
       {
